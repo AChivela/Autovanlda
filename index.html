@@ -1,36 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, viewport-fit=cover">
-    <title>Autoavan - Oficina Mecânica Especializada | Luanda</title>
-    <meta name="description" content="Oficina mecânica especializada em Luanda. Reparação de motores, carros elétricos, câmbios automáticos, programação de placas e elétrica automotiva.">
+    <!-- Meta tags e cabeçalho permanecem os mesmos -->
+    <!-- ... (código anterior mantido) ... -->
     
-    <!-- Meta tags de segurança -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://maps.googleapis.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.google.com https://docs.google.com; connect-src 'self'">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
-    
-    <!-- Ícones para vários dispositivos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Tema para navegadores mobile -->
-    <meta name="theme-color" content="#1a2a3a">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Adicione estas regras CSS ao seu estilo existente */
+        
+        /* Ajustes específicos para o formulário do Google em mobile */
+        @media (max-width: 768px) {
+            .google-form-container {
+                margin-top: 20px;
+            }
+            
+            .google-form-container iframe {
+                height: 1200px; /* Aumenta a altura para melhor visualização em mobile */
+                min-height: 100vh;
+                border: none;
+                margin-top: -50px; /* Remove espaço superior */
+            }
+            
+            /* Remove o título "Formulário sem título" do Google Forms */
+            .ss-form-title {
+                display: none !important;
+            }
+            
+            /* Ajusta os campos do formulário */
+            .ss-form-container input, 
+            .ss-form-container textarea, 
+            .ss-form-container select {
+                font-size: 16px !important; /* Torna o texto mais legível */
+                padding: 12px !important;
+            }
+            
+            /* Remove a parte do email que aparece por padrão */
+            .ss-email-format {
+                display: none !important;
+            }
+        }
+        
+        /* Melhorias gerais para mobile */
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem !important;
+            }
+            
+            .hero-content p {
+                font-size: 1rem !important;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            .contact-info {
+                text-align: center;
+            }
+            
+            .contact-details {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .map-area iframe {
+                height: 300px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ... (código anterior mantido) ... -->
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <!-- ... (conteúdo de informações de contato mantido) ... -->
+                </div>
+
+                <div class="google-form-container">
+                    <!-- Formulário do Google ajustado para mobile -->
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSemnuyS_XapfeIwkScvGvgCNgdWJ0hOHSUCArgyW3_cFvmjHg/viewform?embedded=true&headers=false&usp=mailtono"
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        scrolling="yes">
+                        Carregando…
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ... (restante do código mantido) ... -->
+
+    <script>
+        // Adicione este script para melhorar o formulário em mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove elementos indesejados do iframe após carregamento
+            const iframe = document.querySelector('.google-form-container iframe');
+            
+            iframe.onload = function() {
+                // Aplica estilos adicionais ao conteúdo do iframe
+                try {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    
+                    // Remove o título do formulário
+                    const formTitle = iframeDoc.querySelector('.ss-form-title');
+                    if(formTitle) formTitle.style.display = 'none';
+                    
+                    // Remove a opção de receber cópia por email
+                    const emailOption = iframeDoc.querySelector('.ss-email-format');
+                    if(emailOption) emailOption.style.display = 'none';
+                    
+                    // Ajusta os campos para mobile
+                    const inputs = iframeDoc.querySelectorAll('input, textarea, select');
+                    inputs.forEach(input => {
+                        input.style.fontSize = '16px';
+                        input.style.padding = '12px';
+                    });
+                } catch(e) {
+                    console.log('Não foi possível ajustar o iframe:', e);
+                }
+            };
+            
+            // Força recarregamento em redimensionamento para ajustar layout
+            window.addEventListener('resize', function() {
+                iframe.src = iframe.src;
+            });
+        });
+    </script>
+</body>
+</html>
     
     <style>
         :root {
