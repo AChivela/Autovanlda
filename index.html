@@ -34,7 +34,7 @@
     
 
 
-
+ 
     <style>
         :root {
             --primary: #1a2a3a;
@@ -1157,12 +1157,16 @@
         }
     </style>
 
+   
 </head>
 <body>
     <!-- WhatsApp Button -->
     <a href="https://wa.me/244926095712" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+    <span class="whatsapp-btn-text">
+        <i class="fab fa-whatsapp"></i> Fale Conosco
+    </span>
 
     <!-- Header -->
     <header id="header">
@@ -1170,8 +1174,12 @@
             <div class="header-container">
                 <a href="#" class="logo">
                     <div class="logo-img">
+                        <!-- Mantenha o SVG como container para responsividade -->
                         <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <image href="Imagens/Logotipo.jpg" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
+                            <!-- Adicione sua imagem como fundo do SVG -->
+                            <image href=Imagens\Logotipo.jpg width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
+                            <!-- Opcional: Manter elementos do SVG sobre a imagem (ex: borda laranja) -->
+                            
                         </svg>
                     </div>
                     <div class="logo-text">
@@ -1188,7 +1196,16 @@
                     <ul>
                         <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
                         <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
-                        <li><a href="#shop"><i class="fas fa-box-open"></i> Peças</a></li>
+                        <li>
+                            <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#shop">Motor</a></li>
+                                <li><a href="#shop">Suspensão</a></li>
+                                <li><a href="#shop">Freios</a></li>
+                                <li><a href="#shop">Elétrica</a></li>
+                                <li><a href="#shop">Placas</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
                         <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
                     </ul>
@@ -1196,7 +1213,6 @@
             </div>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -1216,12 +1232,7 @@
     <!-- Features -->
     <section class="features">
         <div class="container">
-            <div class="section-header">
-                <h2>Nossos Diferenciais</h2>
-                <p>Conheça as vantagens de escolher a Autoavan</p>
-            </div>
-            
-            <div class="grid-3">
+            <div class="features-container">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
@@ -1254,21 +1265,22 @@
         <div class="container">
             <div class="section-header">
                 <h2>Sobre a Autoavan</h2>
-                <p>Referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
+                <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
             </div>
             
-            <div class="grid-2">
+            <div class="about-content">
                 <div class="about-text">
                     <h3>Nossa História</h3>
-                    <p>Fundada em 2022, a Autoavan surgiu com o objetivo de oferecer serviços mecânicos de excelência com transparência e honestidade. Especializamo-nos em veículos modernos, incluindo híbridos e elétricos, com tecnologia de ponta para diagnóstico e reparação.</p>
+                    <p>Fundada em 2022, a Autoavan surgiu com o objetivo de oferecer serviços mecânicos de excelência com transparência e honestidade. Ao longo dos anos, nos tornamos referência em mecânica automotiva na região de Luanda.</p>
+                    <p>Especializamo-nos em veículos modernos, incluindo híbridos e elétricos, com tecnologia de ponta para diagnóstico e reparação.</p>
                     
-                    <div class="grid-3" style="margin-top: 2rem;">
+                    <div class="mission-vision-values">
                         <div class="mv-item">
                             <div class="mv-icon">
                                 <i class="fas fa-bullseye"></i>
                             </div>
                             <h4>Missão</h4>
-                            <p>Proporcionar soluções automotivas especializadas com excelência técnica e transparência.</p>
+                            <p>Proporcionar soluções automotivas especializadas com excelência técnica, transparência e compromisso, tornando-nos referência em Luanda para reparação de veículos convencionais e elétricos.</p>
                         </div>
                         
                         <div class="mv-item">
@@ -1276,7 +1288,7 @@
                                 <i class="fas fa-eye"></i>
                             </div>
                             <h4>Visão</h4>
-                            <p>Ser reconhecida como a oficina líder em tecnologia automotiva em Angola até 2025.</p>
+                            <p>Ser reconhecida como a oficina líder em tecnologia automotiva em Angola até 2025, expandindo nossa atuação para outras províncias com padrões internacionais de qualidade.</p>
                         </div>
                         
                         <div class="mv-item">
@@ -1285,16 +1297,227 @@
                             </div>
                             <h4>Valores</h4>
                             <ul>
-                                <li><i class="fas fa-check-circle"></i> Integridade</li>
-                                <li><i class="fas fa-check-circle"></i> Inovação</li>
-                                <li><i class="fas fa-check-circle"></i> Excelência</li>
+                                <li><i class="fas fa-check-circle"></i> Integridade e honestidade</li>
+                                <li><i class="fas fa-check-circle"></i> Inovação tecnológica</li>
+                                <li><i class="fas fa-check-circle"></i> Atendimento personalizado</li>
+                                <li><i class="fas fa-check-circle"></i> Responsabilidade ambiental</li>
+                                <li><i class="fas fa-check-circle"></i> Excelência operacional</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficina Autoavan em Luanda" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficina Autoavan em Luanda">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+   <section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nossos Serviços Especializados</h2>
+            <p>Tecnologia e expertise para todos os tipos de veículos</p>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                    <div class="service-img" style="background-image: url('Imagens/Manutenção e Reparação de Motores.jpg');">
+                    <span class="service-category">Motor</span>
+                </div>
+                <div class="service-content">
+                    <h3>Manutenção e Reparação de Motores</h3>
+                    <p>Serviços completos para motores a combustão, desde manutenção preventiva até reconstrução total.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Manutenção%20e%20Reparação%20de%20Motores" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Reparação de Carros Híbridos e Elétricos.png');">
+                    <span class="service-category">Elétricos</span>
+                </div>
+                <div class="service-content">
+                    <h3>Reparação de Carros Híbridos e Elétricos</h3>
+                    <p>Tecnologia especializada para diagnóstico e reparo de veículos elétricos e híbridos.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20de%20Carros%20Híbridos%20e%20Elétricos" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Reparação de Câmbios Automáticos.jpg');">
+                    <span class="service-category">Câmbios</span>
+                </div>
+                <div class="service-content">
+                    <h3>Reparação de Câmbios Automáticos</h3>
+                    <p>Especialistas em reparo de câmbios automáticos e automatizados de todas as marcas.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/+244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20de%20Câmbios%20Automáticos" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Reparação e Programação de Placas.jpg');">
+                    <span class="service-category">Placas</span>
+                </div>
+                <div class="service-content">
+                    <h3>Reparação e Programação de Placas</h3>
+                    <p>Serviços especializados em reparo e programação de placas eletrônicas automotivas.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20e%20Programação%20de%20Placas" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Elétrica e Eletrônica Automotiva.jpg');">
+                    <span class="service-category">Elétrica</span>
+                </div>
+                <div class="service-content">
+                    <h3>Elétrica e Eletrônica Automotiva</h3>
+                    <p>Diagnóstico e reparo de sistemas elétricos e eletrônicos veiculares.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Elétrica%20e%20Eletrônica%20Automotiva" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Codificação de Chaves.jpg');">
+                    <span class="service-category">Chaves</span>
+                </div>
+                <div class="service-content">
+                    <h3>Codificação de Chaves</h3>
+                    <p>Programação de chaves originais e sobressalentes para todos os modelos.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Codificação%20de%20Chaves" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Parts Shop -->
+    <section class="shop" id="shop">
+        <div class="container">
+            <div class="shop-header">
+                <div class="section-header" style="text-align: left; margin: 0;">
+                    <h2>Peças Automotivas</h2>
+                    <p style="margin: 0;">Peças originais e de qualidade para seu veículo</p>
+                </div>
+                
+                <div class="shop-tabs">
+                    <div class="shop-tab active">Todas</div>
+                    <div class="shop-tab">Motor</div>
+                    <div class="shop-tab">Suspensão</div>
+                    <div class="shop-tab">Freios</div>
+                    <div class="shop-tab">Placas</div>
+                </div>
+            </div>
+            
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="part-img" style="background-image: url('Imagens/Filtro de Óleo Original.jpg');">
+                        <span class="part-badge">Novo</span>
+                    </div>
+                    <div class="part-content">
+                        <span class="part-category">Motor</span>
+                        <h3 class="part-title">Filtro de Óleo Original</h3>
+                        <p class="part-description">Compatível com diversos modelos de veículos</p>
+                        <div class="part-footer">
+                            <div class="part-price">
+                                <span class="part-old-price">8.500 Kz</span>
+                                7.200 Kz
+                            </div>
+                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Filtro%20de%20Óleo%20Original%20(7.200%20Kz)" class="whatsapp-btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <div class="part-img" style="background-image: url('Imagens/Pastilhas de Freio.jpg');">
+                        <span class="part-badge">Oferta</span>
+                    </div>
+                    <div class="part-content">
+                        <span class="part-category">Freios</span>
+                        <h3 class="part-title">Pastilhas de Freio</h3>
+                        <p class="part-description">Conjunto completo para eixo dianteiro</p>
+                        <div class="part-footer">
+                            <div class="part-price">
+                                <span class="part-old-price">25.000 Kz</span>
+                                21.500 Kz
+                            </div>
+                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20Pastilhas%20de%20Freio%20(21.500%20Kz)" class="whatsapp-btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <div class="part-img" style="background-image: url('Imagens/Bateria Automotiva.webp');">
+                        <span class="part-badge">Mais Vendido</span>
+                    </div>
+                    <div class="part-content">
+                        <span class="part-category">Elétrica</span>
+                        <h3 class="part-title">Bateria Automotiva</h3>
+                        <p class="part-description">60Ah com garantia de 12 meses</p>
+                        <div class="part-footer">
+                            <div class="part-price">
+                                45.000 Kz
+                            </div>
+                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Bateria%20Automotiva%2060Ah%20(45.000%20Kz)" class="whatsapp-btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <div class="part-img" style="background-image: url('Imagens/Placa Eletrônica ECU.png');">
+                        <span class="part-badge">Novo</span>
+                    </div>
+                    <div class="part-content">
+                        <span class="part-category">Placas</span>
+                        <h3 class="part-title">Placa Eletrônica ECU</h3>
+                        <p class="part-description">Compatível com vários modelos </p>
+                        <div class="part-footer">
+                            <div class="part-price">
+                                120.000 Kz
+                            </div>
+                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1303,7 +1526,7 @@
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="grid-2">
+            <div class="contact-container">
                 <div class="contact-info">
                     <h3>Entre em Contato</h3>
                     
@@ -1324,37 +1547,138 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Telefone</h4>
-                                <a href="tel:+244926095712">+244 926 095 712</a>
+                                <a href="tel:+244926095712">+244926095712</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>E-mail</h4>
+                                <a href="mailto:autoavan7@gmail.com">autoavan7@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Horário</h4>
+                                <p>Seg-Sex: 8:00 - 18:00<br>Sábado: 8:00 - 13:00</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="map-area" style="margin-top: 40px;">
-                        <h3>Nossa Localização</h3>
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.761210427433!2d13.2727466!3d-8.9823796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a5205f213e0a8b1%3A0x5d3df32a5fa4f145!2sCamama%2C%20Luanda!5e0!3m2!1spt-PT!2sao!4v1712233233141" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0; border-radius: 10px;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <div class="social-links">
+                        <a href="https://facebook.com/autoavan" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/autoavan" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/244926095712" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://youtube.com/autoavan" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
+                    <!-- Mapa da Localização -->
+<div class="map-area" style="margin-top: 40px;">
+    <h3 style="margin-bottom: 15px;">Nossa Localização</h3>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.761210427433!2d13.2727466!3d-8.9823796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a5205f213e0a8b1%3A0x5d3df32a5fa4f145!2sCamama%2C%20Luanda!5e0!3m2!1spt-PT!2sao!4v1712233233141" 
+        width="100%" 
+        height="420" 
+        style="border:0; border-radius: 10px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
                 </div>
 
-                <div class="google-form-container">
-                    <iframe 
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSemnuyS_XapfeIwkScvGvgCNgdWJ0hOHSUCArgyW3_cFvmjHg/viewform?embedded=true&headers=false&usp=mailtono"
-                        frameborder="0" 
-                        marginheight="0" 
-                        marginwidth="0">
-                        Carregando…
-                    </iframe>
+                
+               <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Profissional</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .google-form-container iframe {
+            width: 100%;
+            height: 800px; /* Ajustável conforme necessário */
+            border: none;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 20px;
+            }
+
+            .google-form-container iframe {
+                height: 1000px; /* mais altura para mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <div class="contact-form">
+            <h2>Fale Conosco</h2>
+            <div class="google-form-container">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSemnuyS_XapfeIwkScvGvgCNgdWJ0hOHSUCArgyW3_cFvmjHg/viewform?embedded=true"
+                    allowfullscreen>
+                    Carregando…
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+                                            </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal de Confirmação -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3>Mensagem Enviada com Sucesso!</h3>
+            <p>Obrigado por entrar em contato com a Autoavan. Nossa equipe responderá em breve.</p>
+            <button class="submit-btn" id="modalCloseBtn">OK</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -1362,7 +1686,8 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <h4>Sobre a Autoavan</h4>
-                    <p>Referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
+                    <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
+                    
                 </div>
                 
                 <div class="footer-col">
@@ -1370,18 +1695,31 @@
                     <ul class="footer-links">
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
-                        <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças</a></li>
+                        <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>Contato</h4>
+                    <h4>Serviços</h4>
                     <ul class="footer-links">
-                        <li><a href="tel:+244926095712"><i class="fas fa-phone-alt"></i> +244 926 095 712</a></li>
-                        <li><a href="mailto:autoavan7@gmail.com"><i class="fas fa-envelope"></i> autoavan7@gmail.com</a></li>
-                        <li><a href="https://wa.me/244926095712"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Manutenção de Motores</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Carros Elétricos/Híbridos</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Câmbios Automáticos</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Reparação de Placas</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Elétrica Automotiva</a></li>
                     </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Clube de Benefícios Automotivos</h4>
+                    <p>Junte-se ao nosso grupo exclusivo no WhatsApp e receba alertas de promoções e descontos progressivos.</p>
+                    <div class="footer-newsletter">
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                    </div>
                 </div>
             </div>
             
@@ -1391,27 +1729,34 @@
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
         
         mobileMenuBtn.addEventListener('click', () => {
-            mainNav.querySelector('ul').classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.querySelector('ul').classList.contains('active') ? 
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
         // Header Scroll Effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            header.classList.toggle('header-scrolled', window.scrollY > 100);
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
         });
         
-        // Smooth Scrolling
+        // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                
+                if (this.getAttribute('href') === '#') return;
                 
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1421,24 +1766,57 @@
                     });
                     
                     // Close mobile menu if open
-                    if (mainNav.querySelector('ul').classList.contains('active')) {
-                        mainNav.querySelector('ul').classList.remove('active');
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
                         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     }
                 }
             });
         });
         
-        // Form adjustment for mobile
-        const adjustFormForMobile = () => {
-            const iframe = document.querySelector('.google-form-container iframe');
-            if (window.innerWidth <= 768) {
-                iframe.src = iframe.src.split('&')[0] + '&embedded=true&headers=false&usp=mailtono';
-            }
-        };
+        // Shop Tabs
+        const shopTabs = document.querySelectorAll('.shop-tab');
+        shopTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                shopTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // Here you would filter products based on the selected tab
+                // This would require additional JavaScript or backend integration
+            });
+        });
         
-        window.addEventListener('resize', adjustFormForMobile);
-        window.addEventListener('load', adjustFormForMobile);
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        
+        // Show confirmation modal on form submit
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission (in a real scenario, you would handle the actual submission)
+            setTimeout(() => {
+                confirmationModal.style.display = 'flex';
+                contactForm.reset();
+            }, 1000);
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+        
+        modalCloseBtn.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === confirmationModal) {
+                confirmationModal.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
