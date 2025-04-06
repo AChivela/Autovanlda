@@ -1648,20 +1648,45 @@
         }
     </style>
 
-  </head>
 <section>
     <div class="contact-form">
         <h2>Fale Conosco</h2>
         <div class="google-form-container">
             <iframe 
+                id="googleForm"
                 src="https://docs.google.com/forms/d/e/1FAIpQLSemnuyS_XapfeIwkScvGvgCNgdWJ0hOHSUCArgyW3_cFvmjHg/viewform?embedded=true"
                 width="640" height="800" frameborder="0" marginheight="0" marginwidth="0" allowfullscreen>
                 Carregando…
             </iframe>
+            <!-- Tampão para cobrir a mensagem -->
+            <div class="overlay"></div>
         </div>
     </div>
 </section>
-</html>
+
+<style>
+    /* Estilo para a sobreposição */
+    .google-form-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        opacity: 0.8;  /* Ajuste a opacidade conforme necessário */
+        pointer-events: none;  /* Garante que o tampão não bloqueie a interação com o iframe */
+    }
+
+    iframe {
+        z-index: 1; /* Garante que o iframe fique acima do tampão */
+    }
+</style>
+
 
 
                 </form>
