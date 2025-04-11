@@ -1,42 +1,10 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autoavan - Oficina Mecânica Especializada | Luanda</title>
-    <meta name="description" content="Oficina mecânica especializada em Luanda. Reparação de motores, carros elétricos, câmbios automáticos, programação de placas e elétrica automotiva.">
-    
-
-     <!-- Meta tags de segurança -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://maps.googleapis.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.google.com https://docs.google.com; connect-src 'self'">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
-
-   
-    
-    <!-- Ícones -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Tema mobile -->
-    <meta name="theme-color" content="#1a2a3a">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-      
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    
+    <meta name="description" content="Oficina mecânica especializada em Luanda. Reparação de motores, carros elétricos, câmbios automáticos, programação de placas e elétrica automotiva. NIF: 5000528366">
     <style>
         :root {
             --primary: #1a2a3a;
@@ -66,58 +34,6 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             line-height: 1.3;
-        }
-        
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-            z-index: 999;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-        }
-        
-        .whatsapp-btn-text {
-            position: fixed;
-            bottom: 30px;
-            right: 100px;
-            background-color: #25D366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-            z-index: 998;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s;
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .whatsapp-btn:hover + .whatsapp-btn-text {
-            opacity: 1;
-            right: 80px;
-        }
-        
-        .whatsapp-btn-text i {
-            margin-right: 8px;
         }
         
         /* Header */
@@ -333,24 +249,6 @@
             background-color: white;
             color: var(--primary);
             transform: translateY(-3px);
-        }
-        
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .btn-whatsapp i {
-            margin-right: 8px;
-        }
-        
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(18, 140, 126, 0.3);
         }
         
         /* Features */
@@ -763,28 +661,6 @@
             background: var(--secondary);
         }
         
-        .whatsapp-btn-small {
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        .whatsapp-btn-small i {
-            margin-right: 5px;
-        }
-        
-        .whatsapp-btn-small:hover {
-            background: #128C7E;
-        }
-        
         /* Contact */
         .contact {
             padding: 5rem 0;
@@ -860,6 +736,64 @@
         .social-links a:hover {
             background: var(--accent);
             transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Modal */
@@ -1097,11 +1031,6 @@
                 font-size: 0.9rem;
             }
             
-            .dropdown-menu li a:hover {
-                color: var(--secondary);
-                background: #f9f9f9;
-            }
-            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -1134,10 +1063,6 @@
                 overflow-x: auto;
                 padding-bottom: 5px;
             }
-            
-            .whatsapp-btn-text {
-                display: none;
-            }
         }
         
         @media (max-width: 576px) {
@@ -1158,18 +1083,12 @@
             }
         }
     </style>
-
-   
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/244926095712" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <span class="whatsapp-btn-text">
-        <i class="fab fa-whatsapp"></i> Fale Conosco
-    </span>
-
     <!-- Header -->
     <header id="header">
         <div class="container">
@@ -1179,7 +1098,7 @@
                         <!-- Mantenha o SVG como container para responsividade -->
                         <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                             <!-- Adicione sua imagem como fundo do SVG -->
-                            <image href=Imagens\Logotipo.jpg width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
+                            <image href="C:\Users\aurel\Pictures\AUTOVAN\Design sem nome.png" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
                             <!-- Opcional: Manter elementos do SVG sobre a imagem (ex: borda laranja) -->
                             
                         </svg>
@@ -1190,7 +1109,7 @@
                     </div>
                 </a>
                 
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
                 
@@ -1215,6 +1134,7 @@
             </div>
         </div>
     </header>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -1223,9 +1143,7 @@
                 <p>Tecnologia avançada para veículos convencionais, híbridos e elétricos. Soluções completas em mecânica, elétrica e programação de placas.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">Agendar Serviço</a>
-                    <a href="https://wa.me/244926095712" class="btn btn-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
+                    <a href="#shop" class="btn btn-secondary">Ver Peças</a>
                 </div>
             </div>
         </div>
@@ -1273,7 +1191,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Nossa História</h3>
-                    <p>Fundada em 2022, a Autoavan surgiu com o objetivo de oferecer serviços mecânicos de excelência com transparência e honestidade. Ao longo dos anos, nos tornamos referência em mecânica automotiva na região de Luanda.</p>
+                    <p>Fundada em 2008, a Autoavan surgiu com o objetivo de oferecer serviços mecânicos de excelência com transparência e honestidade. Ao longo dos anos, nos tornamos referência em mecânica automotiva na região de Luanda.</p>
                     <p>Especializamo-nos em veículos modernos, incluindo híbridos e elétricos, com tecnologia de ponta para diagnóstico e reparação.</p>
                     
                     <div class="mission-vision-values">
@@ -1307,6 +1225,15 @@
                             </ul>
                         </div>
                     </div>
+                    
+                    <div class="about-list">
+                        <h4>Nossos Dados:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> <strong>Razão Social:</strong> AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA</li>
+                            <li><i class="fas fa-check"></i> <strong>NIF:</strong> 5000528366</li>
+                            <li><i class="fas fa-check"></i> <strong>Endereço:</strong> Comuna de Camama, sentido Calemba 2, próximo à Igreja Renascer. Município de Belas, Luanda</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="about-img">
@@ -1317,113 +1244,100 @@
     </section>
 
     <!-- Services -->
-   <section class="services" id="services">
-    <div class="container">
-        <div class="section-header">
-            <h2>Nossos Serviços Especializados</h2>
-            <p>Tecnologia e expertise para todos os tipos de veículos</p>
-        </div>
-        
-        <div class="services-container">
-            <div class="service-card">
-                    <div class="service-img" style="background-image: url('Imagens/Manutenção e Reparação de Motores.jpg');">
-                    <span class="service-category">Motor</span>
-                </div>
-                <div class="service-content">
-                    <h3>Manutenção e Reparação de Motores</h3>
-                    <p>Serviços completos para motores a combustão, desde manutenção preventiva até reconstrução total.</p>
-                    <div class="service-meta">
-                        <span class="service-price">Sob Consulta</span>
-                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Manutenção%20e%20Reparação%20de%20Motores" class="whatsapp-btn-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                    </div>
-                </div>
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Serviços Especializados</h2>
+                <p>Tecnologia e expertise para todos os tipos de veículos</p>
             </div>
             
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('Imagens/Reparação de Carros Híbridos e Elétricos.png');">
-                    <span class="service-category">Elétricos</span>
-                </div>
-                <div class="service-content">
-                    <h3>Reparação de Carros Híbridos e Elétricos</h3>
-                    <p>Tecnologia especializada para diagnóstico e reparo de veículos elétricos e híbridos.</p>
-                    <div class="service-meta">
-                        <span class="service-price">Sob Consulta</span>
-                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20de%20Carros%20Híbridos%20e%20Elétricos" class="whatsapp-btn-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1629452934563-f2f3a7f60cbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <span class="service-category">Motor</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Manutenção e Reparação de Motores</h3>
+                        <p>Serviços completos para motores a combustão, desde manutenção preventiva até reconstrução total.</p>
+                        <div class="service-meta">
+                            <span class="service-price">Sob Consulta</span>
+                            <a href="#contact" class="service-link">Agendar <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('Imagens/Reparação de Câmbios Automáticos.jpg');">
-                    <span class="service-category">Câmbios</span>
-                </div>
-                <div class="service-content">
-                    <h3>Reparação de Câmbios Automáticos</h3>
-                    <p>Especialistas em reparo de câmbios automáticos e automatizados de todas as marcas.</p>
-                    <div class="service-meta">
-                        <span class="service-price">Sob Consulta</span>
-                        <a href="https://wa.me/+244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20de%20Câmbios%20Automáticos" class="whatsapp-btn-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1594708767771-a750a6e8d0a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <span class="service-category">Elétricos</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Reparação de Carros Híbridos e Elétricos</h3>
+                        <p>Tecnologia especializada para diagnóstico e reparo de veículos elétricos e híbridos.</p>
+                        <div class="service-meta">
+                            <span class="service-price">Sob Consulta</span>
+                            <a href="#contact" class="service-link">Agendar <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('Imagens/Reparação e Programação de Placas.jpg');">
-                    <span class="service-category">Placas</span>
-                </div>
-                <div class="service-content">
-                    <h3>Reparação e Programação de Placas</h3>
-                    <p>Serviços especializados em reparo e programação de placas eletrônicas automotivas.</p>
-                    <div class="service-meta">
-                        <span class="service-price">Sob Consulta</span>
-                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20e%20Programação%20de%20Placas" class="whatsapp-btn-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <span class="service-category">Câmbios</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Reparação de Câmbios Automáticos</h3>
+                        <p>Especialistas em reparo de câmbios automáticos e automatizados de todas as marcas.</p>
+                        <div class="service-meta">
+                            <span class="service-price">Sob Consulta</span>
+                            <a href="#contact" class="service-link">Agendar <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('Imagens/Elétrica e Eletrônica Automotiva.jpg');">
-                    <span class="service-category">Elétrica</span>
-                </div>
-                <div class="service-content">
-                    <h3>Elétrica e Eletrônica Automotiva</h3>
-                    <p>Diagnóstico e reparo de sistemas elétricos e eletrônicos veiculares.</p>
-                    <div class="service-meta">
-                        <span class="service-price">Sob Consulta</span>
-                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Elétrica%20e%20Eletrônica%20Automotiva" class="whatsapp-btn-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1580682279868-3d8b1f50ba4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <span class="service-category">Placas</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Reparação e Programação de Placas</h3>
+                        <p>Serviços especializados em reparo e programação de placas eletrônicas automotivas.</p>
+                        <div class="service-meta">
+                            <span class="service-price">Sob Consulta</span>
+                            <a href="#contact" class="service-link">Agendar <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('Imagens/Codificação de Chaves.jpg');">
-                    <span class="service-category">Chaves</span>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <span class="service-category">Elétrica</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Elétrica e Eletrônica Automotiva</h3>
+                        <p>Diagnóstico e reparo de sistemas elétricos e eletrônicos veiculares.</p>
+                        <div class="service-meta">
+                            <span class="service-price">Sob Consulta</span>
+                            <a href="#contact" class="service-link">Agendar <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-content">
-                    <h3>Codificação de Chaves</h3>
-                    <p>Programação de chaves originais e sobressalentes para todos os modelos.</p>
-                    <div class="service-meta">
-                        <span class="service-price">Sob Consulta</span>
-                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Codificação%20de%20Chaves" class="whatsapp-btn-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1549317661-bd32b390d2b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                        <span class="service-category">Chaves</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Codificação de Chaves</h3>
+                        <p>Programação de chaves originais e sobressalentes para todos os modelos.</p>
+                        <div class="service-meta">
+                            <span class="service-price">25.000 Kz</span>
+                            <a href="#contact" class="service-link">Agendar <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Parts Shop -->
     <section class="shop" id="shop">
@@ -1445,7 +1359,7 @@
             
             <div class="parts-grid">
                 <div class="part-card">
-                    <div class="part-img" style="background-image: url('Imagens/Filtro de Óleo Original.jpg');">
+                    <div class="part-img" style="background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
                         <span class="part-badge">Novo</span>
                     </div>
                     <div class="part-content">
@@ -1457,15 +1371,15 @@
                                 <span class="part-old-price">8.500 Kz</span>
                                 7.200 Kz
                             </div>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Filtro%20de%20Óleo%20Original%20(7.200%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            <a href="#contact" class="contact-btn" data-part="Filtro de Óleo Original" data-price="7200">
+                                <i class="fas fa-envelope"></i> Consultar
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="part-card">
-                    <div class="part-img" style="background-image: url('Imagens/Pastilhas de Freio.jpg');">
+                    <div class="part-img" style="background-image: url('https://images.unsplash.com/photo-1597931757101-41e9e3f4ae33?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
                         <span class="part-badge">Oferta</span>
                     </div>
                     <div class="part-content">
@@ -1477,15 +1391,15 @@
                                 <span class="part-old-price">25.000 Kz</span>
                                 21.500 Kz
                             </div>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20Pastilhas%20de%20Freio%20(21.500%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            <a href="#contact" class="contact-btn" data-part="Pastilhas de Freio" data-price="21500">
+                                <i class="fas fa-envelope"></i> Consultar
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="part-card">
-                    <div class="part-img" style="background-image: url('Imagens/Bateria Automotiva.webp');">
+                    <div class="part-img" style="background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
                         <span class="part-badge">Mais Vendido</span>
                     </div>
                     <div class="part-content">
@@ -1496,27 +1410,27 @@
                             <div class="part-price">
                                 45.000 Kz
                             </div>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Bateria%20Automotiva%2060Ah%20(45.000%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            <a href="#contact" class="contact-btn" data-part="Bateria Automotiva 60Ah" data-price="45000">
+                                <i class="fas fa-envelope"></i> Consultar
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="part-card">
-                    <div class="part-img" style="background-image: url('Imagens/Placa Eletrônica ECU.png');">
+                    <div class="part-img" style="background-image: url('https://images.unsplash.com/photo-1580682279868-3d8b1f50ba4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
                         <span class="part-badge">Novo</span>
                     </div>
                     <div class="part-content">
                         <span class="part-category">Placas</span>
                         <h3 class="part-title">Placa Eletrônica ECU</h3>
-                        <p class="part-description">Compatível com vários modelos </p>
+                        <p class="part-description">Compatível com vários modelos europeus</p>
                         <div class="part-footer">
                             <div class="part-price">
-                                300.000 Kz
+                                120.000 Kz
                             </div>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            <a href="#contact" class="contact-btn" data-part="Placa Eletrônica ECU" data-price="120000">
+                                <i class="fas fa-envelope"></i> Consultar
                             </a>
                         </div>
                     </div>
@@ -1549,7 +1463,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Telefone</h4>
-                                <a href="tel:+244926095712">+244926095712</a>
+                                <a href="tel:+244123456789">+244 123 456 789</a>
                             </div>
                         </div>
                         
@@ -1559,7 +1473,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>E-mail</h4>
-                                <a href="comercial@autoavanlda.com">comercial@autoavanlda.com</a>
+                                <a href="mailto:aureliochivelachivela@gmail.com">aureliochivelachivela@gmail.com</a>
                             </div>
                         </div>
                         
@@ -1577,259 +1491,62 @@
                     <div class="social-links">
                         <a href="https://facebook.com/autoavan" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://instagram.com/autoavan" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/244926095712" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/244123456789" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://youtube.com/autoavan" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <!-- Mapa da Localização -->
-<div class="map-area" style="margin-top: 40px;">
-    <h3 style="margin-bottom: 15px;">Nossa Localização</h3>
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.761210427433!2d13.2727466!3d-8.9823796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a5205f213e0a8b1%3A0x5d3df32a5fa4f145!2sCamama%2C%20Luanda!5e0!3m2!1spt-PT!2sao!4v1712233233141" 
-        width="100%" 
-        height="420" 
-        style="border:0; border-radius: 10px;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
-
                 </div>
-
                 
-               <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Profissional</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-        }
-
-        section {
-            padding: 60px 20px;
-        }
-
-        .contact-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .google-form-container iframe {
-            width: 100%;
-            height: 800px; /* Ajustável conforme necessário */
-            border: none;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .contact-form {
-                padding: 20px;
-            }
-
-            .google-form-container iframe {
-                height: 1000px; /* mais altura para mobile */
-            }
-        }
-    </style>
-
-<!-- Substitua esta seção do formulário Google pelo novo formulário -->
-<div class="contact-form-container">
-    <h3>Agende Seu Serviço</h3>
-    <form id="serviceForm" action="https://formsubmit.co/el/jowesi" method="POST">
-        <!-- Token anti-spam (opcional) -->
-        <input type="hidden" name="_captcha" value="false">
-        
-        <!-- Redirecionamento após envio (opcional) -->
-        <input type="hidden" name="_next" value="https://autoavanlda.com/agradecimento.html">
-        
-        <!-- Template de email personalizado -->
-        <input type="hidden" name="_template" value="table">
-        
-        <!-- Assunto do email -->
-        <input type="hidden" name="_subject" value="Novo Agendamento - Autoavan">
-        
-        <div class="form-group">
-            <label for="name">Nome Completo*</label>
-            <input type="text" id="name" name="name" required>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/xeoarred" method="POST">
+                        <input type="hidden" name="_subject" value="Novo Contato - Site Autoavan">
+                        <input type="hidden" name="_next" value="#contact">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" id="partName" name="part_name" value="">
+                        <input type="hidden" id="partPrice" name="part_price" value="">
+                        <input type="hidden" name="_template" value="table">  
+                        <input type="hidden" name="_cc" value="aureliochivelas@gmail.com">  
+                        <input type="text" name="_honey" style="display:none"> <!-- Anti-spam -->
+                        
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Serviço/Peça de Interesse</label>
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="">Selecione...</option>
+                                <option value="Manutenção de Motores">Manutenção de Motores</option>
+                                <option value="Carros Híbridos/Elétricos">Carros Híbridos/Elétricos</option>
+                                <option value="Câmbios Automáticos">Câmbios Automáticos</option>
+                                <option value="Reparação de Placas">Reparação de Placas</option>
+                                <option value="Programação de Chaves">Programação de Chaves</option>
+                                <option value="Elétrica Automotiva">Elétrica Automotiva</option>
+                                <option value="Compra de Peças">Compra de Peças</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        
-        <div class="form-group">
-            <label for="phone">Telefone*</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
-        
-        <div class="form-group">
-            <label for="vehicle">Veículo (Marca/Modelo/Ano)*</label>
-            <input type="text" id="vehicle" name="vehicle" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="service">Serviço Desejado*</label>
-            <select id="service" name="service" required>
-                <option value="">Selecione um serviço</option>
-                <option value="Manutenção de Motor">Manutenção de Motor</option>
-                <option value="Carros Elétricos/Híbridos">Carros Elétricos/Híbridos</option>
-                <option value="Câmbios Automáticos">Câmbios Automáticos</option>
-                <option value="Reparação de Placas">Reparação de Placas</option>
-                <option value="Elétrica Automotiva">Elétrica Automotiva</option>
-                <option value="Codificação de Chaves">Codificação de Chaves</option>
-                <option value="Outro">Outro (especifique)</option>
-            </select>
-        </div>
-        
-        <div class="form-group" id="otherServiceGroup" style="display:none;">
-            <label for="otherService">Especifique o Serviço</label>
-            <input type="text" id="otherService" name="other_service">
-        </div>
-        
-        <div class="form-group">
-            <label for="date">Data Preferencial*</label>
-            <input type="date" id="date" name="date" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="time">Horário Preferencial*</label>
-            <select id="time" name="time" required>
-                <option value="">Selecione um horário</option>
-                <option value="08:00 - 10:00">08:00 - 10:00</option>
-                <option value="10:00 - 12:00">10:00 - 12:00</option>
-                <option value="13:00 - 15:00">13:00 - 15:00</option>
-                <option value="15:00 - 17:00">15:00 - 17:00</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Detalhes Adicionais</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-        </div>
-        
-        <div class="form-group">
-            <button type="submit" class="submit-btn">Agendar Serviço</button>
-        </div>
-    </form>
-</div>
-
-<style>
-    .contact-form-container {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 30px;
-        border-radius: 10px;
-        backdrop-filter: blur(5px);
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    
-    .contact-form-container h3 {
-        color: white;
-        text-align: center;
-        margin-bottom: 25px;
-        font-size: 1.8rem;
-    }
-    
-    .form-group {
-        margin-bottom: 20px;
-    }
-    
-    .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        color: white;
-        font-weight: 500;
-    }
-    
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-        padding: 12px 15px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 5px;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        font-size: 1rem;
-    }
-    
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-        color: rgba(255, 255, 255, 0.6);
-    }
-    
-    .form-group textarea {
-        resize: vertical;
-        min-height: 100px;
-    }
-    
-    .submit-btn {
-        background: var(--secondary);
-        color: white;
-        border: none;
-        padding: 15px 30px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: 600;
-        width: 100%;
-        transition: all 0.3s;
-    }
-    
-    .submit-btn:hover {
-        background: var(--accent);
-        transform: translateY(-2px);
-    }
-    
-    @media (max-width: 768px) {
-        .contact-form-container {
-            padding: 20px;
-        }
-    }
-</style>
-
-<script>
-    // Mostrar campo "Outro serviço" quando selecionado
-    document.getElementById('service').addEventListener('change', function() {
-        const otherServiceGroup = document.getElementById('otherServiceGroup');
-        otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
-    });
-    
-    // Configurar data mínima (amanhã)
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    
-    const dd = String(tomorrow.getDate()).padStart(2, '0');
-    const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
-    const yyyy = tomorrow.getFullYear();
-    
-    document.getElementById('date').min = `${yyyy}-${mm}-${dd}`;
-    
-    // FormSubmit handling
-    document.getElementById('serviceForm').addEventListener('submit', function(e) {
-        // Validação adicional pode ser adicionada aqui
-        const confirmationModal = document.getElementById('confirmationModal');
-        confirmationModal.style.display = 'flex';
-    });
-</script>
+    </section>
 
     <!-- Modal de Confirmação -->
     <div class="modal" id="confirmationModal">
@@ -1841,14 +1558,14 @@
         </div>
     </div>
 
-    <<!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
                     <h4>Sobre a Autoavan</h4>
                     <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
-                    
+                    <p>NIF: 5000528366</p>
                 </div>
                 
                 <div class="footer-col">
@@ -1859,7 +1576,6 @@
                         <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
                         <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
-                        <li><a href="#trabalhe-conosco" id="candidaturaBtn"><i class="fas fa-chevron-right"></i> Trabalhe Conosco</a></li>
                     </ul>
                 </div>
                 
@@ -1875,12 +1591,11 @@
                 </div>
                 
                 <div class="footer-col">
-                    <h4>Clube de Benefícios Automotivos</h4>
-                    <p>Junte-se ao nosso grupo exclusivo no WhatsApp e receba alertas de promoções e descontos progressivos.</p>
+                    <h4>Newsletter</h4>
+                    <p>Inscreva-se para receber nossas promoções e novidades.</p>
                     <div class="footer-newsletter">
-                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit">Inscrever</button>
                     </div>
                 </div>
             </div>
@@ -1890,62 +1605,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Candidatura Modal -->
-    <div class="modal-overlay" id="candidaturaModal">
-        <div class="modal-container" style="max-width: 600px;">
-            <span class="modal-close" id="closeCandidaturaModal">&times;</span>
-            <h3 class="modal-title">Candidate-se à Autoavan</h3>
-            
-            <form id="candidaturaForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="candidatoNome">Nome Completo*</label>
-                        <input type="text" id="candidatoNome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="candidatoTelefone">Telefone*</label>
-                        <input type="tel" id="candidatoTelefone" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="candidatoEmail">E-mail*</label>
-                    <input type="email" id="candidatoEmail" required>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="candidatoArea">Área de Interesse*</label>
-                        <select id="candidatoArea" required>
-                            <option value="">Selecione</option>
-                            <option value="Mecânica">Mecânica Automotiva</option>
-                            <option value="Elétrica">Elétrica Veicular</option>
-                            <option value="Eletrônica">Eletrônica Automotiva</option>
-                            <option value="Atendimento">Atendimento ao Cliente</option>
-                            <option value="Administrativo">Administrativo</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="candidatoExperiencia">Anos de Experiência*</label>
-                        <input type="number" id="candidatoExperiencia" min="0" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="candidatoMensagem">Por que quer trabalhar conosco?*</label>
-                    <textarea id="candidatoMensagem" rows="4" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="candidatoCurriculo">Anexar Currículo (PDF)*</label>
-                    <input type="file" id="candidatoCurriculo" accept=".pdf" required>
-                </div>
-
-                <button type="submit" class="form-submit">Enviar Candidatura</button>
-            </form>
-        </div>
-    </div>
 
     <!-- JavaScript -->
     <script>
@@ -2003,115 +1662,54 @@
             });
         });
         
-        // Quantity Selectors
-        document.querySelectorAll('.quantity-plus').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const input = this.previousElementSibling;
-                input.value = parseInt(input.value) + 1;
-            });
-        });
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
         
-        document.querySelectorAll('.quantity-minus').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const input = this.nextElementSibling;
-                if (parseInt(input.value) > 1) {
-                    input.value = parseInt(input.value) - 1;
-                }
-            });
-        });
-        
-        // WhatsApp Order Buttons
-        document.querySelectorAll('.whatsapp-order-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const productName = this.getAttribute('data-name');
-                const productPrice = this.getAttribute('data-price');
-                const quantity = this.closest('.part-actions').querySelector('.quantity-input').value;
-                const totalPrice = parseInt(productPrice) * parseInt(quantity);
+        // Pre-fill form when clicking on part contact button
+        document.querySelectorAll('.contact-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const partName = btn.getAttribute('data-part');
+                const partPrice = btn.getAttribute('data-price');
                 
-                // Show confirmation before redirecting to WhatsApp
-                Swal.fire({
-                    title: 'Confirmar Pedido',
-                    html: `Você está prestes a enviar um pedido para:<br><br>
-                           <b>${productName}</b><br>
-                           Quantidade: ${quantity}<br>
-                           Preço Unitário: ${productPrice} Kz<br>
-                           Total: ${totalPrice} Kz<br><br>
-                           Deseja continuar?`,
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Sim, enviar pedido',
-                    cancelButtonText: 'Cancelar'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        const message = `Olá, gostaria de encomendar:\n\n*Produto:* ${productName}\n*Quantidade:* ${quantity}\n*Preço Unitário:* ${productPrice} Kz\n*Total:* ${totalPrice} Kz\n\nPor favor, confirme a disponibilidade.`;
-                        const whatsappUrl = `https://wa.me/244926095712?text=${encodeURIComponent(message)}`;
-                        window.open(whatsappUrl, '_blank');
-                    }
-                });
+                // Set hidden fields
+                document.getElementById('partName').value = partName;
+                document.getElementById('partPrice').value = partPrice;
+                
+                // Set service dropdown to "Compra de Peças"
+                document.getElementById('service').value = "Compra de Peças";
+                
+                // Pre-fill message
+                document.getElementById('message').value = `Gostaria de mais informações sobre a peça: ${partName} (Preço: ${partPrice} Kz)`;
             });
         });
-
-        // Candidatura Modal Logic
-        const candidaturaBtn = document.getElementById('candidaturaBtn');
-        const candidaturaModal = document.getElementById('candidaturaModal');
-        const closeCandidaturaModal = document.getElementById('closeCandidaturaModal');
-
-        candidaturaBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            candidaturaModal.style.display = 'flex';
-        });
-
-        closeCandidaturaModal.addEventListener('click', () => {
-            candidaturaModal.style.display = 'none';
-        });
-
-        // Form Submission
-        document.getElementById('candidaturaForm').addEventListener('submit', function(e) {
+        
+        // Show confirmation modal on form submit
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simulação de envio (em produção usar FormSubmit ou PHP)
-            const formData = {
-                nome: document.getElementById('candidatoNome').value,
-                telefone: document.getElementById('candidatoTelefone').value,
-                email: document.getElementById('candidatoEmail').value,
-                area: document.getElementById('candidatoArea').value,
-                experiencia: document.getElementById('candidatoExperiencia').value,
-                mensagem: document.getElementById('candidatoMensagem').value
-            };
-
-            // Aqui você integraria com FormSubmit.co ou backend PHP
-            Swal.fire({
-                title: 'Candidatura Enviada!',
-                html: `Obrigado, ${formData.nome}!<br><br>
-                       Sua candidatura para <b>${formData.area}</b> foi recebida.<br>
-                       Entraremos em contato pelo telefone ${formData.telefone}.`,
-                icon: 'success'
-            });
-
-            // Limpar formulário
-            this.reset();
-            candidaturaModal.style.display = 'none';
-            
-            // Em produção, ativar este código para enviar para o email:
-            
-            fetch('https://eu.portal.fastfieldforms.com/WebApp/WebForm?formId=32473', {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.log(error));
-            
+            // Simulate form submission (in a real scenario, you would handle the actual submission)
+            setTimeout(() => {
+                confirmationModal.style.display = 'flex';
+                contactForm.reset();
+            }, 1000);
         });
-
-        // Fechar modais ao clicar fora
-        window.addEventListener('click', function(e) {
-            if (e.target === candidaturaModal) {
-                candidaturaModal.style.display = 'none';
+        
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+        
+        modalCloseBtn.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === confirmationModal) {
+                confirmationModal.style.display = 'none';
             }
         });
     </script>
