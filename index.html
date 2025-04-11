@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -382,57 +382,6 @@
             margin-right: 10px;
             margin-top: 3px;
         }
-
-        /* Missão, Visão e Valores */
-        .mission-vision-values {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .mv-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-        }
-
-        .mv-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .mv-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .mv-item h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .mv-item ul {
-            margin-top: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        .mv-item ul li {
-            margin-bottom: 0.8rem;
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .mv-item ul li i {
-            color: var(--accent);
-            margin-right: 10px;
-            font-size: 0.9rem;
-        }
         
         /* Services */
         .services {
@@ -639,7 +588,7 @@
             margin-right: 5px;
         }
         
-        .contact-btn {
+        .add-to-cart {
             background: var(--primary);
             color: white;
             border: none;
@@ -649,15 +598,13 @@
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            text-decoration: none;
-            font-size: 0.9rem;
         }
         
-        .contact-btn i {
+        .add-to-cart i {
             margin-right: 5px;
         }
         
-        .contact-btn:hover {
+        .add-to-cart:hover {
             background: var(--secondary);
         }
         
@@ -796,49 +743,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-light);
-            transition: all 0.3s;
-        }
-        
-        .close-modal:hover {
-            color: var(--secondary);
-        }
-        
-        .modal h3 {
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        
         /* Footer */
         footer {
             background: var(--dark);
@@ -963,10 +867,6 @@
             .social-links {
                 justify-content: center;
             }
-
-            .mission-vision-values {
-                grid-template-columns: 1fr;
-            }
         }
         
         @media (max-width: 768px) {
@@ -1051,18 +951,6 @@
             .section-header h2 {
                 font-size: 2rem;
             }
-            
-            .shop-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .shop-tabs {
-                width: 100%;
-                overflow-x: auto;
-                padding-bottom: 5px;
-            }
         }
         
         @media (max-width: 576px) {
@@ -1095,14 +983,14 @@
             <div class="header-container">
                 <a href="#" class="logo">
                     <div class="logo-img">
-                        <!-- Mantenha o SVG como container para responsividade -->
-                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Adicione sua imagem como fundo do SVG -->
-                            <image href="C:\Users\aurel\Pictures\AUTOVAN\Design sem nome.png" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
-                            <!-- Opcional: Manter elementos do SVG sobre a imagem (ex: borda laranja) -->
-                            
-                        </svg>
-                    </div>
+    <!-- Mantenha o SVG como container para responsividade -->
+    <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+        <!-- Adicione sua imagem como fundo do SVG -->
+        <image href="C:\Users\aurel\Pictures\AUTOVAN\Design sem nome.png" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
+        <!-- Opcional: Manter elementos do SVG sobre a imagem (ex: borda laranja) -->
+        
+    </svg>
+</div>
                     <div class="logo-text">
                         <span class="logo-main">AUTOAVAN</span>
                         <span class="logo-sub">MECÂNICA ESPECIALIZADA</span>
@@ -1118,7 +1006,7 @@
                         <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
                         <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
                         <li>
-                            <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
+                            <a href="#shop"><i class="fas fa-shopping-cart"></i> Peças <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#shop">Motor</a></li>
                                 <li><a href="#shop">Suspensão</a></li>
@@ -1143,7 +1031,7 @@
                 <p>Tecnologia avançada para veículos convencionais, híbridos e elétricos. Soluções completas em mecânica, elétrica e programação de placas.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">Agendar Serviço</a>
-                    <a href="#shop" class="btn btn-secondary">Ver Peças</a>
+                    <a href="#shop" class="btn btn-secondary">Comprar Peças</a>
                 </div>
             </div>
         </div>
@@ -1193,38 +1081,6 @@
                     <h3>Nossa História</h3>
                     <p>Fundada em 2008, a Autoavan surgiu com o objetivo de oferecer serviços mecânicos de excelência com transparência e honestidade. Ao longo dos anos, nos tornamos referência em mecânica automotiva na região de Luanda.</p>
                     <p>Especializamo-nos em veículos modernos, incluindo híbridos e elétricos, com tecnologia de ponta para diagnóstico e reparação.</p>
-                    
-                    <div class="mission-vision-values">
-                        <div class="mv-item">
-                            <div class="mv-icon">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <h4>Missão</h4>
-                            <p>Proporcionar soluções automotivas especializadas com excelência técnica, transparência e compromisso, tornando-nos referência em Luanda para reparação de veículos convencionais e elétricos.</p>
-                        </div>
-                        
-                        <div class="mv-item">
-                            <div class="mv-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h4>Visão</h4>
-                            <p>Ser reconhecida como a oficina líder em tecnologia automotiva em Angola até 2025, expandindo nossa atuação para outras províncias com padrões internacionais de qualidade.</p>
-                        </div>
-                        
-                        <div class="mv-item">
-                            <div class="mv-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <h4>Valores</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Integridade e honestidade</li>
-                                <li><i class="fas fa-check-circle"></i> Inovação tecnológica</li>
-                                <li><i class="fas fa-check-circle"></i> Atendimento personalizado</li>
-                                <li><i class="fas fa-check-circle"></i> Responsabilidade ambiental</li>
-                                <li><i class="fas fa-check-circle"></i> Excelência operacional</li>
-                            </ul>
-                        </div>
-                    </div>
                     
                     <div class="about-list">
                         <h4>Nossos Dados:</h4>
@@ -1371,9 +1227,9 @@
                                 <span class="part-old-price">8.500 Kz</span>
                                 7.200 Kz
                             </div>
-                            <a href="#contact" class="contact-btn" data-part="Filtro de Óleo Original" data-price="7200">
-                                <i class="fas fa-envelope"></i> Consultar
-                            </a>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1391,9 +1247,9 @@
                                 <span class="part-old-price">25.000 Kz</span>
                                 21.500 Kz
                             </div>
-                            <a href="#contact" class="contact-btn" data-part="Pastilhas de Freio" data-price="21500">
-                                <i class="fas fa-envelope"></i> Consultar
-                            </a>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1410,9 +1266,9 @@
                             <div class="part-price">
                                 45.000 Kz
                             </div>
-                            <a href="#contact" class="contact-btn" data-part="Bateria Automotiva 60Ah" data-price="45000">
-                                <i class="fas fa-envelope"></i> Consultar
-                            </a>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1429,9 +1285,9 @@
                             <div class="part-price">
                                 120.000 Kz
                             </div>
-                            <a href="#contact" class="contact-btn" data-part="Placa Eletrônica ECU" data-price="120000">
-                                <i class="fas fa-envelope"></i> Consultar
-                            </a>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1496,67 +1352,21 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/xeoarred" method="POST">
-                        <input type="hidden" name="_subject" value="Novo Contato - Site Autoavan">
-                        <input type="hidden" name="_next" value="#contact">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" id="partName" name="part_name" value="">
-                        <input type="hidden" id="partPrice" name="part_price" value="">
-                        <input type="hidden" name="_template" value="table">  
-                        <input type="hidden" name="_cc" value="aureliochivelas@gmail.com">  
-                        <input type="text" name="_honey" style="display:none"> <!-- Anti-spam -->
-                        
-                        <div class="form-group">
-                            <label for="name">Nome Completo</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Telefone</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Serviço/Peça de Interesse</label>
-                            <select id="service" name="service" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <option value="Manutenção de Motores">Manutenção de Motores</option>
-                                <option value="Carros Híbridos/Elétricos">Carros Híbridos/Elétricos</option>
-                                <option value="Câmbios Automáticos">Câmbios Automáticos</option>
-                                <option value="Reparação de Placas">Reparação de Placas</option>
-                                <option value="Programação de Chaves">Programação de Chaves</option>
-                                <option value="Elétrica Automotiva">Elétrica Automotiva</option>
-                                <option value="Compra de Peças">Compra de Peças</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
-                    </form>
+                         <div class="contact-form">
+                    <div class="google-form-container">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemnuyS_XapfeIwkScvGvgCNgdWJ0hOHSUCArgyW3_cFvmjHg/viewform?embedded=true" 
+                                width="100%" 
+                                height="1255" 
+                                frameborder="0" 
+                                marginheight="0" 
+                                marginwidth="0">
+                            Carregando…
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Modal de Confirmação -->
-    <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h3>Mensagem Enviada com Sucesso!</h3>
-            <p>Obrigado por entrar em contato com a Autoavan. Nossa equipe responderá em breve.</p>
-            <button class="submit-btn" id="modalCloseBtn">OK</button>
-        </div>
-    </div>
+    </section
 
     <!-- Footer -->
     <footer>
@@ -1590,19 +1400,11 @@
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Inscreva-se para receber nossas promoções e novidades.</p>
-                    <div class="footer-newsletter">
-                        <input type="email" placeholder="Seu e-mail">
-                        <button type="submit">Inscrever</button>
-                    </div>
-                </div>
+                
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
-            </div>
         </div>
     </footer>
 
@@ -1660,57 +1462,6 @@
                 // Here you would filter products based on the selected tab
                 // This would require additional JavaScript or backend integration
             });
-        });
-        
-        // Contact Form Handling
-        const contactForm = document.getElementById('contactForm');
-        const confirmationModal = document.getElementById('confirmationModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
-        
-        // Pre-fill form when clicking on part contact button
-        document.querySelectorAll('.contact-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const partName = btn.getAttribute('data-part');
-                const partPrice = btn.getAttribute('data-price');
-                
-                // Set hidden fields
-                document.getElementById('partName').value = partName;
-                document.getElementById('partPrice').value = partPrice;
-                
-                // Set service dropdown to "Compra de Peças"
-                document.getElementById('service').value = "Compra de Peças";
-                
-                // Pre-fill message
-                document.getElementById('message').value = `Gostaria de mais informações sobre a peça: ${partName} (Preço: ${partPrice} Kz)`;
-            });
-        });
-        
-        // Show confirmation modal on form submit
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission (in a real scenario, you would handle the actual submission)
-            setTimeout(() => {
-                confirmationModal.style.display = 'flex';
-                contactForm.reset();
-            }, 1000);
-        });
-        
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        modalCloseBtn.addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
-                confirmationModal.style.display = 'none';
-            }
         });
     </script>
 </body>
