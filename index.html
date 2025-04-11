@@ -1795,6 +1795,72 @@
             padding: 20px;
         }
     }
+    
+    /* Rodapé horizontal */
+    footer {
+        background-color: #111;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+    }
+    
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .footer-col {
+        flex: 1;
+        padding: 20px;
+        min-width: 220px;
+    }
+    
+    .footer-col h4 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .footer-links {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer-links li a i {
+        margin-right: 8px;
+    }
+    
+    .whatsapp-btn-small {
+        background-color: #25D366;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .whatsapp-btn-small i {
+        margin-right: 8px;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding: 20px;
+        background-color: #222;
+    }
 </style>
 
 <script>
@@ -1823,153 +1889,52 @@
     });
 </script>
 
-    <!-- Modal de Confirmação -->
-    <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h3>Mensagem Enviada com Sucesso!</h3>
-            <p>Obrigado por entrar em contato com a Autoavan. Nossa equipe responderá em breve.</p>
-            <button class="submit-btn" id="modalCloseBtn">OK</button>
+<!-- Modal de Confirmação -->
+<div class="modal" id="confirmationModal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h3>Mensagem Enviada com Sucesso!</h3>
+        <p>Obrigado por entrar em contato com a Autoavan. Nossa equipe responderá em breve.</p>
+        <button class="submit-btn" id="modalCloseBtn">OK</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Sobre a Autoavan</h4>
+                <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul class="footer-links">
+                    <li><a href="#manutencao-motor">Manutenção de Motor</a></li>
+                    <li><a href="#carros-eletricos">Carros Elétricos/Híbridos</a></li>
+                    <li><a href="#cambio-automatico">Câmbios Automáticos</a></li>
+                    <li><a href="#reparacao-placas">Reparação de Placas</a></li>
+                    <li><a href="#eletrica-automotiva">Elétrica Automotiva</a></li>
+                    <li><a href="#codificacao-chaves">Codificação de Chaves</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contactos</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+244912345678"><i class="fa fa-phone"></i> +244 912 345 678</a></li>
+                    <li><a href="mailto:info@autoavanlda.com"><i class="fa fa-envelope"></i> info@autoavanlda.com</a></li>
+                    <li><a href="https://wa.me/244912345678" class="whatsapp-btn-small"><i class="fa fa-whatsapp"></i> Enviar Mensagem</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h4>Sobre a Autoavan</h4>
-                    <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
-                    
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Links Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
-                        <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Serviços</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Manutenção de Motores</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Carros Elétricos/Híbridos</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Câmbios Automáticos</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Reparação de Placas</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Elétrica Automotiva</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Clube de Benefícios Automotivos</h4>
-                    <p>Junte-se ao nosso grupo exclusivo no WhatsApp e receba alertas de promoções e descontos progressivos.</p>
-                    <div class="footer-newsletter">
-                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Autoavan LDA. Todos os direitos reservados.</p>
+    </div>
+</footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        });
-        
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                if (this.getAttribute('href') === '#') return;
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mainNav.classList.contains('active')) {
-                        mainNav.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                }
-            });
-        });
-        
-        // Shop Tabs
-        const shopTabs = document.querySelectorAll('.shop-tab');
-        shopTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                shopTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                // Here you would filter products based on the selected tab
-                // This would require additional JavaScript or backend integration
-            });
-        });
-        
-        // Contact Form Handling
-        const contactForm = document.getElementById('contactForm');
-        const confirmationModal = document.getElementById('confirmationModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
-        
-        // Show confirmation modal on form submit
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission (in a real scenario, you would handle the actual submission)
-            setTimeout(() => {
-                confirmationModal.style.display = 'flex';
-                contactForm.reset();
-            }, 1000);
-        });
-        
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        modalCloseBtn.addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
-                confirmationModal.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
