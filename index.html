@@ -1403,7 +1403,7 @@
                             <i class="fas fa-eye"></i>
                         </div>
                         <h4>Visão</h4>
-                        <p>Ser reconhecida como a oficina líder em tecnologia automotiva em Angola, expandindo nossa atuação para outras províncias com padrões internacionais de qualidade.</p>
+                        <p>Ser reconhecida como a oficina líder em tecnologia automotiva em Angola até 2025, expandindo nossa atuação para outras províncias com padrões internacionais de qualidade.</p>
                     </div>
                     
                     <div class="mv-item">
@@ -1547,16 +1547,16 @@
             </div>
             
             <div class="shop-tabs">
-                <div class="shop-tab active" data-category="all">Todas</div>
-                <div class="shop-tab" data-category="motor">Motor</div>
-                <div class="shop-tab" data-category="suspensao">Suspensão</div>
-                <div class="shop-tab" data-category="freios">Freios</div>
-                <div class="shop-tab" data-category="placas">Placas</div>
+                <div class="shop-tab active">Todas</div>
+                <div class="shop-tab">Motor</div>
+                <div class="shop-tab">Suspensão</div>
+                <div class="shop-tab">Freios</div>
+                <div class="shop-tab">Placas</div>
             </div>
         </div>
         
         <div class="parts-grid">
-            <div class="part-card" data-category="motor">
+            <div class="part-card">
                 <div class="part-img" style="background-image: url('Imagens/Filtro de Óleo Original.jpg');">
                     <span class="part-badge">Novo</span>
                 </div>
@@ -1576,7 +1576,7 @@
                 </div>
             </div>
             
-            <div class="part-card" data-category="freios">
+            <div class="part-card">
                 <div class="part-img" style="background-image: url('Imagens/Pastilhas de Freio.jpg');">
                     <span class="part-badge">Oferta</span>
                 </div>
@@ -1596,7 +1596,7 @@
                 </div>
             </div>
             
-            <div class="part-card" data-category="eletrica">
+            <div class="part-card">
                 <div class="part-img" style="background-image: url('Imagens/Bateria Automotiva.webp');">
                     <span class="part-badge">Mais Vendido</span>
                 </div>
@@ -1615,7 +1615,7 @@
                 </div>
             </div>
             
-            <div class="part-card" data-category="placas">
+            <div class="part-card">
                 <div class="part-img" style="background-image: url('Imagens/Placa Eletrônica ECU.png');">
                     <span class="part-badge">Novo</span>
                 </div>
@@ -1627,7 +1627,7 @@
                         <div class="part-price">
                             300.000 Kz
                         </div>
-                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(300.000%20Kz)" class="whatsapp-btn-small" target="_blank">
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
                     </div>
@@ -1636,38 +1636,6 @@
         </div>
     </div>
 </section>
-
-<script>
-    // Filtro de Peças Automotivas
-    function filterParts(category) {
-        const parts = document.querySelectorAll('.part-card');
-        const tabs = document.querySelectorAll('.shop-tab');
-        
-        // Atualizar tabs ativas
-        tabs.forEach(tab => {
-            tab.classList.toggle('active', tab.dataset.category === category);
-        });
-        
-        // Filtrar peças
-        parts.forEach(part => {
-            if (category === 'all' || part.dataset.category === category) {
-                part.style.display = 'block';
-            } else {
-                part.style.display = 'none';
-            }
-        });
-    }
-    
-    // Event listeners para as tabs
-    document.querySelectorAll('.shop-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            filterParts(tab.dataset.category);
-        });
-    });
-    
-    // Inicializar mostrando todas as peças
-    filterParts('all');
-</script>
 
 <!-- Contact -->
 <section class="contact" id="contact">
@@ -1962,16 +1930,16 @@
         confirmationModal.style.display = 'flex';
         
         // In a real scenario, you would use fetch() or similar to submit the form
-        // fetch(serviceForm.action, {
-        //     method: 'POST',
-        //     body: new FormData(serviceForm)
-        // })
-        // .then(response => {
-        //     if (response.ok) {
-        //         confirmationModal.style.display = 'flex';
-        //         serviceForm.reset();
-        //     }
-        // });
+        fetch(serviceForm.action, {
+            method: 'POST',
+             body: new FormData(serviceForm)
+         })
+        .then(response => {
+             if (response.ok) {
+               confirmationModal.style.display = 'flex';
+             serviceForm.reset();
+             }
+         });
     });
     
     // Close modal
