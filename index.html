@@ -1930,16 +1930,16 @@
         confirmationModal.style.display = 'flex';
         
         // In a real scenario, you would use fetch() or similar to submit the form
-        fetch(serviceForm.action, {
-            method: 'POST',
-             body: new FormData(serviceForm)
-         })
-        .then(response => {
-             if (response.ok) {
-               confirmationModal.style.display = 'flex';
-             serviceForm.reset();
-             }
-         });
+        // fetch(serviceForm.action, {
+        //     method: 'POST',
+        //     body: new FormData(serviceForm)
+        // })
+        // .then(response => {
+        //     if (response.ok) {
+        //         confirmationModal.style.display = 'flex';
+        //         serviceForm.reset();
+        //     }
+        // });
     });
     
     // Close modal
