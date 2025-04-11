@@ -1841,7 +1841,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <<!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
@@ -1859,6 +1859,7 @@
                         <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
                         <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                        <li><a href="#trabalhe-conosco" id="candidaturaBtn"><i class="fas fa-chevron-right"></i> Trabalhe Conosco</a></li>
                     </ul>
                 </div>
                 
@@ -1889,6 +1890,62 @@
             </div>
         </div>
     </footer>
+
+    <!-- Candidatura Modal -->
+    <div class="modal-overlay" id="candidaturaModal">
+        <div class="modal-container" style="max-width: 600px;">
+            <span class="modal-close" id="closeCandidaturaModal">&times;</span>
+            <h3 class="modal-title">Candidate-se à Autoavan</h3>
+            
+            <form id="candidaturaForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="candidatoNome">Nome Completo*</label>
+                        <input type="text" id="candidatoNome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="candidatoTelefone">Telefone*</label>
+                        <input type="tel" id="candidatoTelefone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="candidatoEmail">E-mail*</label>
+                    <input type="email" id="candidatoEmail" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="candidatoArea">Área de Interesse*</label>
+                        <select id="candidatoArea" required>
+                            <option value="">Selecione</option>
+                            <option value="Mecânica">Mecânica Automotiva</option>
+                            <option value="Elétrica">Elétrica Veicular</option>
+                            <option value="Eletrônica">Eletrônica Automotiva</option>
+                            <option value="Atendimento">Atendimento ao Cliente</option>
+                            <option value="Administrativo">Administrativo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="candidatoExperiencia">Anos de Experiência*</label>
+                        <input type="number" id="candidatoExperiencia" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="candidatoMensagem">Por que quer trabalhar conosco?*</label>
+                    <textarea id="candidatoMensagem" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="candidatoCurriculo">Anexar Currículo (PDF)*</label>
+                    <input type="file" id="candidatoCurriculo" accept=".pdf" required>
+                </div>
+
+                <button type="submit" class="form-submit">Enviar Candidatura</button>
+            </form>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script>
@@ -1946,36 +2003,115 @@
             });
         });
         
-        // Contact Form Handling
-        const contactForm = document.getElementById('contactForm');
-        const confirmationModal = document.getElementById('confirmationModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        // Quantity Selectors
+        document.querySelectorAll('.quantity-plus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                input.value = parseInt(input.value) + 1;
+            });
+        });
         
-        // Show confirmation modal on form submit
-        contactForm.addEventListener('submit', function(e) {
+        document.querySelectorAll('.quantity-minus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.nextElementSibling;
+                if (parseInt(input.value) > 1) {
+                    input.value = parseInt(input.value) - 1;
+                }
+            });
+        });
+        
+        // WhatsApp Order Buttons
+        document.querySelectorAll('.whatsapp-order-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productName = this.getAttribute('data-name');
+                const productPrice = this.getAttribute('data-price');
+                const quantity = this.closest('.part-actions').querySelector('.quantity-input').value;
+                const totalPrice = parseInt(productPrice) * parseInt(quantity);
+                
+                // Show confirmation before redirecting to WhatsApp
+                Swal.fire({
+                    title: 'Confirmar Pedido',
+                    html: `Você está prestes a enviar um pedido para:<br><br>
+                           <b>${productName}</b><br>
+                           Quantidade: ${quantity}<br>
+                           Preço Unitário: ${productPrice} Kz<br>
+                           Total: ${totalPrice} Kz<br><br>
+                           Deseja continuar?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sim, enviar pedido',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const message = `Olá, gostaria de encomendar:\n\n*Produto:* ${productName}\n*Quantidade:* ${quantity}\n*Preço Unitário:* ${productPrice} Kz\n*Total:* ${totalPrice} Kz\n\nPor favor, confirme a disponibilidade.`;
+                        const whatsappUrl = `https://wa.me/244926095712?text=${encodeURIComponent(message)}`;
+                        window.open(whatsappUrl, '_blank');
+                    }
+                });
+            });
+        });
+
+        // Candidatura Modal Logic
+        const candidaturaBtn = document.getElementById('candidaturaBtn');
+        const candidaturaModal = document.getElementById('candidaturaModal');
+        const closeCandidaturaModal = document.getElementById('closeCandidaturaModal');
+
+        candidaturaBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            candidaturaModal.style.display = 'flex';
+        });
+
+        closeCandidaturaModal.addEventListener('click', () => {
+            candidaturaModal.style.display = 'none';
+        });
+
+        // Form Submission
+        document.getElementById('candidaturaForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simulate form submission (in a real scenario, you would handle the actual submission)
-            setTimeout(() => {
-                confirmationModal.style.display = 'flex';
-                contactForm.reset();
-            }, 1000);
+            // Simulação de envio (em produção usar FormSubmit ou PHP)
+            const formData = {
+                nome: document.getElementById('candidatoNome').value,
+                telefone: document.getElementById('candidatoTelefone').value,
+                email: document.getElementById('candidatoEmail').value,
+                area: document.getElementById('candidatoArea').value,
+                experiencia: document.getElementById('candidatoExperiencia').value,
+                mensagem: document.getElementById('candidatoMensagem').value
+            };
+
+            // Aqui você integraria com FormSubmit.co ou backend PHP
+            Swal.fire({
+                title: 'Candidatura Enviada!',
+                html: `Obrigado, ${formData.nome}!<br><br>
+                       Sua candidatura para <b>${formData.area}</b> foi recebida.<br>
+                       Entraremos em contato pelo telefone ${formData.telefone}.`,
+                icon: 'success'
+            });
+
+            // Limpar formulário
+            this.reset();
+            candidaturaModal.style.display = 'none';
+            
+            // Em produção, ativar este código para enviar para o email:
+            
+            fetch('https://eu.portal.fastfieldforms.com/WebApp/WebForm?formId=32473', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
+            
         });
-        
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        modalCloseBtn.addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
-                confirmationModal.style.display = 'none';
+
+        // Fechar modais ao clicar fora
+        window.addEventListener('click', function(e) {
+            if (e.target === candidaturaModal) {
+                candidaturaModal.style.display = 'none';
             }
         });
     </script>
