@@ -1,18 +1,13 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
-    <!-- Meta Tags Essenciais -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Metadados SEO -->
     <title>Autoavan - Oficina Mecânica Especializada | Luanda</title>
     <meta name="description" content="Oficina mecânica especializada em Luanda. Reparação de motores, carros elétricos, câmbios automáticos, programação de placas e elétrica automotiva.">
-    <meta name="keywords" content="oficina mecânica Luanda, reparação automóvel, mecânica especializada, carros elétricos Angola, reparação câmbios automáticos">
-    <meta name="author" content="Autoavan LDA">
     
-    <!-- Meta Tags de Segurança -->
+
+     <!-- Meta tags de segurança -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://maps.googleapis.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.google.com https://docs.google.com; connect-src 'self'">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -22,30 +17,27 @@
     
     <!-- Web App Manifest -->
     <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
+
+   
     
-    <!-- Ícones e Favicon -->
+    <!-- Ícones -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     
-    <!-- Tema para Mobile -->
+    <!-- Tema mobile -->
     <meta name="theme-color" content="#1a2a3a">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- Pré-conexão para CDNs -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
+      
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Principal -->
+    
     <style>
-        /* Variáveis CSS */
         :root {
             --primary: #1a2a3a;
             --secondary: #d32f2f;
@@ -54,13 +46,8 @@
             --dark: #121212;
             --text: #333333;
             --text-light: #757575;
-            --transition: all 0.3s ease;
-            --shadow-sm: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-md: 0 10px 20px rgba(0,0,0,0.1);
-            --shadow-lg: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        /* Reset e Estilos Base */
         * {
             margin: 0;
             padding: 0;
@@ -81,121 +68,6 @@
             line-height: 1.3;
         }
         
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        button {
-            cursor: pointer;
-            border: none;
-            background: none;
-            transition: var(--transition);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-header h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-        }
-        
-        .section-header p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--text-light);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .btn-primary {
-            background-color: var(--secondary);
-            color: white;
-            border: 2px solid var(--secondary);
-        }
-        
-        .btn-primary:hover {
-            background-color: transparent;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background-color: white;
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .btn-whatsapp i {
-            margin-right: 8px;
-        }
-        
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(18, 140, 126, 0.3);
-        }
-        
         /* WhatsApp Button */
         .whatsapp-btn {
             position: fixed;
@@ -212,7 +84,8 @@
             font-size: 30px;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
             z-index: 999;
-            transition: var(--transition);
+            transition: all 0.3s;
+            text-decoration: none;
         }
         
         .whatsapp-btn:hover {
@@ -233,7 +106,7 @@
             z-index: 998;
             display: flex;
             align-items: center;
-            transition: var(--transition);
+            transition: all 0.3s;
             opacity: 0;
             pointer-events: none;
         }
@@ -256,13 +129,19 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
         
         .header-scrolled {
             padding: 0.5rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .header-container {
@@ -316,7 +195,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem;
-            transition: var(--transition);
+            transition: all 0.3s;
             display: flex;
             align-items: center;
         }
@@ -337,10 +216,10 @@
             background: white;
             width: 220px;
             border-radius: 5px;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
             opacity: 0;
             visibility: hidden;
-            transition: var(--transition);
+            transition: all 0.3s;
             z-index: 100;
         }
         
@@ -418,6 +297,62 @@
             gap: 20px;
         }
         
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-whatsapp i {
+            margin-right: 8px;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(18, 140, 126, 0.3);
+        }
+        
         /* Features */
         .features {
             padding: 5rem 0;
@@ -435,13 +370,13 @@
             padding: 2.5rem 2rem;
             border-radius: 8px;
             text-align: center;
-            transition: var(--transition);
+            transition: all 0.3s;
             border-bottom: 4px solid transparent;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-bottom-color: var(--secondary);
         }
         
@@ -462,6 +397,36 @@
             background: linear-gradient(135deg, #f5f5f5 0%, #e9e9e9 100%);
         }
         
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
+        
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -473,7 +438,7 @@
             position: relative;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .about-img img {
@@ -532,13 +497,13 @@
             background: white;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
         }
 
         .mv-item:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         .mv-icon {
@@ -587,14 +552,14 @@
             background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
             border: 1px solid #eee;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .service-img {
@@ -655,7 +620,7 @@
         
         .service-link i {
             margin-left: 5px;
-            transition: var(--transition);
+            transition: all 0.3s;
         }
         
         .service-link:hover i {
@@ -687,7 +652,7 @@
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
-            transition: var(--transition);
+            transition: all 0.3s;
         }
         
         .shop-tab.active {
@@ -705,13 +670,13 @@
             background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
         }
         
         .part-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
         .part-img {
@@ -783,7 +748,7 @@
             padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             text-decoration: none;
@@ -805,7 +770,7 @@
             padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             text-decoration: none;
@@ -867,7 +832,7 @@
         .contact-text a {
             color: #ddd;
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s;
         }
         
         .contact-text a:hover {
@@ -889,97 +854,12 @@
             border-radius: 50%;
             color: white;
             font-size: 1.2rem;
-            transition: var(--transition);
+            transition: all 0.3s;
         }
         
         .social-links a:hover {
             background: var(--accent);
             transform: translateY(-3px);
-        }
-        
-        /* Formulário de Contato */
-        .contact-form-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .contact-form-container h3 {
-            color: white;
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: white;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-        }
-        
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .submit-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            width: 100%;
-            transition: var(--transition);
-        }
-        
-        .submit-btn:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
-        }
-        
-        /* Mapa */
-        .map-area {
-            margin-top: 40px;
-        }
-        
-        .map-area h3 {
-            margin-bottom: 15px;
-            color: white;
-        }
-        
-        .map-area iframe {
-            width: 100%;
-            height: 420px;
-            border: 0;
-            border-radius: 10px;
         }
         
         /* Modal */
@@ -1013,7 +893,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text-light);
-            transition: var(--transition);
+            transition: all 0.3s;
         }
         
         .close-modal:hover {
@@ -1070,7 +950,7 @@
         .footer-links a {
             color: #bbb;
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s;
             display: flex;
             align-items: center;
         }
@@ -1103,7 +983,7 @@
             cursor: pointer;
             width: 100%;
             font-weight: 600;
-            transition: var(--transition);
+            transition: all 0.3s;
         }
         
         .footer-newsletter button:hover {
@@ -1170,7 +1050,7 @@
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                 transform: translateY(-150%);
                 opacity: 0;
-                transition: var(--transition);
+                transition: all 0.3s;
             }
             
             nav.active {
@@ -1278,6 +1158,8 @@
             }
         }
     </style>
+
+   
 </head>
 <body>
     <!-- WhatsApp Button -->
@@ -1710,9 +1592,17 @@
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-<div>
 </div>
 
+                </div>
+
+                
+               <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Profissional</title>
     <style>
         body {
             margin: 0;
@@ -1913,72 +1803,6 @@
             padding: 20px;
         }
     }
-    
-    /* Rodapé horizontal */
-    footer {
-        background-color: #111;
-        color: white;
-        padding: 40px 0;
-        text-align: center;
-    }
-    
-    .footer-container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    
-    .footer-col {
-        flex: 1;
-        padding: 20px;
-        min-width: 220px;
-    }
-    
-    .footer-col h4 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-    }
-    
-    .footer-links {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    .footer-links li {
-        margin-bottom: 10px;
-    }
-    
-    .footer-links li a {
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-    }
-    
-    .footer-links li a i {
-        margin-right: 8px;
-    }
-    
-    .whatsapp-btn-small {
-        background-color: #25D366;
-        padding: 10px 20px;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-    }
-    
-    .whatsapp-btn-small i {
-        margin-right: 8px;
-    }
-    
-    .footer-bottom {
-        text-align: center;
-        padding: 20px;
-        background-color: #222;
-    }
 </style>
 
 <script>
@@ -2007,52 +1831,153 @@
     });
 </script>
 
-<!-- Modal de Confirmação -->
-<div class="modal" id="confirmationModal">
-    <div class="modal-content">
-        <span class="close-modal" id="closeModal">&times;</span>
-        <h3>Mensagem Enviada com Sucesso!</h3>
-        <p>Obrigado por entrar em contato com a Autoavan. Nossa equipe responderá em breve.</p>
-        <button class="submit-btn" id="modalCloseBtn">OK</button>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>Sobre a Autoavan</h4>
-                <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Serviços</h4>
-                <ul class="footer-links">
-                    <li><a href="#manutencao-motor">Manutenção de Motor</a></li>
-                    <li><a href="#carros-eletricos">Carros Elétricos/Híbridos</a></li>
-                    <li><a href="#cambio-automatico">Câmbios Automáticos</a></li>
-                    <li><a href="#reparacao-placas">Reparação de Placas</a></li>
-                    <li><a href="#eletrica-automotiva">Elétrica Automotiva</a></li>
-                    <li><a href="#codificacao-chaves">Codificação de Chaves</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Contactos</h4>
-                <ul class="footer-links">
-                    <li><a href="tel:+244912345678"><i class="fa fa-phone"></i> +244 912 345 678</a></li>
-                    <li><a href="mailto:info@autoavanlda.com"><i class="fa fa-envelope"></i> info@autoavanlda.com</a></li>
-                    <li><a href="https://wa.me/244912345678" class="whatsapp-btn-small"><i class="fa fa-whatsapp"></i> Enviar Mensagem</a></li>
-                </ul>
-            </div>
+    <!-- Modal de Confirmação -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3>Mensagem Enviada com Sucesso!</h3>
+            <p>Obrigado por entrar em contato com a Autoavan. Nossa equipe responderá em breve.</p>
+            <button class="submit-btn" id="modalCloseBtn">OK</button>
         </div>
     </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2025 Autoavan LDA. Todos os direitos reservados.</p>
-    </div>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Sobre a Autoavan</h4>
+                    <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
+                    
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                        <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Serviços</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Manutenção de Motores</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Carros Elétricos/Híbridos</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Câmbios Automáticos</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Reparação de Placas</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Elétrica Automotiva</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Clube de Benefícios Automotivos</h4>
+                    <p>Junte-se ao nosso grupo exclusivo no WhatsApp e receba alertas de promoções e descontos progressivos.</p>
+                    <div class="footer-newsletter">
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Shop Tabs
+        const shopTabs = document.querySelectorAll('.shop-tab');
+        shopTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                shopTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // Here you would filter products based on the selected tab
+                // This would require additional JavaScript or backend integration
+            });
+        });
+        
+        // Contact Form Handling
+        const contactForm = document.getElementById('contactForm');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        
+        // Show confirmation modal on form submit
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission (in a real scenario, you would handle the actual submission)
+            setTimeout(() => {
+                confirmationModal.style.display = 'flex';
+                contactForm.reset();
+            }, 1000);
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+        
+        modalCloseBtn.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === confirmationModal) {
+                confirmationModal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
