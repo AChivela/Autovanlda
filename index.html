@@ -1844,7 +1844,74 @@
             <button class="submit-btn" id="modalCloseBtn">Fechar</button>
         </div>
     </div>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os itens do dropdown de peças
+    const pecasItems = document.querySelectorAll('.dropdown-menu li a');
+    
+    // Seleciona todas as peças na grid
+    const partCards = document.querySelectorAll('.part-card');
+    
+    // Adiciona evento de clique para cada item do menu de peças
+    pecasItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove a classe 'active' de todas as abas
+            document.querySelectorAll('.shop-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Adiciona 'active' na aba correspondente
+            const categoria = this.textContent.trim();
+            const tabCorrespondente = Array.from(document.querySelectorAll('.shop-tab')).find(tab => 
+                tab.textContent.trim() === categoria || 
+                (categoria === 'Motor' && tab.textContent.trim() === 'Todas')
+            );
+            
+            if (tabCorrespondente) {
+                tabCorrespondente.classList.add('active');
+            }
+            
+            // Filtra as peças
+            partCards.forEach(card => {
+                const cardCategory = card.querySelector('.part-category').textContent.trim();
+                
+                if (categoria === 'Todas' || cardCategory === categoria) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Fecha o dropdown após seleção (opcional)
+            this.closest('.dropdown-menu').style.opacity = '0';
+            this.closest('.dropdown-menu').style.visibility = 'hidden';
+        });
+    });
+    
+    // Adiciona também a funcionalidade para as abas
+    const shopTabs = document.querySelectorAll('.shop-tab');
+    shopTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const categoria = this.textContent.trim();
+            
+            shopTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            partCards.forEach(card => {
+                const cardCategory = card.querySelector('.part-category').textContent.trim();
+                
+                if (categoria === 'Todas' || cardCategory === categoria) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+ </script>
     <!-- JavaScript -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
