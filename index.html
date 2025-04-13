@@ -1804,6 +1804,10 @@
                         <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
                         <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+<button id="jobApplicationBtn" class="job-application-button">
+    <i class="fas fa-briefcase"></i> Trabalhe Conosco
+</button>
+
                     </ul>
                 </div>
                 
@@ -1828,112 +1832,68 @@
                     </div>
                 </div>
             </div>
-            <!-- Adicione este código no seu HTML (pode ser na seção de Contato ou em uma página separada) -->
-<section id="trabalhe-conosco" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Trabalhe Conosco</h2>
-            <p>Envie seu currículo para fazer parte da nossa equipe</p>
-        </div>
 
-        <div class="job-application-form">
-            <form id="jobForm" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="applicant-name">Nome Completo*</label>
-                    <input type="text" id="applicant-name" name="name" required>
-                </div>
 
-                <div class="form-group">
-                    <label for="applicant-email">Email*</label>
-                    <input type="email" id="applicant-email" name="email" required>
-                </div>
 
-                <div class="form-group">
-                    <label for="applicant-phone">Telefone*</label>
-                    <input type="tel" id="applicant-phone" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="applicant-position">Vaga de Interesse*</label>
-                    <select id="applicant-position" name="position" required>
-                        <option value="">Selecione uma vaga</option>
-                        <option value="Mecânico Automotivo">Mecânico Automotivo</option>
-                        <option value="Eletricista Automotivo">Eletricista Automotivo</option>
-                        <option value="Especialista em Injeção Eletrônica">Especialista em Injeção Eletrônica</option>
-                        <option value="Atendente">Atendente</option>
-                        <option value="Gerente de Oficina">Gerente de Oficina</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="applicant-experience">Experiência Profissional*</label>
-                    <textarea id="applicant-experience" name="experience" rows="4" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="applicant-resume">Currículo (PDF ou DOC)*</label>
-                    <input type="file" id="applicant-resume" name="resume" accept=".pdf,.doc,.docx" required>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Enviar Candidatura</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- Adicione este CSS -->
-<style>
-    .job-application-form {
-        max-width: 600px;
-        margin: 0 auto;
-        background: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-
-    .job-application-form .form-group {
-        margin-bottom: 20px;
-    }
-
-    .job-application-form label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 500;
-    }
-
-    .job-application-form input,
-    .job-application-form select,
-    .job-application-form textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 16px;
-    }
-
-    .job-application-form textarea {
-        resize: vertical;
-        min-height: 100px;
-    }
-
-    .job-application-form button {
-        background: #d32f2f;
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background 0.3s;
-    }
-
-    .job-application-form button:hover {
-        background: #b71c1c;
-    }
-</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos do modal
+    const modal = document.getElementById('jobApplicationModal');
+    const btn = document.getElementById('jobApplicationBtn');
+    const closeBtn = document.querySelector('.close-modal');
+    const form = document.getElementById('jobForm');
+    
+    // Abrir modal
+    btn.addEventListener('click', function() {
+        modal.style.display = 'flex';
+    });
+    
+    // Fechar modal
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    
+    // Fechar ao clicar fora
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    
+    // Envio do formulário
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validação
+        let isValid = true;
+        document.querySelectorAll('#jobForm [required]').forEach(field => {
+            if (!field.value.trim()) {
+                field.style.borderColor = 'red';
+                isValid = false;
+            } else {
+                field.style.borderColor = '#ddd';
+            }
+        });
+        
+        if (isValid) {
+            // Simulação de envio (substitua por código real)
+            const formData = new FormData(form);
+            console.log('Dados enviados:', Object.fromEntries(formData));
+            
+            alert('Candidatura enviada com sucesso!');
+            form.reset();
+            modal.style.display = 'none';
+            
+            // Exemplo com fetch:
+            // fetch('seu-script.php', { method: 'POST', body: formData })
+            //   .then(response => alert('Sucesso!'))
+            //   .catch(error => alert('Erro ao enviar'));
+        } else {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+        }
+    });
+});
+</script>
 
 <!-- Adicione este JavaScript -->
 <script>
@@ -2236,5 +2196,145 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     </script>
+    <!-- Adicione este modal antes do fechamento do body -->
+<div id="jobApplicationModal" class="job-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Trabalhe na Autoavan</h2>
+        
+        <form id="jobForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="applicant-name">Nome Completo*</label>
+                <input type="text" id="applicant-name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-email">Email*</label>
+                <input type="email" id="applicant-email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-phone">Telefone*</label>
+                <input type="tel" id="applicant-phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-position">Vaga de Interesse*</label>
+                <select id="applicant-position" name="position" required>
+                    <option value="">Selecione uma vaga</option>
+                    <option value="Mecânico">Mecânico</option>
+                    <option value="Eletricista">Eletricista Automotivo</option>
+                    <option value="Atendente">Atendente</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-resume">Anexar Currículo*</label>
+                <input type="file" id="applicant-resume" name="resume" accept=".pdf,.doc,.docx" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Candidatura</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Estilo do botão no rodapé */
+    .job-application-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #d32f2f;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 999;
+        transition: all 0.3s ease;
+    }
+    
+    .job-application-button:hover {
+        background-color: #b71c1c;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+    
+    /* Estilo do modal */
+    .job-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-content {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+    }
+    
+    .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    /* Estilo do formulário */
+    #jobForm {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-group label {
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    .submit-btn {
+        background: #d32f2f;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+    }
+    
+    .submit-btn:hover {
+        background: #b71c1c;
+    }
+</style>
 </body>
 </html>
