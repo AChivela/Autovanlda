@@ -10,7 +10,7 @@
     <title>Autoavan,Lda - Oficina Mecânica Especializada | Luanda</title>
     <meta name="description" content="Oficina mecânica especializada em Luanda. Reparação de motores, carros elétricos, câmbios automáticos, programação de placas e elétrica automotiva.">
     <meta name="keywords" content="oficina mecânica Luanda, reparação automóvel, mecânica especializada, carros elétricos Angola, reparação câmbios automáticos">
-    <meta name="author" content="Autoavan LDA">
+    <meta name="author" content="Autoavan LDA"> 
     
     <!-- Meta Tags de Segurança -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://maps.googleapis.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.google.com https://docs.google.com; connect-src 'self'">
@@ -1844,19 +1844,98 @@
     </div>
 </footer>
 
+<!-- Menu Mobile Deslizante -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+        <div class="logo">
+            <div class="logo-img">
+                <svg width="40" height="40" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                    <image href="Imagens/Logotipo.jpg" width="40" height="32" preserveAspectRatio="xMidYMid slice"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">AUTOAVAN</span>
+            </div>
+        </div>
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <nav class="mobile-menu-nav">
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
+            <li class="has-submenu">
+                <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down submenu-toggle"></i></a>
+                <ul class="submenu">
+                    <li><a href="#shop">Motor</a></li>
+                    <li><a href="#shop">Suspensão</a></li>
+                    <li><a href="#shop">Freios</a></li>
+                    <li><a href="#shop">Elétrica</a></li>
+                    <li><a href="#shop">Placas</a></li>
+                </ul>
+            </li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Modal de Confirmação -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h3>✅ Agendamento Confirmado!</h3>
+        <p>Obrigado por agendar conosco. Entraremos em contato em breve para confirmar os detalhes.</p>
+        <button class="submit-btn" id="modalCloseBtn">Fechar</button>
+    </div>
+</div>
+
 <!-- JavaScript -->
 <script>
-    // Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    // =====================
+    // MENU MOBILE DESLIZANTE
+    // =====================
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
     
-    mobileMenuBtn.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-        mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
-            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    function toggleMobileMenu() {
+        mobileMenu.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    mobileMenuClose.addEventListener('click', toggleMobileMenu);
+    mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+    
+    // Submenus mobile
+    document.querySelectorAll('.has-submenu > a').forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const submenu = this.parentElement;
+                submenu.classList.toggle('active');
+            }
+        });
     });
     
-    // Header Scroll Effect
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.mobile-menu-nav a:not(.has-submenu > a)').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                toggleMobileMenu();
+            }
+        });
+    });
+    
+    // =====================
+    // HEADER SCROLL EFFECT
+    // =====================
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
@@ -1866,7 +1945,9 @@
         }
     });
     
-    // Smooth Scrolling for Anchor Links
+    // =====================
+    // SCROLL SUAVE
+    // =====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1879,84 +1960,99 @@
                     top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
-                // Close mobile menu if open
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
             }
         });
     });
     
-    // Shop Tabs
-    const shopTabs = document.querySelectorAll('.shop-tab');
-    shopTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            shopTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            // Here you would filter products based on the selected tab
-            // This would require additional JavaScript or backend integration
-        });
-    });
-    
-    // Form Handling
+    // =====================
+    // FORMULÁRIO DE CONTATO
+    // =====================
     const serviceForm = document.getElementById('serviceForm');
     const confirmationModal = document.getElementById('confirmationModal');
-    const closeModal = document.getElementById('closeModal');
-    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
     
-    // Show "Other Service" field when selected
+    // Mostrar campo "Outro Serviço" quando selecionado
     document.getElementById('service').addEventListener('change', function() {
-        const otherServiceGroup = document.getElementById('otherServiceGroup');
-        otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
+        document.getElementById('otherServiceGroup').style.display = 
+            this.value === 'Outro' ? 'block' : 'none';
     });
     
-    // Set minimum date (tomorrow)
+    // Definir data mínima (amanhã)
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
+    document.getElementById('date').min = tomorrow.toISOString().split('T')[0];
     
-    const dd = String(tomorrow.getDate()).padStart(2, '0');
-    const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
-    const yyyy = tomorrow.getFullYear();
-    
-    document.getElementById('date').min = `${yyyy}-${mm}-${dd}`;
-    
-    // Form submission handling
-    serviceForm.addEventListener('submit', function(e) {
+    // Envio do formulário
+    serviceForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Here you would normally handle form submission
-        // For demo purposes, we'll just show the confirmation modal
-        confirmationModal.style.display = 'flex';
+        // Mostrar estado de carregamento
+        submitBtn.disabled = true;
+        btnText.textContent = "Enviando...";
+        btnSpinner.style.display = "inline-block";
         
-        // In a real scenario, you would use fetch() or similar to submit the form
-        // fetch(serviceForm.action, {
-        //     method: 'POST',
-        //     body: new FormData(serviceForm)
-        // })
-        // .then(response => {
-        //     if (response.ok) {
-        //         confirmationModal.style.display = 'flex';
-        //         serviceForm.reset();
-        //     }
-        // });
+        try {
+            const response = await fetch(serviceForm.action, {
+                method: 'POST',
+                body: new FormData(serviceForm),
+                headers: { 'Accept': 'application/json' }
+            });
+            
+            if (response.ok) {
+                // Sucesso - mostrar modal e limpar formulário
+                confirmationModal.style.display = 'flex';
+                serviceForm.reset();
+                
+                // Redirecionar após 3 segundos
+                setTimeout(() => {
+                    const redirectUrl = document.querySelector('[name="_next"]').value;
+                    if (redirectUrl) window.location.href = redirectUrl;
+                }, 3000);
+            } else {
+                throw new Error('Falha no envio');
+            }
+        } catch (error) {
+            console.error("Erro:", error);
+            alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
+        } finally {
+            // Restaurar botão
+            submitBtn.disabled = false;
+            btnText.textContent = "Agendar Serviço";
+            btnSpinner.style.display = "none";
+        }
     });
     
-    // Close modal
-    closeModal.addEventListener('click', () => {
+    // Fechar modal
+    document.getElementById('modalCloseBtn').addEventListener('click', () => {
         confirmationModal.style.display = 'none';
     });
     
-    modalCloseBtn.addEventListener('click', () => {
+    document.getElementById('closeModal').addEventListener('click', () => {
         confirmationModal.style.display = 'none';
     });
     
-    // Close modal when clicking outside
+    // Fechar modal ao clicar fora
     window.addEventListener('click', (e) => {
         if (e.target === confirmationModal) {
             confirmationModal.style.display = 'none';
         }
     });
+    
+    // =====================
+    // SHOP TABS
+    // =====================
+    const shopTabs = document.querySelectorAll('.shop-tab');
+    shopTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            shopTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            // Aqui você pode adicionar a lógica para filtrar os produtos
+        });
+    });
+});
 </script>
+</body>
+</html>
