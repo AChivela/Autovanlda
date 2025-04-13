@@ -1828,6 +1828,168 @@
                     </div>
                 </div>
             </div>
+            <!-- Adicione este código no seu HTML (pode ser na seção de Contato ou em uma página separada) -->
+<section id="trabalhe-conosco" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Trabalhe Conosco</h2>
+            <p>Envie seu currículo para fazer parte da nossa equipe</p>
+        </div>
+
+        <div class="job-application-form">
+            <form id="jobForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="applicant-name">Nome Completo*</label>
+                    <input type="text" id="applicant-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-email">Email*</label>
+                    <input type="email" id="applicant-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-phone">Telefone*</label>
+                    <input type="tel" id="applicant-phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-position">Vaga de Interesse*</label>
+                    <select id="applicant-position" name="position" required>
+                        <option value="">Selecione uma vaga</option>
+                        <option value="Mecânico Automotivo">Mecânico Automotivo</option>
+                        <option value="Eletricista Automotivo">Eletricista Automotivo</option>
+                        <option value="Especialista em Injeção Eletrônica">Especialista em Injeção Eletrônica</option>
+                        <option value="Atendente">Atendente</option>
+                        <option value="Gerente de Oficina">Gerente de Oficina</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-experience">Experiência Profissional*</label>
+                    <textarea id="applicant-experience" name="experience" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-resume">Currículo (PDF ou DOC)*</label>
+                    <input type="file" id="applicant-resume" name="resume" accept=".pdf,.doc,.docx" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Enviar Candidatura</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Adicione este CSS -->
+<style>
+    .job-application-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .job-application-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .job-application-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+
+    .job-application-form input,
+    .job-application-form select,
+    .job-application-form textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .job-application-form textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .job-application-form button {
+        background: #d32f2f;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+    }
+
+    .job-application-form button:hover {
+        background: #b71c1c;
+    }
+</style>
+
+<!-- Adicione este JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const jobForm = document.getElementById('jobForm');
+    
+    jobForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validação básica
+        const requiredFields = jobForm.querySelectorAll('[required]');
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.style.borderColor = 'red';
+                isValid = false;
+            } else {
+                field.style.borderColor = '#ddd';
+            }
+        });
+        
+        if (!isValid) {
+            alert('Por favor, preencha todos os campos obrigatórios');
+            return;
+        }
+        
+        // Simulação de envio (substitua por código real de envio)
+        const formData = new FormData(jobForm);
+        
+        // Aqui você pode adicionar AJAX para enviar para um servidor
+        console.log('Dados do formulário:', Object.fromEntries(formData));
+        
+        // Feedback para o usuário
+        alert('Candidatura enviada com sucesso! Entraremos em contato em breve.');
+        jobForm.reset();
+        
+        // Exemplo com Fetch API (descomente e adapte)
+        /*
+        fetch('seu-endpoint.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Candidatura enviada com sucesso!');
+            jobForm.reset();
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Ocorreu um erro ao enviar sua candidatura.');
+        });
+        */
+    });
+});
+</script>
             
             <div class="footer-bottom">
                 <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
