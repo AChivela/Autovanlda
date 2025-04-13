@@ -1707,92 +1707,137 @@
                 </div>
             </div>
             
-            <div class="contact-form-container">
-                <h3>Agende Seu Serviço</h3>
-                <form id="serviceForm" action="https://formsubmit.co/el/jowesi" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://autoavanlda.com/agradecimento.html">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="Novo Agendamento - Autoavan">
-                    
-                    <div class="form-group">
-                        <label for="name">Nome Completo*</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Telefone*</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="vehicle">Veículo (Marca/Modelo/Ano)*</label>
-                        <input type="text" id="vehicle" name="vehicle" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">Serviço Desejado*</label>
-                        <select id="service" name="service" required>
-                            <option value="">Selecione um serviço</option>
-                            <option value="Manutenção de Motor">Manutenção de Motor</option>
-                            <option value="Carros Elétricos/Híbridos">Carros Elétricos/Híbridos</option>
-                            <option value="Câmbios Automáticos">Câmbios Automáticos</option>
-                            <option value="Reparação de Placas">Reparação de Placas</option>
-                            <option value="Elétrica Automotiva">Elétrica Automotiva</option>
-                            <option value="Codificação de Chaves">Codificação de Chaves</option>
-                            <option value="Outro">Outro (especifique)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group" id="otherServiceGroup" style="display:none;">
-                        <label for="otherService">Especifique o Serviço</label>
-                        <input type="text" id="otherService" name="other_service">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="date">Data Preferencial*</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="time">Horário Preferencial*</label>
-                        <select id="time" name="time" required>
-                            <option value="">Selecione um horário</option>
-                            <option value="08:00 - 10:00">08:00 - 10:00</option>
-                            <option value="10:00 - 12:00">10:00 - 12:00</option>
-                            <option value="13:00 - 15:00">13:00 - 15:00</option>
-                            <option value="15:00 - 17:00">15:00 - 17:00</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Detalhes Adicionais</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="submit-btn">Agendar Serviço</button>
-                    </div>
-                </form>
-            </div>
+    <!-- Formulário de Agendamento -->
+<div class="contact-form-container">
+    <h3>Agende Seu Serviço</h3>
+    <form id="serviceForm" action="https://formsubmit.co/comercial@autoavanlda.com" method="POST">
+        <!-- Configurações do FormSubmit -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://autoavanlda.com/agradecimento.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="Novo Agendamento - Autoavan">
+        
+        <!-- Campos do Formulário -->
+        <div class="form-group">
+            <label for="name">Nome Completo*</label>
+            <input type="text" id="name" name="name" required>
         </div>
-    </div>
-</section>
+        <div class="form-group">
+            <label for="phone">Telefone*</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="vehicle">Veículo (Marca/Modelo/Ano)*</label>
+            <input type="text" id="vehicle" name="vehicle" required>
+        </div>
+        <div class="form-group">
+            <label for="service">Serviço Desejado*</label>
+            <select id="service" name="service" required>
+                <option value="">Selecione um serviço</option>
+                <option value="Manutenção de Motor">Manutenção de Motor</option>
+                <option value="Carros Elétricos/Híbridos">Carros Elétricos/Híbridos</option>
+                <option value="Câmbios Automáticos">Câmbios Automáticos</option>
+                <option value="Reparação de Placas">Reparação de Placas</option>
+                <option value="Elétrica Automotiva">Elétrica Automotiva</option>
+                <option value="Codificação de Chaves">Codificação de Chaves</option>
+                <option value="Outro">Outro (especifique)</option>
+            </select>
+        </div>
+        <div class="form-group" id="otherServiceGroup" style="display:none;">
+            <label for="otherService">Especifique o Serviço</label>
+            <input type="text" id="otherService" name="other_service">
+        </div>
+        <div class="form-group">
+            <label for="date">Data Preferencial*</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Horário Preferencial*</label>
+            <select id="time" name="time" required>
+                <option value="">Selecione um horário</option>
+                <option value="08:00 - 10:00">08:00 - 10:00</option>
+                <option value="10:00 - 12:00">10:00 - 12:00</option>
+                <option value="13:00 - 15:00">13:00 - 15:00</option>
+                <option value="15:00 - 17:00">15:00 - 17:00</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="message">Detalhes Adicionais</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span id="btnText">Agendar Serviço</span>
+                <span id="btnSpinner" style="display:none;"><i class="fas fa-spinner fa-spin"></i></span>
+            </button>
+        </div>
+    </form>
+</div>
 
 <!-- Modal de Confirmação -->
-<div class="modal" id="confirmationModal">
-    <div class="modal-content">
-        <span class="close-modal" id="closeModal">&times;</span>
-        <h3>Mensagem Enviada com Sucesso!</h3>
-        <p>Obrigado por entrar em contato com a Autoavan. Nossa equipe responderá em breve.</p>
-        <button class="submit-btn" id="modalCloseBtn">OK</button>
+<div id="confirmationModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:999;">
+    <div style="background:#fff; padding:30px; border-radius:10px; max-width:400px; text-align:center;">
+        <h2>✅ Agendamento Enviado!</h2>
+        <p>Redirecionando para a página de agradecimento...</p>
+        <button id="modalCloseBtn">Fechar</button>
     </div>
 </div>
+
+<!-- JavaScript -->
+<script>
+const serviceForm = document.getElementById('serviceForm');
+const confirmationModal = document.getElementById('confirmationModal');
+const submitBtn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
+const btnSpinner = document.getElementById('btnSpinner');
+
+document.getElementById('service').addEventListener('change', function() {
+    document.getElementById('otherServiceGroup').style.display = 
+        this.value === 'Outro' ? 'block' : 'none';
+});
+
+document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+serviceForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    btnText.textContent = "Enviando...";
+    btnSpinner.style.display = "inline-block";
+    
+    try {
+        const response = await fetch(serviceForm.action, {
+            method: 'POST',
+            body: new FormData(serviceForm),
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            confirmationModal.style.display = 'flex';
+            serviceForm.reset();
+            setTimeout(() => {
+                const redirectUrl = document.querySelector('[name="_next"]').value;
+                if (redirectUrl) window.location.href = redirectUrl;
+            }, 3000);
+        } else {
+            throw new Error('Falha no envio');
+        }
+    } catch (error) {
+        alert("Erro ao enviar. Contacte: +244 926 095 712");
+    } finally {
+        submitBtn.disabled = false;
+        btnText.textContent = "Agendar Serviço";
+        btnSpinner.style.display = "none";
+    }
+});
+
+document.getElementById('modalCloseBtn').addEventListener('click', () => {
+    confirmationModal.style.display = 'none';
+});
+</script>
 
 <!-- Footer -->
 <footer>
@@ -1957,4 +2002,6 @@
             confirmationModal.style.display = 'none';
         }
     });
+
+    
 </script>
