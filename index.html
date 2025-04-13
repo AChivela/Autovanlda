@@ -1707,7 +1707,8 @@
                 </div>
             </div>
             
-    <!-- Formulário de Agendamento -->
+            <div class="contact-form-container">
+               <!-- Formulário de Agendamento -->
 <div class="contact-form-container">
     <h3>Agende Seu Serviço</h3>
     <form id="serviceForm" action="https://formsubmit.co/comercial@autoavanlda.com" method="POST">
@@ -1787,57 +1788,7 @@
     </div>
 </div>
 
-<!-- JavaScript -->
-<script>
-const serviceForm = document.getElementById('serviceForm');
-const confirmationModal = document.getElementById('confirmationModal');
-const submitBtn = document.getElementById('submitBtn');
-const btnText = document.getElementById('btnText');
-const btnSpinner = document.getElementById('btnSpinner');
 
-document.getElementById('service').addEventListener('change', function() {
-    document.getElementById('otherServiceGroup').style.display = 
-        this.value === 'Outro' ? 'block' : 'none';
-});
-
-document.getElementById('date').min = new Date().toISOString().split('T')[0];
-
-serviceForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    submitBtn.disabled = true;
-    btnText.textContent = "Enviando...";
-    btnSpinner.style.display = "inline-block";
-    
-    try {
-        const response = await fetch(serviceForm.action, {
-            method: 'POST',
-            body: new FormData(serviceForm),
-            headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-            confirmationModal.style.display = 'flex';
-            serviceForm.reset();
-            setTimeout(() => {
-                const redirectUrl = document.querySelector('[name="_next"]').value;
-                if (redirectUrl) window.location.href = redirectUrl;
-            }, 3000);
-        } else {
-            throw new Error('Falha no envio');
-        }
-    } catch (error) {
-        alert("Erro ao enviar. Contacte: +244 926 095 712");
-    } finally {
-        submitBtn.disabled = false;
-        btnText.textContent = "Agendar Serviço";
-        btnSpinner.style.display = "none";
-    }
-});
-
-document.getElementById('modalCloseBtn').addEventListener('click', () => {
-    confirmationModal.style.display = 'none';
-});
-</script>
 
 <!-- Footer -->
 <footer>
@@ -1889,48 +1840,54 @@ document.getElementById('modalCloseBtn').addEventListener('click', () => {
 
 <!-- JavaScript -->
 <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
+const serviceForm = document.getElementById('serviceForm');
+const confirmationModal = document.getElementById('confirmationModal');
+const submitBtn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
+const btnSpinner = document.getElementById('btnSpinner');
+
+document.getElementById('service').addEventListener('change', function() {
+    document.getElementById('otherServiceGroup').style.display = 
+        this.value === 'Outro' ? 'block' : 'none';
+});
+
+document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+serviceForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    btnText.textContent = "Enviando...";
+    btnSpinner.style.display = "inline-block";
     
-    mobileMenuBtn.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-        mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
-            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-    
-    // Header Scroll Effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    });
-    
-    // Smooth Scrolling for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            if (this.getAttribute('href') === '#') return;
-            
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            }
+    try {
+        const response = await fetch(serviceForm.action, {
+            method: 'POST',
+            body: new FormData(serviceForm),
+            headers: { 'Accept': 'application/json' }
         });
-    });
+
+        if (response.ok) {
+            confirmationModal.style.display = 'flex';
+            serviceForm.reset();
+            setTimeout(() => {
+                const redirectUrl = document.querySelector('[name="_next"]').value;
+                if (redirectUrl) window.location.href = redirectUrl;
+            }, 3000);
+        } else {
+            throw new Error('Falha no envio');
+        }
+    } catch (error) {
+        alert("Erro ao enviar. Contacte: +244 926 095 712");
+    } finally {
+        submitBtn.disabled = false;
+        btnText.textContent = "Agendar Serviço";
+        btnSpinner.style.display = "none";
+    }
+});
+
+document.getElementById('modalCloseBtn').addEventListener('click', () => {
+    confirmationModal.style.display = 'none';
+});
     
     // Shop Tabs
     const shopTabs = document.querySelectorAll('.shop-tab');
@@ -2002,6 +1959,4 @@ document.getElementById('modalCloseBtn').addEventListener('click', () => {
             confirmationModal.style.display = 'none';
         }
     });
-
-    
 </script>
