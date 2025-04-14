@@ -10,7 +10,7 @@
     <title>Autoavan,Lda - Oficina Mecânica Especializada | Luanda</title>
     <meta name="description" content="Oficina mecânica especializada em Luanda. Reparação de motores, carros elétricos, câmbios automáticos, programação de placas e elétrica automotiva.">
     <meta name="keywords" content="oficina mecânica Luanda, reparação automóvel, mecânica especializada, carros elétricos Angola, reparação câmbios automáticos">
-    <meta name="author" content="Autoavan LDA"> 
+    <meta name="author" content="Autoavan LDA">
     
     <!-- Meta Tags de Segurança -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://maps.googleapis.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.google.com https://docs.google.com; connect-src 'self'">
@@ -1025,6 +1025,95 @@
             color: var(--primary);
         }
         
+        /* Modal Trabalhe Conosco */
+        .job-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .job-modal .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .job-modal h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .job-modal .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .job-modal .close-modal:hover {
+            color: var(--secondary);
+        }
+
+        .job-modal .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .job-modal label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .job-modal input,
+        .job-modal select,
+        .job-modal textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .job-modal textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .job-modal .submit-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            width: 100%;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .job-modal .submit-btn:hover {
+            background: var(--accent);
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -1277,6 +1366,83 @@
                 grid-template-columns: 1fr;
             }
         }
+/* Rodapé */
+footer {
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: white; /* Cor do texto */
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.footer-col {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 8px 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links a:hover {
+    color: #4CAF50; /* Cor do hover */
+}
+
+.recruitment-card {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.recruitment-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.recruitment-benefits p {
+    margin: 5px 0;
+}
+
+/* Linha separadora */
+.footer-line {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Rodapé corporativo */
+.corporate-footer {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.copyright-text {
+    margin-top: 20px;
+}
+
+.copyright-text p {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 300;
+}
+
+
     </style>
 </head>
 <body>
@@ -1303,7 +1469,6 @@
                         <span class="logo-sub">MECÂNICA ESPECIALIZADA</span>
                     </div>
                 </a>
-                
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -1324,6 +1489,7 @@
                         </li>
                         <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
                         <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+                       <!--  <li><a href="#" data-open-modal="jobs"><i class="fas fa-briefcase"></i> Trabalhe Conosco</a></li> -->
                     </ul>
                 </nav>
             </div>
@@ -1692,6 +1858,7 @@
                         <a href="https://www.facebook.com/profile.php?id=100083699883838n" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/autoavan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==n" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/244926095712" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                      <!--<a href="https://youtube.com/autoavan" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a> --> 
                     </div>
                     
                     <div class="map-area">
@@ -1708,11 +1875,9 @@
                     </div>
                 </div>
                 
-                <!-- Formulário de Agendamento -->
                 <div class="contact-form-container">
                     <h3>Agende Seu Serviço</h3>
-                    <form id="serviceForm" action="https://formsubmit.co/comercial@autoavanlda.com" method="POST">
-                        <!-- Configurações do FormSubmit -->
+                    <form id="serviceForm" action="https://formsubmit.co/el/jowesi" method="POST">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_next" value="https://autoavanlda.com/agradecimento.html">
                         <input type="hidden" name="_template" value="table">
@@ -1788,294 +1953,82 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h4>Sobre a Autoavan</h4>
-                    <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
-                </div>
-                
-                <div class="footer-col">
-    <h4>Links Rápidos</h4>
-    <ul class="footer-links">
-        <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
-        <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
-        <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
-        <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
-        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
-    </ul>
-  
-</div>
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <!-- Sobre a Autoavan -->
+            <div class="footer-col">
+                <h4>Sobre a Autoavan</h4>
+                <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
+            </div>
+            
+            <!-- Links Rápidos -->
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                    <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                </ul>
+            </div>
+            
+            <!-- Serviços -->
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul class="footer-links">
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Manutenção de Motores</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Carros Elétricos/Híbridos</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Câmbios Automáticos</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Reparação de Placas</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Elétrica Automotiva</a></li>
+                </ul>
+            </div>
 
-                
-                <div class="footer-col">
-                    <h4>Serviços</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Manutenção de Motores</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Carros Elétricos/Híbridos</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Câmbios Automáticos</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Reparação de Placas</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Elétrica Automotiva</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Clube de Benefícios Automotivos</h4>
-                    <p>Junte-se ao nosso grupo exclusivo no WhatsApp e receba alertas de promoções e descontos progressivos.</p>
-                    <div class="footer-newsletter">
-                        <a href="https://wa.me/244926095712" class="whatsapp-btn-small" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Entrar no Grupo
-                        </a>
+            <!-- Seção de Recrutamento -->
+            <div class="footer-col recruitment-section">
+                <div class="footer-links">
+                    <h4><i class="fas fa-users"></i> Junte-se à Nossa Equipe</h4>
+                    <p>Buscamos profissionais apaixonados por excelência automotiva.</p>
+                    <a href="candidatura.html" class="premium-cta"> Candidate-se <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="recruitment-benefits">
+                        <p><i class="fas fa-check-circle"></i> Plano de Carreira</p>
+                        <p><i class="fas fa-check-circle"></i> Formação Contínua</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Elementos do modal
-    const modal = document.getElementById('jobApplicationModal');
-    const btn = document.getElementById('jobApplicationBtn');
-    const closeBtn = document.querySelector('.close-modal');
-    const form = document.getElementById('jobForm');
-    
-    // Abrir modal
-    btn.addEventListener('click', function() {
-        modal.style.display = 'flex';
-    });
-    
-    // Fechar modal
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // Fechar ao clicar fora
-    window.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-    
-    // Envio do formulário
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
         
-        // Validação
-        let isValid = true;
-        document.querySelectorAll('#jobForm [required]').forEach(field => {
-            if (!field.value.trim()) {
-                field.style.borderColor = 'red';
-                isValid = false;
-            } else {
-                field.style.borderColor = '#ddd';
-            }
-        });
-        
-        if (isValid) {
-            // Simulação de envio (substitua por código real)
-            const formData = new FormData(form);
-            console.log('Dados enviados:', Object.fromEntries(formData));
-            
-            alert('Candidatura enviada com sucesso!');
-            form.reset();
-            modal.style.display = 'none';
-            
-            // Exemplo com fetch:
-            // fetch('seu-script.php', { method: 'POST', body: formData })
-            //   .then(response => alert('Sucesso!'))
-            //   .catch(error => alert('Erro ao enviar'));
-        } else {
-            alert('Por favor, preencha todos os campos obrigatórios.');
-        }
-    });
-});
-</script>
-
-<!-- Adicione este JavaScript -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const jobForm = document.getElementById('jobForm');
-    
-    jobForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validação básica
-        const requiredFields = jobForm.querySelectorAll('[required]');
-        let isValid = true;
-        
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                field.style.borderColor = 'red';
-                isValid = false;
-            } else {
-                field.style.borderColor = '#ddd';
-            }
-        });
-        
-        if (!isValid) {
-            alert('Por favor, preencha todos os campos obrigatórios');
-            return;
-        }
-        
-        // Simulação de envio (substitua por código real de envio)
-        const formData = new FormData(jobForm);
-        
-        // Aqui você pode adicionar AJAX para enviar para um servidor
-        console.log('Dados do formulário:', Object.fromEntries(formData));
-        
-        // Feedback para o usuário
-        alert('Candidatura enviada com sucesso! Entraremos em contato em breve.');
-        jobForm.reset();
-        
-        // Exemplo com Fetch API (descomente e adapte)
-        /*
-        fetch('seu-endpoint.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert('Candidatura enviada com sucesso!');
-            jobForm.reset();
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-            alert('Ocorreu um erro ao enviar sua candidatura.');
-        });
-        */
-    });
-});
-</script>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
+        <!-- Rodapé Corporativo -->
+        <div class="corporate-footer">
+            <hr class="footer-line"> <!-- Linha separadora -->
+            <div class="footer-bottom-content">
+                <div class="copyright-text">
+                    <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
+                </div>
             </div>
         </div>
-    </footer>
-
-    <!-- Modal de Confirmação -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h3>✅ Agendamento Confirmado!</h3>
-            <p>Obrigado por agendar conosco. Entraremos em contato em breve para confirmar os detalhes.</p>
-            <button class="submit-btn" id="modalCloseBtn">Fechar</button>
-        </div>
     </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona todos os itens do dropdown de peças
-    const pecasItems = document.querySelectorAll('.dropdown-menu li a');
-    
-    // Seleciona todas as peças na grid
-    const partCards = document.querySelectorAll('.part-card');
-    
-    // Adiciona evento de clique para cada item do menu de peças
-    pecasItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove a classe 'active' de todas as abas
-            document.querySelectorAll('.shop-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Adiciona 'active' na aba correspondente
-            const categoria = this.textContent.trim();
-            const tabCorrespondente = Array.from(document.querySelectorAll('.shop-tab')).find(tab => 
-                tab.textContent.trim() === categoria || 
-                (categoria === 'Motor' && tab.textContent.trim() === 'Todas')
-            );
-            
-            if (tabCorrespondente) {
-                tabCorrespondente.classList.add('active');
-            }
-            
-            // Filtra as peças
-            partCards.forEach(card => {
-                const cardCategory = card.querySelector('.part-category').textContent.trim();
-                
-                if (categoria === 'Todas' || cardCategory === categoria) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Fecha o dropdown após seleção (opcional)
-            this.closest('.dropdown-menu').style.opacity = '0';
-            this.closest('.dropdown-menu').style.visibility = 'hidden';
-        });
-    });
-    
-    // Adiciona também a funcionalidade para as abas
-    const shopTabs = document.querySelectorAll('.shop-tab');
-    shopTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const categoria = this.textContent.trim();
-            
-            shopTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            
-            partCards.forEach(card => {
-                const cardCategory = card.querySelector('.part-category').textContent.trim();
-                
-                if (categoria === 'Todas' || cardCategory === categoria) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-});
- </script>
+</footer>
+
+
+
     <!-- JavaScript -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // =====================
-        // MENU MOBILE DESLIZANTE
-        // =====================
+        // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mainNav = document.getElementById('mainNav');
         
-        function toggleMobileMenu() {
-            mobileMenu.classList.toggle('active');
-            mobileMenuOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        }
-        
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-        mobileMenuClose.addEventListener('click', toggleMobileMenu);
-        mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
-        
-        // Submenus mobile
-        document.querySelectorAll('.has-submenu > a').forEach(item => {
-            item.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const submenu = this.parentElement;
-                    submenu.classList.toggle('active');
-                }
-            });
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
-        // Fechar menu ao clicar em um link
-        document.querySelectorAll('.mobile-menu-nav a:not(.has-submenu > a)').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    toggleMobileMenu();
-                }
-            });
-        });
-        
-        // =====================
-        // HEADER SCROLL EFFECT
-        // =====================
+        // Header Scroll Effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -2085,9 +2038,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // =====================
-        // SCROLL SUAVE
-        // =====================
+        // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -2100,99 +2051,112 @@ document.addEventListener('DOMContentLoaded', function() {
                         top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
                 }
             });
         });
         
-        // =====================
-        // FORMULÁRIO DE CONTATO
-        // =====================
-        const serviceForm = document.getElementById('serviceForm');
-        const confirmationModal = document.getElementById('confirmationModal');
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const btnSpinner = document.getElementById('btnSpinner');
-        
-        // Mostrar campo "Outro Serviço" quando selecionado
-        document.getElementById('service').addEventListener('change', function() {
-            document.getElementById('otherServiceGroup').style.display = 
-                this.value === 'Outro' ? 'block' : 'none';
-        });
-        
-        // Definir data mínima (amanhã)
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        document.getElementById('date').min = tomorrow.toISOString().split('T')[0];
-        
-        // Envio do formulário
-        serviceForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Mostrar estado de carregamento
-            submitBtn.disabled = true;
-            btnText.textContent = "Enviando...";
-            btnSpinner.style.display = "inline-block";
-            
-            try {
-                const response = await fetch(serviceForm.action, {
-                    method: 'POST',
-                    body: new FormData(serviceForm),
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                if (response.ok) {
-                    // Sucesso - mostrar modal e limpar formulário
-                    confirmationModal.style.display = 'flex';
-                    serviceForm.reset();
-                    
-                    // Redirecionar após 3 segundos
-                    setTimeout(() => {
-                        const redirectUrl = document.querySelector('[name="_next"]').value;
-                        if (redirectUrl) window.location.href = redirectUrl;
-                    }, 3000);
-                } else {
-                    throw new Error('Falha no envio');
-                }
-            } catch (error) {
-                console.error("Erro:", error);
-                alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
-            } finally {
-                // Restaurar botão
-                submitBtn.disabled = false;
-                btnText.textContent = "Agendar Serviço";
-                btnSpinner.style.display = "none";
-            }
-        });
-        
-        // Fechar modal
-        document.getElementById('modalCloseBtn').addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        document.getElementById('closeModal').addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        // Fechar modal ao clicar fora
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
-                confirmationModal.style.display = 'none';
-            }
-        });
-        
-        // =====================
-        // SHOP TABS
-        // =====================
+        // Shop Tabs
         const shopTabs = document.querySelectorAll('.shop-tab');
         shopTabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 shopTabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
-                // Aqui você pode adicionar a lógica para filtrar os produtos
+                // Here you would filter products based on the selected tab
+                // This would require additional JavaScript or backend integration
             });
         });
-    });
- </script>
+        
+        // Form Handling
+        const serviceForm = document.getElementById('serviceForm');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        
+        // Show "Other Service" field when selected
+        document.getElementById('service').addEventListener('change', function() {
+            const otherServiceGroup = document.getElementById('otherServiceGroup');
+            otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
+        });
+        
+        // Set minimum date (tomorrow)
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        const dd = String(tomorrow.getDate()).padStart(2, '0');
+        const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+        const yyyy = tomorrow.getFullYear();
+        
+        document.getElementById('date').min = `${yyyy}-${mm}-${dd}`;
+        
+        // Form submission handling
+        serviceForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally handle form submission
+            // For demo purposes, we'll just show the confirmation modal
+            confirmationModal.style.display = 'flex';
+            
+            // In a real scenario, you would use fetch() or similar to submit the form
+            // fetch(serviceForm.action, {
+            //     method: 'POST',
+            //     body: new FormData(serviceForm)
+            // })
+            // .then(response => {
+            //     if (response.ok) {
+            //         confirmationModal.style.display = 'flex';
+            //         serviceForm.reset();
+            //     }
+            // });
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+        
+        modalCloseBtn.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === confirmationModal) {
+                confirmationModal.style.display = 'none';
+            }
+        });
+
+        
+            // Botão para abrir modal
+            document.querySelectorAll('[data-open-modal="jobs"]').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('jobApplicationModal').style.display = 'flex';
+                });
+            });
+
+            // Fechar modal
+            const closeModal = document.querySelector('.job-modal .close-modal');
+            if(closeModal) {
+                closeModal.addEventListener('click', function() {
+                    document.getElementById('jobApplicationModal').style.display = 'none';
+                });
+            }
+
+            // Fechar ao clicar fora
+            window.addEventListener('click', function(e) {
+                if (e.target === document.getElementById('jobApplicationModal')) {
+                    document.getElementById('jobApplicationModal').style.display = 'none';
+                }
+            });
+    </script>
+
+    </script>
 </body>
 </html>
