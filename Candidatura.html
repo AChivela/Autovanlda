@@ -27,28 +27,61 @@
             margin: 0 auto;
         }
 
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header img {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
         .form-container {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 30px;
-            margin-top: 30px;
+            margin-top: 10px;
         }
 
         h1 {
             color: var(--secondary-color);
             text-align: center;
             margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            font-size: 22px;
         }
 
         .form-group {
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
+            color: var(--dark-gray);
         }
 
         label.required::after {
@@ -64,6 +97,7 @@
             border-radius: var(--border-radius);
             font-size: 16px;
             transition: var(--transition);
+            box-sizing: border-box;
         }
 
         input:focus, select:focus, textarea:focus {
@@ -77,18 +111,24 @@
             resize: vertical;
         }
 
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
         button[type="submit"] {
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 14px;
+            padding: 14px 30px;
             font-size: 18px;
             font-weight: 600;
             border: none;
             border-radius: var(--border-radius);
-            width: 100%;
             cursor: pointer;
             transition: var(--transition);
-            margin-top: 20px;
+            width: auto;
+            min-width: 200px;
         }
 
         button[type="submit"]:hover {
@@ -117,7 +157,37 @@
             display: block;
         }
 
-        @media (max-width: 600px) {
+        .file-upload {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .file-upload-label {
+            background-color: var(--light-gray);
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px dashed #ccc;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .file-upload-label:hover {
+            background-color: #e9ecef;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
             body {
                 padding: 10px;
             }
@@ -129,141 +199,164 @@
     </style>
 </head>
 <body>
-    <div class="form-container">
+    <div class="header">
         <h1>Candidatura de Emprego</h1>
-        
-        <div id="statusMessage" class="status-message"></div>
+    </div>
 
-        <form action="https://formsubmit.co/comercial@autoavanlda.com" method="POST" enctype="multipart/form-data">
-            <!-- Configurações do FormSubmit -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="Nova Candidatura - Site">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://www.autoavanlda.com/obrigado-candidatura.html">
-            <div class="form-group">
-                <label for="name" class="required">Nome Completo</label>
-                <input type="text" id="name" name="Nome Completo" required>
+    <div class="form-container">
+        <form id="jobApplicationForm">
+            <div id="statusMessage" class="status-message"></div>
+
+            <h2>Informações Pessoais</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName" class="required">Primeiro Nome</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="required">Último Nome</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="email" class="required">Email</label>
-                <input type="email" id="email" name="Email" required>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email" class="required">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="required">Telefone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="phone" class="required">Telefone (Angola)</label>
-                <input type="tel" id="phone" name="Telefone" value="+244 " placeholder="+244 900 000 000" required>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="birthDate">Data de Nascimento</label>
+                    <input type="date" id="birthDate" name="birthDate">
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nacionalidade</label>
+                    <input type="text" id="nationality" name="nationality" value="Angolana">
+                </div>
             </div>
-            
+
             <div class="form-group">
-                <label for="position" class="required">Vaga de Interesse</label>
-                <select id="position" name="Vaga de Interesse" required>
-                    <option value="" disabled selected>Selecione uma vaga</option>
-                    <option value="Gerente">Gerente</option>
-                    <option value="Supervisor">Supervisor</option>
-                    <option value="Técnico">Técnico</option>
-                    <option value="Assistente">Recepcionista de Oficina</option>
-                    <option value="Outra">Outra</option>
+                <label for="address">Endereço Completo</label>
+                <input type="text" id="address" name="address">
+            </div>
+
+            <h2>Informações Profissionais</h2>
+            <div class="form-group">
+                <label for="position" class="required">Cargo Pretendido</label>
+                <input type="text" id="position" name="position" required>
+            </div>
+
+            <div class="form-group">
+                <label for="experience" class="required">Anos de Experiência</label>
+                <select id="experience" name="experience" required>
+                    <option value="">Selecione...</option>
+                    <option value="0-2">0-2 anos</option>
+                    <option value="3-5">3-5 anos</option>
+                    <option value="6-10">6-10 anos</option>
+                    <option value="10+">Mais de 10 anos</option>
                 </select>
             </div>
-            
+
             <div class="form-group">
-                <label for="experience" class="required">Experiência Profissional</label>
-                <textarea id="experience" name="Experiência Profissional" required></textarea>
+                <label for="currentJob">Cargo Atual</label>
+                <input type="text" id="currentJob" name="currentJob">
             </div>
-            
+
             <div class="form-group">
-                <label for="education" class="required">Formação Acadêmica</label>
-                <textarea id="education" name="Formação Acadêmica" required></textarea>
+                <label for="currentCompany">Empresa Atual</label>
+                <input type="text" id="currentCompany" name="currentCompany">
             </div>
-            
+
             <div class="form-group">
-                <label for="cv" class="required">Currículo (PDF ou DOC)</label>
-                <input type="file" id="cv" name="Currículo" accept=".pdf,.doc,.docx" required>
+                <label for="skills" class="required">Principais Competências</label>
+                <textarea id="skills" name="skills" required placeholder="Liste suas principais habilidades técnicas e profissionais"></textarea>
             </div>
-            
-            <button type="submit">Enviar Candidatura</button>
+
+            <div class="form-group">
+                <label for="experienceSummary">Resumo da Experiência Profissional</label>
+                <textarea id="experienceSummary" name="experienceSummary" placeholder="Descreva brevemente sua trajetória profissional e principais conquistas"></textarea>
+            </div>
+
+            <h2>Documentos</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cvUpload">Currículo (PDF)</label>
+                    <div class="file-upload">
+                        <label for="cvUpload" class="file-upload-label">Selecionar arquivo</label>
+                        <input type="file" id="cvUpload" name="cvUpload" accept=".pdf">
+                        <span id="cvFileName">Nenhum arquivo selecionado</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="certificatesUpload">Certificados (PDF/ZIP)</label>
+                    <div class="file-upload">
+                        <label for="certificatesUpload" class="file-upload-label">Selecionar arquivo</label>
+                        <input type="file" id="certificatesUpload" name="certificatesUpload" accept=".pdf,.zip">
+                        <span id="certificatesFileName">Nenhum arquivo selecionado</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Informações Adicionais</h2>
+            <div class="form-group">
+                <label for="availability">Disponibilidade para Início</label>
+                <select id="availability" name="availability">
+                    <option value="immediate">Imediata</option>
+                    <option value="15days">15 dias</option>
+                    <option value="1month">1 mês</option>
+                    <option value="2months">2 meses</option>
+                    <option value="negotiable">Negociável</option>
+                </select>
+            </div>
+
+          <!--  <div class="form-group">
+                <label for="salaryExpectation">Expectativa Salarial (Kzs)</label>
+                <input type="text" id="salaryExpectation" name="salaryExpectation" placeholder="Ex: 2000-2500">
+            </div> -->
+
+            <div class="form-group">
+                <label for="additionalInfo">Informações Adicionais</label>
+                <textarea id="additionalInfo" name="additionalInfo" placeholder="Alguma informação adicional que considere relevante"></textarea>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Enviar Candidatura</button>
+            </div>
         </form>
     </div>
 
     <script>
-        // Máscara para telefone de Angola com +244 pré-definido
-        document.getElementById('phone').addEventListener('input', function(e) {
-            // Garante que comece com +244
-            if (!this.value.startsWith('+244 ')) {
-                this.value = '+244 ';
-            }
+        document.getElementById('jobApplicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Remove tudo que não é dígito (exceto o + inicial)
-            let digits = this.value.replace(/[^\d+]/g, '');
+            // Simulação de envio bem-sucedido
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.textContent = 'Candidatura enviada com sucesso! Entraremos em contato em breve.';
+            statusMessage.className = 'status-message success';
             
-            // Se for apenas +244, mantém como está
-            if (digits === '+244') {
-                this.value = '+244 ';
-                return;
-            }
-            
-            // Pega apenas os dígitos após o +244 (máximo 9)
-            let numbers = digits.substring(4);
-            numbers = numbers.replace(/\D/g, '');
-            if (numbers.length > 9) numbers = numbers.substring(0, 9);
-            
-            // Formata: +244 XXX XXX XXX
-            let formatted = '+244 ';
-            if (numbers.length > 0) {
-                formatted += numbers.substring(0, 3);
-                if (numbers.length > 3) {
-                    formatted += ' ' + numbers.substring(3, 6);
-                    if (numbers.length > 6) {
-                        formatted += ' ' + numbers.substring(6, 9);
-                    }
-                }
-            }
-            
-            // Atualiza o valor mantendo a posição do cursor
-            const selectionStart = this.selectionStart;
-            this.value = formatted;
-            this.setSelectionRange(selectionStart, selectionStart);
+            // Limpar o formulário após 3 segundos
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('cvFileName').textContent = 'Nenhum arquivo selecionado';
+                document.getElementById('certificatesFileName').textContent = 'Nenhum arquivo selecionado';
+            }, 3000);
         });
 
-        // Garante que o campo comece com +244 ao ganhar foco
-        document.getElementById('phone').addEventListener('focus', function(e) {
-            if (!this.value.startsWith('+244 ')) {
-                this.value = '+244 ';
-            }
+        // Mostrar nome dos arquivos selecionados
+        document.getElementById('cvUpload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'Nenhum arquivo selecionado';
+            document.getElementById('cvFileName').textContent = fileName;
         });
 
-        // Impede a modificação manual do +244 inicial
-        document.getElementById('phone').addEventListener('keydown', function(e) {
-            const selectionStart = this.selectionStart;
-            if (selectionStart <= 4 && (e.key === 'Backspace' || e.key === 'Delete')) {
-                e.preventDefault();
-            }
-            if (selectionStart < 5 && e.key.length === 1 && /\d/.test(e.key)) {
-                e.preventDefault();
-                const numbers = this.value.substring(5).replace(/\D/g, '');
-                if (numbers.length < 9) {
-                    this.value = '+244 ' + e.key + numbers;
-                    this.setSelectionRange(6, 6);
-                }
-            }
-        });
-
-        // Validação antes do envio
-        document.querySelector('form').addEventListener('submit', function(e) {
-            const phone = document.getElementById('phone').value;
-            const phoneDigits = phone.replace(/\D/g, '').substring(3); // Remove +244
-            
-            if (phoneDigits.length !== 9) {
-                e.preventDefault();
-                document.getElementById('statusMessage').textContent = 'Por favor, insira um número de telefone angolano válido (9 dígitos após +244)';
-                document.getElementById('statusMessage').className = 'status-message error';
-                return;
-            }
-            
-            // Mostrar mensagem de envio
-            document.getElementById('statusMessage').textContent = 'Enviando sua candidatura...';
-            document.getElementById('statusMessage').className = 'status-message';
+        document.getElementById('certificatesUpload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'Nenhum arquivo selecionado';
+            document.getElementById('certificatesFileName').textContent = fileName;
         });
     </script>
 </body>
