@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candidatura de Emprego - Angola</title>
+    <title>Candidatura de Emprego - AutoAvan Lda</title>
     <style>
         :root {
             --primary-color: #0056b3;
@@ -29,11 +29,11 @@
 
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .header img {
-            max-width: 150px;
+            max-height: 80px;
             margin-bottom: 15px;
         }
 
@@ -62,8 +62,6 @@
 
         .form-group {
             margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
         }
 
         .form-row {
@@ -109,6 +107,21 @@
         textarea {
             min-height: 120px;
             resize: vertical;
+        }
+
+        .file-upload {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .file-upload input[type="file"] {
+            border: 1px dashed #ccc;
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+
+        .file-upload input[type="file"]:focus {
+            border-color: var(--primary-color);
         }
 
         .button-container {
@@ -157,29 +170,10 @@
             display: block;
         }
 
-        .file-upload {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .file-upload input[type="file"] {
-            display: none;
-        }
-
-        .file-upload-label {
-            background-color: var(--light-gray);
-            padding: 10px 15px;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            border: 1px dashed #ccc;
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        .file-upload-label:hover {
-            background-color: #e9ecef;
+        .loading {
+            background-color: #cce5ff;
+            color: #004085;
+            display: block;
         }
 
         @media (max-width: 768px) {
@@ -204,57 +198,71 @@
     </div>
 
     <div class="form-container">
-        <form id="jobApplicationForm">
-            <div id="statusMessage" class="status-message"></div>
+        <div id="statusMessage" class="status-message"></div>
+
+        <form action="https://formsubmit.co/comercial@autoavanlda.com" method="POST" enctype="multipart/form-data" id="jobApplicationForm">
+            <!-- Configurações do FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Nova Candidatura - Site AutoAvan">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://www.autoavanlda.com/obrigado-candidatura.html">
+            <input type="hidden" name="_autoresponse" value="Obrigado por enviar sua candidatura para a AutoAvan Lda. Analisaremos seu perfil e entraremos em contato caso haja interesse.">
 
             <h2>Informações Pessoais</h2>
             <div class="form-row">
                 <div class="form-group">
                     <label for="firstName" class="required">Primeiro Nome</label>
-                    <input type="text" id="firstName" name="firstName" required>
+                    <input type="text" id="firstName" name="Primeiro Nome" required>
                 </div>
                 <div class="form-group">
                     <label for="lastName" class="required">Último Nome</label>
-                    <input type="text" id="lastName" name="lastName" required>
+                    <input type="text" id="lastName" name="Último Nome" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="email" class="required">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="Email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone" class="required">Telefone</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label for="phone" class="required">Telefone (Angola)</label>
+                    <input type="tel" id="phone" name="Telefone" value="+244 " placeholder="+244 900 000 000" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="birthDate">Data de Nascimento</label>
-                    <input type="date" id="birthDate" name="birthDate">
+                    <input type="date" id="birthDate" name="Data de Nascimento">
                 </div>
                 <div class="form-group">
                     <label for="nationality">Nacionalidade</label>
-                    <input type="text" id="nationality" name="nationality" value="Angolana">
+                    <input type="text" id="nationality" name="Nacionalidade" value="Angolana">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="address">Endereço Completo</label>
-                <input type="text" id="address" name="address">
+                <input type="text" id="address" name="Endereço" placeholder="Rua, Bairro, Cidade, Província">
             </div>
 
             <h2>Informações Profissionais</h2>
             <div class="form-group">
-                <label for="position" class="required">Cargo Pretendido</label>
-                <input type="text" id="position" name="position" required>
+                <label for="position" class="required">Vaga de Interesse</label>
+                <select id="position" name="Vaga de Interesse" required>
+                    <option value="" disabled selected>Selecione uma vaga</option>
+                    <option value="Gerente">Gerente</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Técnico">Técnico</option>
+                    <option value="Assistente">Recepcionista de Oficina</option>
+                    <option value="Outra">Outra</option>
+                </select>
             </div>
 
             <div class="form-group">
                 <label for="experience" class="required">Anos de Experiência</label>
-                <select id="experience" name="experience" required>
+                <select id="experience" name="Anos de Experiência" required>
                     <option value="">Selecione...</option>
                     <option value="0-2">0-2 anos</option>
                     <option value="3-5">3-5 anos</option>
@@ -265,48 +273,42 @@
 
             <div class="form-group">
                 <label for="currentJob">Cargo Atual</label>
-                <input type="text" id="currentJob" name="currentJob">
+                <input type="text" id="currentJob" name="Cargo Atual" placeholder="Se atualmente empregado">
             </div>
 
             <div class="form-group">
                 <label for="currentCompany">Empresa Atual</label>
-                <input type="text" id="currentCompany" name="currentCompany">
+                <input type="text" id="currentCompany" name="Empresa Atual">
             </div>
 
             <div class="form-group">
                 <label for="skills" class="required">Principais Competências</label>
-                <textarea id="skills" name="skills" required placeholder="Liste suas principais habilidades técnicas e profissionais"></textarea>
+                <textarea id="skills" name="Principais Competências" required placeholder="Liste suas principais habilidades técnicas e profissionais"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="experienceSummary">Resumo da Experiência Profissional</label>
-                <textarea id="experienceSummary" name="experienceSummary" placeholder="Descreva brevemente sua trajetória profissional e principais conquistas"></textarea>
+                <textarea id="experienceSummary" name="Resumo Profissional" placeholder="Descreva brevemente sua trajetória profissional e principais conquistas"></textarea>
             </div>
 
             <h2>Documentos</h2>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="cvUpload">Currículo (PDF)</label>
-                    <div class="file-upload">
-                        <label for="cvUpload" class="file-upload-label">Selecionar arquivo</label>
-                        <input type="file" id="cvUpload" name="cvUpload" accept=".pdf">
-                        <span id="cvFileName">Nenhum arquivo selecionado</span>
-                    </div>
+                    <label for="cv" class="required">Currículo (PDF ou DOC)</label>
+                    <input type="file" id="cv" name="Currículo" accept=".pdf,.doc,.docx" required>
+                    <small>Tamanho máximo: 5MB</small>
                 </div>
                 <div class="form-group">
-                    <label for="certificatesUpload">Certificados (PDF/ZIP)</label>
-                    <div class="file-upload">
-                        <label for="certificatesUpload" class="file-upload-label">Selecionar arquivo</label>
-                        <input type="file" id="certificatesUpload" name="certificatesUpload" accept=".pdf,.zip">
-                        <span id="certificatesFileName">Nenhum arquivo selecionado</span>
-                    </div>
+                    <label for="certificates">Certificados (PDF/ZIP)</label>
+                    <input type="file" id="certificates" name="Certificados" accept=".pdf,.zip">
+                    <small>Opcional - Tamanho máximo: 5MB</small>
                 </div>
             </div>
 
             <h2>Informações Adicionais</h2>
             <div class="form-group">
                 <label for="availability">Disponibilidade para Início</label>
-                <select id="availability" name="availability">
+                <select id="availability" name="Disponibilidade">
                     <option value="immediate">Imediata</option>
                     <option value="15days">15 dias</option>
                     <option value="1month">1 mês</option>
@@ -315,14 +317,14 @@
                 </select>
             </div>
 
-          <!--  <div class="form-group">
-                <label for="salaryExpectation">Expectativa Salarial (Kzs)</label>
-                <input type="text" id="salaryExpectation" name="salaryExpectation" placeholder="Ex: 2000-2500">
+           <!-- <div class="form-group">
+                <label for="salaryExpectation">Expectativa Salarial (USD)</label>
+                <input type="text" id="salaryExpectation" name="Expectativa Salarial" placeholder="Ex: 2000-2500">
             </div> -->
 
             <div class="form-group">
                 <label for="additionalInfo">Informações Adicionais</label>
-                <textarea id="additionalInfo" name="additionalInfo" placeholder="Alguma informação adicional que considere relevante"></textarea>
+                <textarea id="additionalInfo" name="Informações Adicionais" placeholder="Alguma informação adicional que considere relevante"></textarea>
             </div>
 
             <div class="button-container">
@@ -332,31 +334,110 @@
     </div>
 
     <script>
+        // Máscara para telefone de Angola com +244 pré-definido
+        document.getElementById('phone').addEventListener('input', function(e) {
+            // Garante que comece com +244
+            if (!this.value.startsWith('+244 ')) {
+                this.value = '+244 ';
+            }
+            
+            // Remove tudo que não é dígito (exceto o + inicial)
+            let digits = this.value.replace(/[^\d+]/g, '');
+            
+            // Se for apenas +244, mantém como está
+            if (digits === '+244') {
+                this.value = '+244 ';
+                return;
+            }
+            
+            // Pega apenas os dígitos após o +244 (máximo 9)
+            let numbers = digits.substring(4);
+            numbers = numbers.replace(/\D/g, '');
+            if (numbers.length > 9) numbers = numbers.substring(0, 9);
+            
+            // Formata: +244 XXX XXX XXX
+            let formatted = '+244 ';
+            if (numbers.length > 0) {
+                formatted += numbers.substring(0, 3);
+                if (numbers.length > 3) {
+                    formatted += ' ' + numbers.substring(3, 6);
+                    if (numbers.length > 6) {
+                        formatted += ' ' + numbers.substring(6, 9);
+                    }
+                }
+            }
+            
+            // Atualiza o valor mantendo a posição do cursor
+            const selectionStart = this.selectionStart;
+            this.value = formatted;
+            this.setSelectionRange(selectionStart, selectionStart);
+        });
+
+        // Garante que o campo comece com +244 ao ganhar foco
+        document.getElementById('phone').addEventListener('focus', function(e) {
+            if (!this.value.startsWith('+244 ')) {
+                this.value = '+244 ';
+            }
+        });
+
+        // Impede a modificação manual do +244 inicial
+        document.getElementById('phone').addEventListener('keydown', function(e) {
+            const selectionStart = this.selectionStart;
+            if (selectionStart <= 4 && (e.key === 'Backspace' || e.key === 'Delete')) {
+                e.preventDefault();
+            }
+            if (selectionStart < 5 && e.key.length === 1 && /\d/.test(e.key)) {
+                e.preventDefault();
+                const numbers = this.value.substring(5).replace(/\D/g, '');
+                if (numbers.length < 9) {
+                    this.value = '+244 ' + e.key + numbers;
+                    this.setSelectionRange(6, 6);
+                }
+            }
+        });
+
+        // Validação antes do envio
         document.getElementById('jobApplicationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            const phone = document.getElementById('phone').value;
+            const phoneDigits = phone.replace(/\D/g, '').substring(3); // Remove +244
+            const cvFile = document.getElementById('cv').files[0];
+            const certificatesFile = document.getElementById('certificates').files[0];
+            const maxFileSize = 5 * 1024 * 1024; // 5MB
             
-            // Simulação de envio bem-sucedido
-            const statusMessage = document.getElementById('statusMessage');
-            statusMessage.textContent = 'Candidatura enviada com sucesso! Entraremos em contato em breve.';
-            statusMessage.className = 'status-message success';
+            // Validação do telefone
+            if (phoneDigits.length !== 9) {
+                e.preventDefault();
+                document.getElementById('statusMessage').textContent = 'Por favor, insira um número de telefone angolano válido (9 dígitos após +244)';
+                document.getElementById('statusMessage').className = 'status-message error';
+                return;
+            }
             
-            // Limpar o formulário após 3 segundos
-            setTimeout(() => {
-                this.reset();
-                document.getElementById('cvFileName').textContent = 'Nenhum arquivo selecionado';
-                document.getElementById('certificatesFileName').textContent = 'Nenhum arquivo selecionado';
-            }, 3000);
-        });
-
-        // Mostrar nome dos arquivos selecionados
-        document.getElementById('cvUpload').addEventListener('change', function(e) {
-            const fileName = e.target.files[0] ? e.target.files[0].name : 'Nenhum arquivo selecionado';
-            document.getElementById('cvFileName').textContent = fileName;
-        });
-
-        document.getElementById('certificatesUpload').addEventListener('change', function(e) {
-            const fileName = e.target.files[0] ? e.target.files[0].name : 'Nenhum arquivo selecionado';
-            document.getElementById('certificatesFileName').textContent = fileName;
+            // Validação do currículo
+            if (!cvFile) {
+                e.preventDefault();
+                document.getElementById('statusMessage').textContent = 'Por favor, anexe seu currículo';
+                document.getElementById('statusMessage').className = 'status-message error';
+                return;
+            }
+            
+            if (cvFile.size > maxFileSize) {
+                e.preventDefault();
+                document.getElementById('statusMessage').textContent = 'O arquivo do currículo excede o tamanho máximo de 5MB';
+                document.getElementById('statusMessage').className = 'status-message error';
+                return;
+            }
+            
+            // Validação dos certificados (se enviados)
+            if (certificatesFile && certificatesFile.size > maxFileSize) {
+                e.preventDefault();
+                document.getElementById('statusMessage').textContent = 'O arquivo de certificados excede o tamanho máximo de 5MB';
+                document.getElementById('statusMessage').className = 'status-message error';
+                return;
+            }
+            
+            // Mostrar mensagem de envio
+            document.getElementById('statusMessage').textContent = 'Enviando sua candidatura...';
+            document.getElementById('statusMessage').className = 'status-message loading';
         });
     </script>
 </body>
