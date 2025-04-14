@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatura de Emprego - Angola</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #003366;
+            --accent-color: #28a745;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+            --text-color: #495057;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        label.required::after {
+            content: '*';
+            color: #dc3545;
+            margin-left: 4px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--border-radius);
+            width: 100%;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-message {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            text-align: center;
+            display: none;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Candidatura de Emprego</h1>
+        
+        <div id="statusMessage" class="status-message"></div>
+
+        <form action="https://formsubmit.co/comercial@autoavanlda.com" method="POST" enctype="multipart/form-data">
+            <!-- Configurações do FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Nova Candidatura - Site">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://www.autoavanlda.com/obrigado-candidatura.html">
+            <div class="form-group">
+                <label for="name" class="required">Nome Completo</label>
+                <input type="text" id="name" name="Nome Completo" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="Email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone" class="required">Telefone (Angola)</label>
+                <input type="tel" id="phone" name="Telefone" value="+244 " placeholder="+244 900 000 000" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="position" class="required">Vaga de Interesse</label>
+                <select id="position" name="Vaga de Interesse" required>
+                    <option value="" disabled selected>Selecione uma vaga</option>
+                    <option value="Gerente">Gerente</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Técnico">Técnico</option>
+                    <option value="Assistente">Recepcionista de Oficina</option>
+                    <option value="Outra">Outra</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="experience" class="required">Experiência Profissional</label>
+                <textarea id="experience" name="Experiência Profissional" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="education" class="required">Formação Acadêmica</label>
+                <textarea id="education" name="Formação Acadêmica" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="cv" class="required">Currículo (PDF ou DOC)</label>
+                <input type="file" id="cv" name="Currículo" accept=".pdf,.doc,.docx" required>
+            </div>
+            
+            <button type="submit">Enviar Candidatura</button>
+        </form>
+    </div>
+
+    <script>
+        // Máscara para telefone de Angola com +244 pré-definido
+        document.getElementById('phone').addEventListener('input', function(e) {
+            // Garante que comece com +244
+            if (!this.value.startsWith('+244 ')) {
+                this.value = '+244 ';
+            }
+            
+            // Remove tudo que não é dígito (exceto o + inicial)
+            let digits = this.value.replace(/[^\d+]/g, '');
+            
+            // Se for apenas +244, mantém como está
+            if (digits === '+244') {
+                this.value = '+244 ';
+                return;
+            }
+            
+            // Pega apenas os dígitos após o +244 (máximo 9)
+            let numbers = digits.substring(4);
+            numbers = numbers.replace(/\D/g, '');
+            if (numbers.length > 9) numbers = numbers.substring(0, 9);
+            
+            // Formata: +244 XXX XXX XXX
+            let formatted = '+244 ';
+            if (numbers.length > 0) {
+                formatted += numbers.substring(0, 3);
+                if (numbers.length > 3) {
+                    formatted += ' ' + numbers.substring(3, 6);
+                    if (numbers.length > 6) {
+                        formatted += ' ' + numbers.substring(6, 9);
+                    }
+                }
+            }
+            
+            // Atualiza o valor mantendo a posição do cursor
+            const selectionStart = this.selectionStart;
+            this.value = formatted;
+            this.setSelectionRange(selectionStart, selectionStart);
+        });
+
+        // Garante que o campo comece com +244 ao ganhar foco
+        document.getElementById('phone').addEventListener('focus', function(e) {
+            if (!this.value.startsWith('+244 ')) {
+                this.value = '+244 ';
+            }
+        });
+
+        // Impede a modificação manual do +244 inicial
+        document.getElementById('phone').addEventListener('keydown', function(e) {
+            const selectionStart = this.selectionStart;
+            if (selectionStart <= 4 && (e.key === 'Backspace' || e.key === 'Delete')) {
+                e.preventDefault();
+            }
+            if (selectionStart < 5 && e.key.length === 1 && /\d/.test(e.key)) {
+                e.preventDefault();
+                const numbers = this.value.substring(5).replace(/\D/g, '');
+                if (numbers.length < 9) {
+                    this.value = '+244 ' + e.key + numbers;
+                    this.setSelectionRange(6, 6);
+                }
+            }
+        });
+
+        // Validação antes do envio
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const phone = document.getElementById('phone').value;
+            const phoneDigits = phone.replace(/\D/g, '').substring(3); // Remove +244
+            
+            if (phoneDigits.length !== 9) {
+                e.preventDefault();
+                document.getElementById('statusMessage').textContent = 'Por favor, insira um número de telefone angolano válido (9 dígitos após +244)';
+                document.getElementById('statusMessage').className = 'status-message error';
+                return;
+            }
+            
+            // Mostrar mensagem de envio
+            document.getElementById('statusMessage').textContent = 'Enviando sua candidatura...';
+            document.getElementById('statusMessage').className = 'status-message';
+        });
+    </script>
+</body>
+</html>
