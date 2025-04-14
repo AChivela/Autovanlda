@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
@@ -1199,6 +1200,47 @@
             background: var(--accent);
         }
         
+        /* Seção de Recrutamento no Footer */
+        .recruitment-section {
+            background-color: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            grid-column: 1 / -1;
+        }
+        
+        .recruitment-section h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .premium-cta {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin: 1rem 0;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .premium-cta:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .recruitment-benefits p {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        
+        .recruitment-benefits i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+        
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
@@ -1257,246 +1299,172 @@
                 background: var(--primary);
                 padding: 1rem;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                transform: translateY(-150%);
-                opacity: 0;
-                transition: var(--transition);
-            }
-            
-            nav.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-            
-            nav ul li:last-child {
-                border-bottom: none;
-            }
-            
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                width: 100%;
-                box-shadow: none;
-                background: transparent;
-                display: none;
-            }
-            
-            nav ul li:hover .dropdown-menu {
-                top: 0;
-            }
-            
-            .dropdown-menu li {
-                border-bottom: none;
-                padding: 0;
-            }
-            
-            .dropdown-menu li a {
-                color: #ddd;
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .dropdown-menu li a:hover {
-                color: var(--secondary);
-                background: #f9f9f9;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .shop-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .shop-tabs {
-                width: 100%;
-                overflow-x: auto;
-                padding-bottom: 5px;
-            }
-            
-            .whatsapp-btn-text {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .logo-main {
-                font-size: 1.5rem;
-            }
-            
-            .hero {
-                min-height: 600px;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .parts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-/* Rodapé */
-footer {
-    background-color: #333; /* Cor de fundo do rodapé */
-    color: white; /* Cor do texto */
-    padding: 20px 0;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 20px;
-}
-
-.footer-col {
-    flex: 1;
-    padding: 0 15px;
-}
-
-.footer-links {
-    list-style-type: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin: 8px 0;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.footer-links a:hover {
-    color: #4CAF50; /* Cor do hover */
-}
-
-.recruitment-card {
-    background-color: #444;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.recruitment-card h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.recruitment-benefits p {
-    margin: 5px 0;
-}
-
-/* Linha separadora */
-.footer-line {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 20px 0;
-}
-
-/* Rodapé corporativo */
-.corporate-footer {
-    text-align: center;
-    padding-top: 20px;
-}
-
-.copyright-text {
-    margin-top: 20px;
-}
-
-.copyright-text p {
-    font-size: 14px;
-    margin: 0;
-    font-weight: 300;
-}
-
-
-    </style>
-</head>
-<body>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/244926095712" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <span class="whatsapp-btn-text">
-        <i class="fab fa-whatsapp"></i> Fale Conosco
-    </span>
-
-    <!-- Header -->
-    <header id="header">
-        <div class="container">
-            <div class="header-container">
-                <a href="#" class="logo">
-                    <div class="logo-img">
-                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <image href="Imagens/Logotipo.jpg" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        <span class="logo-main">AUTOAVAN,LDA</span> 
-                        <span class="logo-sub">MECÂNICA ESPECIALIZADA</span>
-                    </div>
-                </a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
-                    <i class="fas fa-bars"></i>
-                </button>
+                transform            nav ul {
+                    flex-direction: column;
+                }
                 
-                <nav id="mainNav">
-                    <ul>
-                        <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
-                        <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
-                        <li>
-                            <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#shop">Motor</a></li>
-                                <li><a href="#shop">Suspensão</a></li>
-                                <li><a href="#shop">Freios</a></li>
-                                <li><a href="#shop">Elétrica</a></li>
-                                <li><a href="#shop">Placas</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
-                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
-                       <!--  <li><a href="#" data-open-modal="jobs"><i class="fas fa-briefcase"></i> Trabalhe Conosco</a></li> -->
-                    </ul>
-                </nav>
+                nav ul li {
+                    margin: 0;
+                    padding: 0.8rem 0;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                }
+                
+                nav ul li:last-child {
+                    border-bottom: none;
+                }
+                
+                .dropdown-menu {
+                    position: static;
+                    opacity: 1;
+                    visibility: visible;
+                    width: 100%;
+                    box-shadow: none;
+                    background: transparent;
+                    display: none;
+                }
+                
+                nav ul li:hover .dropdown-menu {
+                    top: 0;
+                }
+                
+                .dropdown-menu li {
+                    border-bottom: none;
+                    padding: 0;
+                }
+                
+                .dropdown-menu li a {
+                    color: #ddd;
+                    padding: 0.5rem 1rem;
+                    font-size: 0.9rem;
+                }
+                
+                .dropdown-menu li a:hover {
+                    color: var(--secondary);
+                    background: #f9f9f9;
+                }
+                
+                .hero-content h1 {
+                    font-size: 2.5rem;
+                }
+                
+                .hero-content p {
+                    font-size: 1.1rem;
+                }
+                
+                .hero-btns {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                
+                .btn {
+                    width: 100%;
+                }
+                
+                .section-header h2 {
+                    font-size: 2rem;
+                }
+                
+                .shop-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
+                }
+                
+                .shop-tabs {
+                    width: 100%;
+                    overflow-x: auto;
+                    padding-bottom: 5px;
+                }
+                
+                .whatsapp-btn-text {
+                    display: none;
+                }
+                
+                /* Ajustes específicos para o footer no mobile */
+                .recruitment-section {
+                    padding: 1rem;
+                    margin-top: 0;
+                }
+                
+                .footer-container {
+                    grid-template-columns: 1fr;
+                }
+                
+                .footer-col {
+                    margin-bottom: 1.5rem;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .logo-main {
+                    font-size: 1.5rem;
+                }
+                
+                .hero {
+                    min-height: 600px;
+                }
+                
+                .hero-content h1 {
+                    font-size: 2rem;
+                }
+                
+                .parts-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/244926095712" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <span class="whatsapp-btn-text">
+            <i class="fab fa-whatsapp"></i> Fale Conosco
+        </span>
+    
+        <!-- Header -->
+        <header id="header">
+            <div class="container">
+                <div class="header-container">
+                    <a href="#" class="logo">
+                        <div class="logo-img">
+                            <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                <image href="Imagens/Logotipo.jpg" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-main">AUTOAVAN,LDA</span> 
+                            <span class="logo-sub">MECÂNICA ESPECIALIZADA</span>
+                        </div>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <nav id="mainNav">
+                        <ul>
+                            <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+                            <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
+                            <li>
+                                <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#shop">Motor</a></li>
+                                    <li><a href="#shop">Suspensão</a></li>
+                                    <li><a href="#shop">Freios</a></li>
+                                    <li><a href="#shop">Elétrica</a></li>
+                                    <li><a href="#shop">Placas</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                            <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
+        </header>
+    
+        <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -1954,211 +1922,191 @@ footer {
         </div>
     </section>
 
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-container">
-            <!-- Sobre a Autoavan -->
-            <div class="footer-col">
-                <h4>Sobre a Autoavan</h4>
-                <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
-            </div>
-            
-            <!-- Links Rápidos -->
-            <div class="footer-col">
-                <h4>Links Rápidos</h4>
-                <ul class="footer-links">
-                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
-                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
-                    <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
-                    <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
-                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
-                </ul>
-            </div>
-            
-            <!-- Serviços -->
-            <div class="footer-col">
-                <h4>Serviços</h4>
-                <ul class="footer-links">
-                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Manutenção de Motores</a></li>
-                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Carros Elétricos/Híbridos</a></li>
-                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Câmbios Automáticos</a></li>
-                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Reparação de Placas</a></li>
-                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Elétrica Automotiva</a></li>
-                </ul>
-            </div>
-
-            <!-- Seção de Recrutamento -->
-            <div class="footer-col recruitment-section">
-                <div class="footer-links">
-                    <h4><i class="fas fa-users"></i> Junte-se à Nossa Equipe</h4>
-                    <p>Buscamos profissionais apaixonados por excelência automotiva.</p>
-                    <a href="https://autoavanlda.com/Candidatura.html" class="premium-cta"> Candidate-se <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <div class="recruitment-benefits">
-                        <p><i class="fas fa-check-circle"></i> Plano de Carreira</p>
-                        <p><i class="fas fa-check-circle"></i> Formação Contínua</p>
+    
+        <!-- Footer Reestruturado -->
+        <footer>
+            <div class="container">
+                <div class="footer-container">
+                    <!-- Sobre a Autoavan -->
+                    <div class="footer-col">
+                        <h4>Sobre a Autoavan</h4>
+                        <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
+                    </div>
+                    
+                    <!-- Links Rápidos -->
+                    <div class="footer-col">
+                        <h4>Links Rápidos</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                            <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
+                            <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Serviços -->
+                    <div class="footer-col">
+                        <h4>Serviços</h4>
+                        <ul class="footer-links">
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Manutenção de Motores</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Carros Elétricos/Híbridos</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Câmbios Automáticos</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Reparação de Placas</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Elétrica Automotiva</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contato -->
+                    <div class="footer-col">
+                        <h4>Contato</h4>
+                        <ul class="footer-links">
+                            <li><a href="tel:+244926095712"><i class="fas fa-phone-alt"></i> +244 926 095 712</a></li>
+                            <li><a href="mailto:comercial@autoavanlda.com"><i class="fas fa-envelope"></i> comercial@autoavanlda.com</a></li>
+                            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Camama, Luanda</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Seção de Recrutamento - Agora bem integrada -->
+                    <div class="recruitment-section">
+                        <h4><i class="fas fa-users"></i> Junte-se à Nossa Equipe</h4>
+                        <p>Buscamos profissionais apaixonados por excelência automotiva.</p>
+                        <a href="https://autoavanlda.com/Candidatura.html" class="premium-cta">
+                            Candidate-se <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="recruitment-benefits">
+                            <p><i class="fas fa-check-circle"></i> Plano de Carreira</p>
+                            <p><i class="fas fa-check-circle"></i> Formação Contínua</p>
+                            <p><i class="fas fa-check-circle"></i> Ambiente Dinâmico</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rodapé Corporativo -->
+                <div class="footer-bottom">
+                    <hr class="footer-line">
+                    <div class="copyright-text">
+                        <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        
-        <!-- Rodapé Corporativo -->
-        <div class="corporate-footer">
-            <hr class="footer-line"> <!-- Linha separadora -->
-            <div class="footer-bottom-content">
-                <div class="copyright-text">
-                    <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        });
-        
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        </footer>
+    
+        <!-- JavaScript -->
+        <script>
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+            
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                });
+            });
+            
+            // Shop Tabs
+            const shopTabs = document.querySelectorAll('.shop-tab');
+            shopTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    shopTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    // Here you would filter products based on the selected tab
+                    // This would require additional JavaScript or backend integration
+                });
+            });
+            
+            // Form Handling
+            const serviceForm = document.getElementById('serviceForm');
+            const confirmationModal = document.getElementById('confirmationModal');
+            const closeModal = document.getElementById('closeModal');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            
+            // Show "Other Service" field when selected
+            document.getElementById('service').addEventListener('change', function() {
+                const otherServiceGroup = document.getElementById('otherServiceGroup');
+                otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
+            });
+            
+            // Set minimum date (tomorrow)
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            const dd = String(tomorrow.getDate()).padStart(2, '0');
+            const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            const yyyy = tomorrow.getFullYear();
+            
+            document.getElementById('date').min = `${yyyy}-${mm}-${dd}`;
+            
+            // Form submission handling
+            serviceForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                if (this.getAttribute('href') === '#') return;
+                // Here you would normally handle form submission
+                // For demo purposes, we'll just show the confirmation modal
+                confirmationModal.style.display = 'flex';
                 
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mainNav.classList.contains('active')) {
-                        mainNav.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                }
+                // In a real scenario, you would use fetch() or similar to submit the form
+                // fetch(serviceForm.action, {
+                //     method: 'POST',
+                //     body: new FormData(serviceForm)
+                // })
+                // .then(response => {
+                //     if (response.ok) {
+                //         confirmationModal.style.display = 'flex';
+                //         serviceForm.reset();
+                //     }
+                // });
             });
-        });
-        
-        // Shop Tabs
-        const shopTabs = document.querySelectorAll('.shop-tab');
-        shopTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                shopTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                // Here you would filter products based on the selected tab
-                // This would require additional JavaScript or backend integration
-            });
-        });
-        
-        // Form Handling
-        const serviceForm = document.getElementById('serviceForm');
-        const confirmationModal = document.getElementById('confirmationModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
-        
-        // Show "Other Service" field when selected
-        document.getElementById('service').addEventListener('change', function() {
-            const otherServiceGroup = document.getElementById('otherServiceGroup');
-            otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
-        });
-        
-        // Set minimum date (tomorrow)
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        
-        const dd = String(tomorrow.getDate()).padStart(2, '0');
-        const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
-        const yyyy = tomorrow.getFullYear();
-        
-        document.getElementById('date').min = `${yyyy}-${mm}-${dd}`;
-        
-        // Form submission handling
-        serviceForm.addEventListener('submit', function(e) {
-            e.preventDefault();
             
-            // Here you would normally handle form submission
-            // For demo purposes, we'll just show the confirmation modal
-            confirmationModal.style.display = 'flex';
-            
-            // In a real scenario, you would use fetch() or similar to submit the form
-            // fetch(serviceForm.action, {
-            //     method: 'POST',
-            //     body: new FormData(serviceForm)
-            // })
-            // .then(response => {
-            //     if (response.ok) {
-            //         confirmationModal.style.display = 'flex';
-            //         serviceForm.reset();
-            //     }
-            // });
-        });
-        
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        modalCloseBtn.addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
+            // Close modal
+            closeModal.addEventListener('click', () => {
                 confirmationModal.style.display = 'none';
-            }
-        });
-
-        
-            // Botão para abrir modal
-            document.querySelectorAll('[data-open-modal="jobs"]').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.getElementById('jobApplicationModal').style.display = 'flex';
-                });
             });
-
-            // Fechar modal
-            const closeModal = document.querySelector('.job-modal .close-modal');
-            if(closeModal) {
-                closeModal.addEventListener('click', function() {
-                    document.getElementById('jobApplicationModal').style.display = 'none';
-                });
-            }
-
-            // Fechar ao clicar fora
-            window.addEventListener('click', function(e) {
-                if (e.target === document.getElementById('jobApplicationModal')) {
-                    document.getElementById('jobApplicationModal').style.display = 'none';
+            
+            modalCloseBtn.addEventListener('click', () => {
+                confirmationModal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target === confirmationModal) {
+                    confirmationModal.style.display = 'none';
                 }
             });
-    </script>
-
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>
