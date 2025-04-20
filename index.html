@@ -514,82 +514,85 @@
             </div>
             
             <!-- Formulário de Agendamento -->
-            <div class="contact-form-container">
-                <h3>Agende Seu Serviço</h3>
-                <form id="serviceForm" action="https://formsubmit.co//comercial@autoavanlda.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://autoavanlda.com//agradecimento.html">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="Novo Agendamento - Autoavan">
-                    
-                    <div class="form-group">
-                        <label for="name">Nome Completo*</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Telefone*</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="vehicle">Veículo (Marca/Modelo/Ano)*</label>
-                        <input type="text" id="vehicle" name="vehicle" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">Serviço Desejado*</label>
-                        <select id="service" name="service" required>
-                            <option value="">Selecione um serviço</option>
-                            <option value="Manutenção de Motor">Manutenção de Motor</option>
-                            <option value="Carros Elétricos/Híbridos">Carros Elétricos/Híbridos</option>
-                            <option value="Câmbios Automáticos">Câmbios Automáticos</option>
-                            <option value="Reparação de Placas">Reparação de Placas</option>
-                            <option value="Elétrica Automotiva">Elétrica Automotiva</option>
-                            <option value="Codificação de Chaves">Codificação de Chaves</option>
-                            <option value="Outro">Outro (especifique)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group" id="otherServiceGroup" style="display:none;">
-                        <label for="otherService">Especifique o Serviço</label>
-                        <input type="text" id="otherService" name="other_service">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="date">Data Preferencial*</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="time">Horário Preferencial*</label>
-                        <select id="time" name="time" required>
-                            <option value="">Selecione um horário</option>
-                            <option value="08:00 - 10:00">08:00 - 10:00</option>
-                            <option value="10:00 - 12:00">10:00 - 12:00</option>
-                            <option value="13:00 - 15:00">13:00 - 15:00</option>
-                            <option value="15:00 - 17:00">15:00 - 17:00</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Detalhes Adicionais</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="submit-btn">Agendar Serviço</button>
-                    </div>
-                </form>
-            </div>
+<div class="contact-form-container">
+    <h3>Agende Seu Serviço</h3>
+    <form id="serviceForm" action="https://formsubmit.co/comercial@autoavanlda.com" method="POST">
+        <!-- Configurações do FormSubmit -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://autoavanlda.com/agradecimento.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="Novo Agendamento - Autoavan">
+        
+        <div class="form-group">
+            <label for="name">Nome Completo*</label>
+            <input type="text" id="name" name="name" required>
         </div>
-    </div>
-</section>
+        
+        <div class="form-group">
+            <label for="phone">Telefone*</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        
+        <div class="form-group">
+            <label for="vehicle">Veículo (Marca/Modelo/Ano)*</label>
+            <input type="text" id="vehicle" name="vehicle" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="service">Serviço Desejado*</label>
+            <select id="service" name="service" required>
+                <option value="">Selecione um serviço</option>
+                <option value="Manutenção de Motor">Manutenção de Motor</option>
+                <option value="Carros Elétricos/Híbridos">Carros Elétricos/Híbridos</option>
+                <option value="Câmbios Automáticos">Câmbios Automáticos</option>
+                <option value="Reparação de Placas">Reparação de Placas</option>
+                <option value="Elétrica Automotiva">Elétrica Automotiva</option>
+                <option value="Codificação de Chaves">Codificação de Chaves</option>
+                <option value="Outro">Outro (especifique)</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="otherServiceGroup" style="display:none;">
+            <label for="otherService">Especifique o Serviço</label>
+            <input type="text" id="otherService" name="other_service">
+        </div>
+        
+        <div class="form-group">
+            <label for="date">Data Preferencial*</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="time">Horário Preferencial*</label>
+            <select id="time" name="time" required>
+                <option value="">Selecione um horário</option>
+                <option value="08:00 - 10:00">08:00 - 10:00</option>
+                <option value="10:00 - 12:00">10:00 - 12:00</option>
+                <option value="13:00 - 15:00">13:00 - 15:00</option>
+                <option value="15:00 - 17:00">15:00 - 17:00</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Detalhes Adicionais</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="submit-btn">
+                <span id="btnText">Agendar Serviço</span>
+                <span class="spinner" id="btnSpinner" style="display: none;">
+                    <i class="fas fa-circle-notch fa-spin"></i>
+                </span>
+            </button>
+        </div>
+    </form>
+</div>
 
 <!-- Footer -->
 <footer>
