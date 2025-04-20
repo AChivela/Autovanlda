@@ -1510,6 +1510,7 @@ document.head.appendChild(style);
                     <i class="fas fa-bars"></i>
                 </button>
                 
+                
                 <nav id="mainNav">
                     <ul>
                         <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
@@ -2467,7 +2468,14 @@ shopTabs.forEach(tab => {
         });
     });
 });
+    document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
     
+    mobileMenuBtn.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+    });
+});
  </script>
 </body>
 </html>
