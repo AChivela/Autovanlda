@@ -738,7 +738,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    
+    // =====================
+    // FORMULÁRIO DE CONTATO
+    // =====================
+    const serviceForm = document.getElementById('serviceForm');
+    if (serviceForm) {
+        const confirmationModal = document.getElementById('confirmationModal');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const otherServiceGroup = document.getElementById('otherServiceGroup');
+        const serviceSelect = document.getElementById('service');
+
+        // Mostrar/ocultar campo "Outro serviço"
+        if (serviceSelect && otherServiceGroup) {
+            serviceSelect.addEventListener('change', function() {
+                otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
+            });
+        }
 
         // Definir data mínima (amanhã)
         const dateInput = document.getElementById('date');
@@ -758,8 +775,32 @@ serviceForm.addEventListener('submit', async function(e) {
         btnSpinner.style.display = "inline-block";
     }
 
-   
-      
+    try {
+        const response = await fetch(serviceForm.action, {
+            method: 'POST',
+            body: new FormData(serviceForm),
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            if (confirmationModal) {
+                confirmationModal.style.display = 'flex';
+                serviceForm.reset();
+
+                // Redirecionar após 3 segundos
+                setTimeout(() => {
+                    window.location.href = "https://autoavanlda.com/agradecimento.html";
+                }, 3000);
+            }
+        }
+        // Não faz nada se não for ok (sem alert, sem console)
+    } finally {
+        if (submitBtn && btnText && btnSpinner) {
+            submitBtn.disabled = false;
+            btnText.textContent = "Agendar Serviço";
+            btnSpinner.style.display = "none";
+        }
+    }
 });
 
 
@@ -845,4 +886,4 @@ serviceForm.addEventListener('submit', async function(e) {
 });
 </script>
 </body>
-</html>
+</html>7
