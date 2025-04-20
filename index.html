@@ -1561,47 +1561,46 @@ document.head.appendChild(style);
 
     <!-- Header -->
     <header id="header">
-        <div class="container">
-            <div class="header-container">
-                <a href="#" class="logo">
-                    <div class="logo-img">
-                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <image href="Imagens/Logotipo.jpg" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        <span class="logo-main">AUTOAVAN,LDA</span> 
-                        <span class="logo-sub">MECÂNICA ESPECIALIZADA</span>
-                    </div>
-                </a>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                
-                
-                <nav id="mainNav">
-                    <ul>
-                        <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
-                        <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
-                        <li>
-                            <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#shop">Motor</a></li>
-                                <li><a href="#shop">Suspensão</a></li>
-                                <li><a href="#shop">Freios</a></li>
-                                <li><a href="#shop">Elétrica</a></li>
-                                <li><a href="#shop">Placas</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
-                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
-                    </ul>
-                </nav>
-            </div>
+  <div class="container">
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-img">
+          <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <image href="Imagens/Logotipo.jpg" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
+          </svg>
         </div>
-    </header>
+        <div class="logo-text">
+          <span class="logo-main">AUTOAVAN,LDA</span>
+          <span class="logo-sub">MECÂNICA ESPECIALIZADA</span>
+        </div>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav id="mainNav">
+        <ul>
+          <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
+          <li>
+            <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#shop">Motor</a></li>
+              <li><a href="#shop">Suspensão</a></li>
+              <li><a href="#shop">Freios</a></li>
+              <li><a href="#shop">Elétrica</a></li>
+              <li><a href="#shop">Placas</a></li>
+            </ul>
+          </li>
+          <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -2349,12 +2348,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
  </script>
     <!-- JavaScript -->
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
+   <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Menu Mobile
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.getElementById('mainNav');
 
-    mobileMenuBtn.addEventListener('click', function() {
+    mobileMenuBtn.addEventListener('click', function () {
         mainNav.classList.toggle('active');
         document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
     });
@@ -2369,7 +2369,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelectorAll('nav ul li a i.fa-chevron-down').forEach(icon => {
-        icon.parentElement.addEventListener('click', function(e) {
+        icon.parentElement.addEventListener('click', function (e) {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
                 const dropdown = this.nextElementSibling;
@@ -2388,7 +2388,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
@@ -2401,136 +2401,97 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 
-                
-        
-        // =====================
-        // FORMULÁRIO DE CONTATO
-        // =====================
-        const serviceForm = document.getElementById('serviceForm');
-        const confirmationModal = document.getElementById('confirmationModal');
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const btnSpinner = document.getElementById('btnSpinner');
-        
-        // Mostrar campo "Outro Serviço" quando selecionado
-        document.getElementById('service').addEventListener('change', function() {
-            document.getElementById('otherServiceGroup').style.display = 
-                this.value === 'Outro' ? 'block' : 'none';
-        });
-        
-        // Definir data mínima (amanhã)
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        document.getElementById('date').min = tomorrow.toISOString().split('T')[0];
-        
-        // Envio do formulário
-        serviceForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Mostrar estado de carregamento
-            submitBtn.disabled = true;
-            btnText.textContent = "Enviando...";
-            btnSpinner.style.display = "inline-block";
-            
-            try {
-                const response = await fetch(serviceForm.action, {
-                    method: 'POST',
-                    body: new FormData(serviceForm),
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                if (response.ok) {
-                    // Sucesso - mostrar modal e limpar formulário
-                    confirmationModal.style.display = 'flex';
-                    serviceForm.reset();
-                    
-                    // Redirecionar após 3 segundos
-                    setTimeout(() => {
-                        const redirectUrl = document.querySelector('[name="_next"]').value;
-                        if (redirectUrl) window.location.href = redirectUrl;
-                    }, 3000);
-                } else {
-                    throw new Error('Falha no envio');
-                }
-            } catch (error) {
-                console.error("Erro:", error);
-                alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
-            } finally {
-                // Restaurar botão
-                submitBtn.disabled = false;
-                btnText.textContent = "Agendar Serviço";
-                btnSpinner.style.display = "none";
-            }
-        });
-        
-        // Fechar modal
-        document.getElementById('modalCloseBtn').addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        document.getElementById('closeModal').addEventListener('click', () => {
-            confirmationModal.style.display = 'none';
-        });
-        
-        // Fechar modal ao clicar fora
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
-                confirmationModal.style.display = 'none';
-            }
-        });
-        
-        // =====================
-        // SHOP TABS
-        // =====================
-        const shopTabs = document.querySelectorAll('.shop-tab');
-        shopTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                shopTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                // Aqui você pode adicionar a lógica para filtrar os produtos
-                // Filtragem de produtos por categoria
-const shopTabs = document.querySelectorAll('.shop-tab');
-const partCards = document.querySelectorAll('.part-card');
+    // =====================
+    // FORMULÁRIO DE CONTATO
+    // =====================
+    const serviceForm = document.getElementById('serviceForm');
+    const confirmationModal = document.getElementById('confirmationModal');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
 
-shopTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove a classe 'active' de todas as abas
-        shopTabs.forEach(t => t.classList.remove('active'));
-        
-        // Adiciona 'active' apenas na aba clicada
-        tab.classList.add('active');
-        
-        // Obtém a categoria selecionada (texto da aba)
-        const selectedCategory = tab.textContent.trim();
-        
-        // Filtra os produtos
-        partCards.forEach(card => {
-            // Obtém a categoria do produto (texto do elemento .part-category)
-            const cardCategory = card.querySelector('.part-category').textContent.trim();
-            
-            // Mostra ou esconde o card baseado na seleção
-            if (selectedCategory === 'Todas' || cardCategory === selectedCategory) {
-                card.style.display = 'block';
-                
-                // Adiciona animação de fade in
-                card.style.animation = 'fadeIn 0.5s ease-in-out';
+    document.getElementById('service').addEventListener('change', function () {
+        document.getElementById('otherServiceGroup').style.display =
+            this.value === 'Outro' ? 'block' : 'none';
+    });
+
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    document.getElementById('date').min = tomorrow.toISOString().split('T')[0];
+
+    serviceForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        btnText.textContent = "Enviando...";
+        btnSpinner.style.display = "inline-block";
+
+        try {
+            const response = await fetch(serviceForm.action, {
+                method: 'POST',
+                body: new FormData(serviceForm),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                confirmationModal.style.display = 'flex';
+                serviceForm.reset();
+                setTimeout(() => {
+                    const redirectUrl = document.querySelector('[name="_next"]').value;
+                    if (redirectUrl) window.location.href = redirectUrl;
+                }, 3000);
             } else {
-                card.style.display = 'none';
+                throw new Error('Falha no envio');
             }
+        } catch (error) {
+            console.error("Erro:", error);
+            alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
+        } finally {
+            submitBtn.disabled = false;
+            btnText.textContent = "Agendar Serviço";
+            btnSpinner.style.display = "none";
+        }
+    });
+
+    document.getElementById('modalCloseBtn').addEventListener('click', () => {
+        confirmationModal.style.display = 'none';
+    });
+    document.getElementById('closeModal').addEventListener('click', () => {
+        confirmationModal.style.display = 'none';
+    });
+    window.addEventListener('click', (e) => {
+        if (e.target === confirmationModal) {
+            confirmationModal.style.display = 'none';
+        }
+    });
+
+    // =====================
+    // SHOP TABS
+    // =====================
+    const shopTabs = document.querySelectorAll('.shop-tab');
+    const partCards = document.querySelectorAll('.part-card');
+
+    shopTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            shopTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const selectedCategory = tab.textContent.trim();
+
+            partCards.forEach(card => {
+                const cardCategory = card.querySelector('.part-category').textContent.trim();
+                if (selectedCategory === 'Todas' || cardCategory === selectedCategory) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease-in-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     });
 });
-    document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
-    
-    mobileMenuBtn.addEventListener('click', function() {
-        mainNav.classList.toggle('active');
-    });
-});
- </script>
+</script>
+
 </body>
 </html>
