@@ -6,1627 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- Metadados SEO -->
-    <title>Autoavan,Lda - Oficina Mecânica Especializada | Luanda</title>
-    <meta name="description" content="Oficina mecânica especializada em Luanda. Reparação de motores, carros elétricos, câmbios automáticos, programação de placas e elétrica automotiva.">
-    <meta name="keywords" content="oficina mecânica Luanda, reparação automóvel, mecânica especializada, carros elétricos Angola, reparação câmbios automáticos">
-    <meta name="author" content="Autoavan LDA"> 
+    <!-- SEO Avançado -->
+    <title>Autoavan,Lda - Oficina Mecânica Especializada em Luanda | Reparação de Veículos</title>
+    <meta name="description" content="Oficina mecânica especializada em Luanda. Reparação de motores, carros elétricos, câmbios automáticos, programação de placas e elétrica automotiva com garantia.">
+    <meta name="keywords" content="oficina mecânica Luanda, reparação automóvel Angola, mecânica especializada, carros elétricos, reparação câmbios automáticos, programação placas automotivas">
+    <meta name="author" content="Autoavan LDA">
     
-    <!-- Meta Tags de Segurança -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://maps.googleapis.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.google.com https://docs.google.com; connect-src 'self'">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
-    
-    <!-- Ícones e Favicon -->
+    <!-- Schema.org para Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Autoavan, LDA",
+      "image": "https://autoavanlda.com/logo.jpg",
+      "@id": "https://autoavanlda.com",
+      "url": "https://autoavanlda.com",
+      "telephone": "+244926095712",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Comuna de Camama, sentido Calemba 2",
+        "addressLocality": "Luanda",
+        "addressRegion": "Belas",
+        "postalCode": "0000",
+        "addressCountry": "AO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-8.9823796",
+        "longitude": "13.2727466"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=100083699883838",
+        "https://www.instagram.com/autoavan"
+      ]
+    }
+    </script>
+
+    <!-- Favicon e Ícones -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Tema para Mobile -->
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#1a2a3a">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Pré-carregamento -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
     
-    <!-- Pré-conexão para CDNs -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Font Awesome -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS Principal -->
+    <!-- CSS Principal Minificado -->
     <style>
-        /* Variáveis CSS */
-        :root {
-            --primary: #1a2a3a;
-            --secondary: #d32f2f;
-            --accent: #ff9800;
-            --light: #f5f5f5;
-            --dark: #121212;
-            --text: #333333;
-            --text-light: #757575;
-            --transition: all 0.3s ease;
-            --shadow-sm: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-md: 0 10px 20px rgba(0,0,0,0.1);
-            --shadow-lg: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        /* Reset e Estilos Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            background-color: #f9f9f9;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        button {
-            cursor: pointer;
-            border: none;
-            background: none;
-            transition: var(--transition);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-header h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-        }
-        
-        .section-header p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--text-light);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .btn-primary {
-            background-color: var(--secondary);
-            color: white;
-            border: 2px solid var(--secondary);
-        }
-        
-        .btn-primary:hover {
-            background-color: transparent;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background-color: white;
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .btn-whatsapp i {
-            margin-right: 8px;
-        }
-        
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(18, 140, 126, 0.3);
-        }
-        
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-            z-index: 999;
-            transition: var(--transition);
-        }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-        }
-        
-        .whatsapp-btn-text {
-            position: fixed;
-            bottom: 30px;
-            right: 100px;
-            background-color: #25D366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-            z-index: 998;
-            display: flex;
-            align-items: center;
-            transition: var(--transition);
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .whatsapp-btn:hover + .whatsapp-btn-text {
-            opacity: 1;
-            right: 80px;
-        }
-        
-        .whatsapp-btn-text i {
-            margin-right: 8px;
-        }
-        
-        /* Header */
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-        
-        .header-scrolled {
-            padding: 0.5rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-        
-        .logo-img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-main {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: white;
-            line-height: 1;
-        }
-        
-        .logo-sub {
-            font-size: 0.8rem;
-            color: var(--accent);
-            letter-spacing: 1px;
-        }
-        
-        /* Navigation */
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 1.8rem;
-            position: relative;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-        }
-        
-        nav ul li a:hover {
-            color: var(--accent);
-        }
-        
-        nav ul li a i {
-            margin-right: 8px;
-            font-size: 1.1rem;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            width: 220px;
-            border-radius: 5px;
-            box-shadow: var(--shadow-md);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 100;
-        }
-        
-        nav ul li:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            top: 120%;
-        }
-        
-        .dropdown-menu li {
-            margin: 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .dropdown-menu li:last-child {
-            border-bottom: none;
-        }
-        
-        .dropdown-menu li a {
-            color: var(--dark);
-            padding: 12px 15px;
-            font-size: 0.95rem;
-        }
-        
-        .dropdown-menu li a:hover {
-            color: var(--secondary);
-            background: #f9f9f9;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Menu de três pontos 
-        .mobile-actions-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            margin-left: 15px;
-        }
-        
-        .mobile-actions-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            min-width: 200px;
-            border-radius: 5px;
-            box-shadow: var(--shadow-md);
-            z-index: 100;
-            padding: 10px 0;
-        }
-        
-        .mobile-actions-menu.active {
-            display: block;
-        }
-        
-        .mobile-actions-menu a {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            color: var(--dark);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .mobile-actions-menu a:hover {
-            background: #f5f5f5;
-            color: var(--secondary);
-        }
-        
-        .mobile-actions-menu a i {
-            margin-right: 10px;
-            color: var(--secondary);
-        } */
-   
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-        
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        /* Features */
-        .features {
-            padding: 5rem 0;
-            background: white;
-        }
-        
-        .features-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: var(--light);
-            padding: 2.5rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: var(--transition);
-            border-bottom: 4px solid transparent;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-bottom-color: var(--secondary);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        /* About */
-        .about {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e9e9e9 100%);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-img {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .about-img:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(26,42,58,0.1) 0%, rgba(26,42,58,0.8) 100%);
-            z-index: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-list {
-            margin-top: 2rem;
-        }
-        
-        .about-list li {
-            margin-bottom: 1rem;
-            list-style: none;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .about-list li i {
-            color: var(--secondary);
-            margin-right: 10px;
-            margin-top: 3px;
-        }
-
-        /* Missão, Visão e Valores */
-        .mission-vision-values {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .mv-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .mv-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .mv-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .mv-item h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .mv-item ul {
-            margin-top: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        .mv-item ul li {
-            margin-bottom: 0.8rem;
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .mv-item ul li i {
-            color: var(--accent);
-            margin-right: 10px;
-            font-size: 0.9rem;
-        }
-        
-        /* Services */
-        .services {
-            padding: 5rem 0;
-            background: white;
-        }
-        
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            border: 1px solid #eee;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .service-img {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .service-category {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--secondary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .service-content {
-            padding: 1.8rem;
-        }
-        
-        .service-content h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .service-content p {
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-        }
-        
-        .service-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eee;
-        }
-        
-        .service-price {
-            font-weight: 700;
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        
-        .service-link {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .service-link i {
-            margin-left: 5px;
-            transition: var(--transition);
-        }
-        
-        .service-link:hover i {
-            transform: translateX(5px);
-        }
-        
-        /* Parts Shop */
-        .shop {
-            padding: 5rem 0;
-            background: var(--light);
-        }
-        
-        .shop-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        
-        .shop-tabs {
-            display: flex;
-            background: #eee;
-            border-radius: 50px;
-            padding: 5px;
-        }
-        
-        .shop-tab {
-            padding: 8px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .shop-tab.active {
-            background: var(--secondary);
-            color: white;
-        }
-        
-        .parts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .part-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-        
-        .part-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .part-img {
-            height: 200px;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #f9f9f9;
-            position: relative;
-        }
-        
-        .part-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: var(--accent);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 3px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .part-content {
-            padding: 1.5rem;
-        }
-        
-        .part-category {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-        
-        .part-title {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .part-description {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .part-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1rem;
-        }
-        
-        .part-price {
-            font-weight: 700;
-            color: var(--secondary);
-        }
-        
-        .part-old-price {
-            text-decoration: line-through;
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-right: 5px;
-        }
-        
-        .contact-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        .contact-btn i {
-            margin-right: 5px;
-        }
-        
-        .contact-btn:hover {
-            background: var(--secondary);
-        }
-        
-        .whatsapp-btn-small {
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        .whatsapp-btn-small i {
-            margin-right: 5px;
-        }
-        
-        .whatsapp-btn-small:hover {
-            background: #128C7E;
-        }
-        
-        /* Contact */
-        .contact {
-            padding: 5rem 0;
-            background: linear-gradient(rgba(26,42,58,0.9), rgba(26,42,58,0.9)), url('https://images.unsplash.com/photo-1551830820-330a71b99659?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: white;
-        }
-        
-        .contact-details {
-            margin-bottom: 3rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-icon {
-            font-size: 1.3rem;
-            color: var(--accent);
-            margin-right: 15px;
-            margin-top: 3px;
-        }
-        
-        .contact-text h4 {
-            margin-bottom: 5px;
-            color: white;
-        }
-        
-        .contact-text a {
-            color: #ddd;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .contact-text a:hover {
-            color: var(--accent);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-        
-        /* Formulário de Contato */
-        .contact-form-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .contact-form-container h3 {
-            color: white;
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: white;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-        }
-        
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .submit-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            width: 100%;
-            transition: var(--transition);
-        }
-        
-        .submit-btn:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
-        }
-        
-        /* Mapa */
-        .map-area {
-            margin-top: 40px;
-        }
-        
-        .map-area h3 {
-            margin-bottom: 15px;
-            color: white;
-        }
-        
-        .map-area iframe {
-            width: 100%;
-            height: 420px;
-            border: 0;
-            border-radius: 10px;
-        }
-        
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-        
-        .close-modal:hover {
-            color: var(--secondary);
-        }
-        
-        .modal h3 {
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-col h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: white;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-col h4:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary);
-        }
-        
-        .footer-col p {
-            margin-bottom: 1.5rem;
-            color: #bbb;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-            list-style: none;
-        }
-        
-        .footer-links a {
-            color: #bbb;
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-        }
-        
-        .footer-links a i {
-            margin-right: 8px;
-            font-size: 0.8rem;
-            color: var(--accent);
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-            transform: translateX(5px);
-        }
-        
-        .footer-newsletter input {
-            width: 100%;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        
-        .footer-newsletter button {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .footer-newsletter button:hover {
-            background: var(--accent);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .container {
-                width: 95%;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .about-img {
-                order: -1;
-            }
-            
-            .contact-info {
-                text-align: center;
-            }
-            
-            .contact-details {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 2rem;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-
-            .mission-vision-values {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn, .mobile-actions-btn {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: var(--primary);
-                padding: 1rem;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                transform: translateY(-150%);
-                opacity: 0;
-                transition: var(--transition);
-            }
-            
-            nav.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-            
-            nav ul li:last-child {
-                border-bottom: none;
-            }
-            
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                width: 100%;
-                box-shadow: none;
-                background: transparent;
-                display: none;
-            }
-            
-            nav ul li:hover .dropdown-menu {
-                top: 0;
-            }
-            
-            .dropdown-menu li {
-                border-bottom: none;
-                padding: 0;
-            }
-            
-            .dropdown-menu li a {
-                color: #ddd;
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .dropdown-menu li a:hover {
-                color: var(--secondary);
-                background: #f9f9f9;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .shop-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .shop-tabs {
-                width: 100%;
-                overflow-x: auto;
-                padding-bottom: 5px;
-            }
-            
-            .whatsapp-btn-text {
-                display: none;
-            }
-        }
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .container {
-                width: 95%;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .about-img {
-                order: -1;
-            }
-            
-            .contact-info {
-                text-align: center;
-            }
-            
-            .contact-details {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 2rem;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-
-            .mission-vision-values {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: var(--primary);
-                padding: 1rem;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                transform: translateY(-150%);
-                opacity: 0;
-                transition: var(--transition);
-            }
-            
-            nav.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-            
-            nav ul li:last-child {
-                border-bottom: none;
-            }
-            
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                width: 100%;
-                box-shadow: none;
-                background: transparent;
-                display: none;
-            }
-            
-            nav ul li:hover .dropdown-menu {
-                top: 0;
-            }
-            
-            .dropdown-menu li {
-                border-bottom: none;
-                padding: 0;
-            }
-            
-            .dropdown-menu li a {
-                color: #ddd;
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .dropdown-menu li a:hover {
-                color: var(--secondary);
-                background: #f9f9f9;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .shop-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .shop-tabs {
-                width: 100%;
-                overflow-x: auto;
-                padding-bottom: 5px;
-            }
-            
-            .whatsapp-btn-text {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .logo-main {
-                font-size: 1.5rem;
-            }
-            
-            .hero {
-                min-height: 600px;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .parts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .part-card {
-        animation: fadeIn 0.5s ease-in-out;
-    }
-`;
-document.head.appendChild(style);
-
-        /* Menu Mobile */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-}
-
-@media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    nav {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--primary);
-        padding: 1rem;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        transform: translateY(-150%);
-        opacity: 0;
-        transition: all 0.3s ease;
-        z-index: 1000;
-    }
-    
-    nav.active {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    
-    nav ul {
-        flex-direction: column;
-    }
-    
-    nav ul li {
-        margin: 0;
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    nav ul li:last-child {
-        border-bottom: none;
-    }
-    
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        background: transparent;
-        display: none;
-    }
-    
-    .dropdown-menu.active {
-        display: block;
-    }
-    
-    .dropdown-menu li a {
-        color: #ddd;
-        padding-left: 2rem;
-    }
-}
-  
-/* Para analisar /* Menu Mobile */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-}
-
-@media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    #mainNav {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--primary);
-        padding: 1rem;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        transform: translateY(-150%);
-        opacity: 0;
-        transition: all 0.3s ease;
-        z-index: 1000;
-    }
-    
-    #mainNav.active {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    
-    #mainNav ul {
-        flex-direction: column;
-    }
-    
-    #mainNav ul li {
-        margin: 0;
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    #mainNav ul li:last-child {
-        border-bottom: none;
-    }
-    
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        background: rgba(0,0,0,0.1);
-        display: none;
-        margin-top: 10px;
-        padding-left: 20px;
-    }
-    
-    .dropdown-menu.active {
-        display: block;
-    }
-    
-    .dropdown-menu li a {
-        color: #ddd;
-        padding: 0.5rem 0;
-    }
-    
-    .dropdown > a .fa-chevron-down {
-        transition: transform 0.3s ease;
-    }
-    
-    .dropdown.active > a .fa-chevron-down {
-        transform: rotate(180deg);
-    }
-}
-
+    :root{--primary:#1a2a3a;--secondary:#d32f2f;--accent:#ff9800;--light:#f5f5f5;--dark:#121212;--text:#333;--text-light:#757575;--transition:all .3s ease;--shadow-sm:0 4px 6px rgba(0,0,0,.1);--shadow-md:0 10px 20px rgba(0,0,0,.1);--shadow-lg:0 15px 30px rgba(0,0,0,.15)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Roboto,'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:var(--text);line-height:1.7;background-color:#f9f9f9;overflow-x:hidden}h1,h2,h3,h4{font-family:Montserrat,sans-serif;font-weight:700;line-height:1.3}a{text-decoration:none;color:inherit;transition:var(--transition)}img{max-width:100%;height:auto;display:block}ul{list-style:none}button{cursor:pointer;border:none;background:none;transition:var(--transition)}.container{width:90%;max-width:1400px;margin:0 auto}.section-header{text-align:center;margin-bottom:4rem}.section-header h2{font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem;position:relative;display:inline-block}.section-header h2:after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:80px;height:4px;background:var(--secondary)}.section-header p{max-width:700px;margin:0 auto;color:var(--text-light)}.btn{display:inline-block;padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:.95rem;transition:var(--transition);box-shadow:var(--shadow-sm)}.btn-primary{background-color:var(--secondary);color:#fff;border:2px solid var(--secondary)}.btn-primary:hover{background-color:transparent;color:#fff;transform:translateY(-3px);box-shadow:0 8px 25px rgba(211,47,47,.3)}.btn-secondary{background-color:transparent;color:#fff;border:2px solid #fff}.btn-secondary:hover{background-color:#fff;color:var(--primary);transform:translateY(-3px)}.btn-whatsapp{background-color:#25D366;color:#fff;display:flex;align-items:center;justify-content:center}.btn-whatsapp i{margin-right:8px}.btn-whatsapp:hover{background-color:#128C7E;transform:translateY(-3px);box-shadow:0 8px 25px rgba(18,140,126,.3)}.whatsapp-btn{position:fixed;bottom:30px;right:30px;background-color:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 20px rgba(37,211,102,.3);z-index:999;transition:var(--transition)}.whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 6px 25px rgba(37,211,102,.4)}.whatsapp-btn-text{position:fixed;bottom:30px;right:100px;background-color:#25D366;color:#fff;padding:10px 20px;border-radius:50px;font-weight:600;box-shadow:0 4px 20px rgba(37,211,102,.3);z-index:998;display:flex;align-items:center;transition:var(--transition);opacity:0;pointer-events:none}.whatsapp-btn:hover+.whatsapp-btn-text{opacity:1;right:80px}.whatsapp-btn-text i{margin-right:8px}header{background-color:var(--primary);color:#fff;padding:1rem 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:var(--shadow-sm);transition:var(--transition)}.header-scrolled{padding:.5rem 0;box-shadow:0 4px 12px rgba(0,0,0,.15)}.header-container{display:flex;justify-content:space-between;align-items:center;position:relative}.logo{display:flex;align-items:center;text-decoration:none}.logo-img{height:50px;margin-right:10px}.logo-text{display:flex;flex-direction:column}.logo-main{font-size:1.8rem;font-weight:800;color:#fff;line-height:1}.logo-sub{font-size:.8rem;color:var(--accent);letter-spacing:1px}nav ul{display:flex;list-style:none}nav ul li{margin-left:1.8rem;position:relative}nav ul li a{color:#fff;text-decoration:none;font-weight:500;font-size:1.05rem;transition:var(--transition);display:flex;align-items:center}nav ul li a:hover{color:var(--accent)}nav ul li a i{margin-right:8px;font-size:1.1rem}.dropdown-menu{position:absolute;top:100%;left:0;background:#fff;width:220px;border-radius:5px;box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transition:var(--transition);z-index:100}nav ul li:hover .dropdown-menu{opacity:1;visibility:visible;top:120%}.dropdown-menu li{margin:0;border-bottom:1px solid #eee}.dropdown-menu li:last-child{border-bottom:none}.dropdown-menu li a{color:var(--dark);padding:12px 15px;font-size:.95rem}.dropdown-menu li a:hover{color:var(--secondary);background:#f9f9f9}.mobile-menu-btn{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer}.hero{background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');background-size:cover;background-position:center;background-attachment:fixed;height:100vh;min-height:700px;display:flex;align-items:center;text-align:center;color:#fff;padding-top:80px}.hero-content{max-width:800px;margin:0 auto}.hero-content h1{font-size:3.2rem;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:1px}.hero-content p{font-size:1.3rem;margin-bottom:2.5rem;opacity:.9}.hero-btns{display:flex;justify-content:center;gap:20px}.features{padding:5rem 0;background:#fff}.features-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}.feature-card{background:var(--light);padding:2.5rem 2rem;border-radius:8px;text-align:center;transition:var(--transition);border-bottom:4px solid transparent}.feature-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg);border-bottom-color:var(--secondary)}.feature-icon{font-size:3rem;color:var(--secondary);margin-bottom:1.5rem}.feature-card h3{margin-bottom:1rem;color:var(--primary)}.about{padding:5rem 0;background:linear-gradient(135deg,#f5f5f5 0,#e9e9e9 100%)}.about-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}.about-img{position:relative;border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg)}.about-img img{width:100%;height:auto;display:block}.about-img:before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(26,42,58,.1) 0,rgba(26,42,58,.8) 100%);z-index:1}.about-text h3{font-size:1.8rem;margin-bottom:1.5rem;color:var(--primary)}.about-text p{margin-bottom:1.5rem}.about-list{margin-top:2rem}.about-list li{margin-bottom:1rem;list-style:none;display:flex;align-items:flex-start}.about-list li i{color:var(--secondary);margin-right:10px;margin-top:3px}.mission-vision-values{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem}.mv-item{background:#fff;padding:2rem;border-radius:8px;box-shadow:var(--shadow-sm);transition:var(--transition)}.mv-item:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}.mv-icon{font-size:2.5rem;color:var(--secondary);margin-bottom:1rem}.mv-item h4{color:var(--primary);margin-bottom:1rem;font-size:1.3rem}.mv-item ul{margin-top:1rem;padding-left:1.5rem}.mv-item ul li{margin-bottom:.8rem;list-style:none;display:flex;align-items:center}.mv-item ul li i{color:var(--accent);margin-right:10px;font-size:.9rem}.services{padding:5rem 0;background:#fff}.services-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem}.service-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition);border:1px solid #eee}.service-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}.service-img{height:220px;background-size:cover;background-position:center;position:relative}.service-category{position:absolute;top:20px;right:20px;background:var(--secondary);color:#fff;padding:5px 15px;border-radius:50px;font-size:.8rem;font-weight:600}.service-content{padding:1.8rem}.service-content h3{margin-bottom:1rem;color:var(--primary)}.service-content p{margin-bottom:1.5rem;color:var(--text-light)}.service-meta{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid #eee}.service-price{font-weight:700;color:var(--secondary);font-size:1.2rem}.service-link{color:var(--primary);font-weight:600;text-decoration:none;display:flex;align-items:center}.service-link i{margin-left:5px;transition:var(--transition)}.service-link:hover i{transform:translateX(5px)}.shop{padding:5rem 0;background:var(--light)}.shop-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}.shop-tabs{display:flex;background:#eee;border-radius:50px;padding:5px}.shop-tab{padding:8px 20px;border-radius:50px;cursor:pointer;font-weight:600;transition:var(--transition)}.shop-tab.active{background:var(--secondary);color:#fff}.parts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem}.part-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition)}.part-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}.part-img{height:200px;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f9f9f9;position:relative}.part-badge{position:absolute;top:10px;left:10px;background:var(--accent);color:#fff;padding:3px 10px;border-radius:3px;font-size:.8rem;font-weight:600}.part-content{padding:1.5rem}.part-category{color:var(--text-light);font-size:.9rem;margin-bottom:5px}.part-title{font-weight:700;margin-bottom:.5rem;color:var(--primary)}.part-description{color:var(--text-light);font-size:.9rem;margin-bottom:1rem}.part-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1rem}.part-price{font-weight:700;color:var(--secondary)}.part-old-price{text-decoration:line-through;color:var(--text-light);font-size:.9rem;margin-right:5px}.contact-btn{background:var(--primary);color:#fff;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;text-decoration:none;font-size:.9rem}.contact-btn i{margin-right:5px}.contact-btn:hover{background:var(--secondary)}.whatsapp-btn-small{background:#25D366;color:#fff;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;text-decoration:none;font-size:.9rem}.whatsapp-btn-small i{margin-right:5px}.whatsapp-btn-small:hover{background:#128C7E}.contact{padding:5rem 0;background:linear-gradient(rgba(26,42,58,.9),rgba(26,42,58,.9)),url('https://images.unsplash.com/photo-1551830820-330a71b99659?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');background-size:cover;background-position:center;background-attachment:fixed;color:#fff}.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:4rem}.contact-info h3{font-size:1.8rem;margin-bottom:2rem;color:#fff}.contact-details{margin-bottom:3rem}.contact-item{display:flex;align-items:flex-start;margin-bottom:1.5rem}.contact-icon{font-size:1.3rem;color:var(--accent);margin-right:15px;margin-top:3px}.contact-text h4{margin-bottom:5px;color:#fff}.contact-text a{color:#ddd;text-decoration:none;transition:var(--transition)}.contact-text a:hover{color:var(--accent)}.social-links{display:flex;gap:15px}.social-links a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:50%;color:#fff;font-size:1.2rem;transition:var(--transition)}.social-links a:hover{background:var(--accent);transform:translateY(-3px)}.contact-form-container{background:rgba(255,255,255,.1);padding:30px;border-radius:10px;backdrop-filter:blur(5px);max-width:600px;margin:0 auto}.contact-form-container h3{color:#fff;text-align:center;margin-bottom:25px;font-size:1.8rem}.form-group{margin-bottom:20px}.form-group label{display:block;margin-bottom:8px;color:#fff;font-weight:500}.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 15px;border:1px solid rgba(255,255,255,.2);border-radius:5px;background:rgba(255,255,255,.1);color:#fff;font-size:1rem}.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.6)}.form-group textarea{resize:vertical;min-height:100px}.submit-btn{background:var(--secondary);color:#fff;border:none;padding:15px 30px;border-radius:5px;cursor:pointer;font-size:1rem;font-weight:600;width:100%;transition:var(--transition)}.submit-btn:hover{background:var(--accent);transform:translateY(-2px)}.map-area{margin-top:40px}.map-area h3{margin-bottom:15px;color:#fff}.map-area iframe{width:100%;height:420px;border:0;border-radius:10px}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.7);z-index:2000;justify-content:center;align-items:center}.modal-content{background:#fff;padding:2rem;border-radius:8px;max-width:500px;width:90%;box-shadow:0 5px 30px rgba(0,0,0,.3);position:relative}.close-modal{position:absolute;top:15px;right:15px;font-size:1.5rem;cursor:pointer;color:var(--text-light);transition:var(--transition)}.close-modal:hover{color:var(--secondary)}.modal h3{margin-bottom:1.5rem;color:var(--primary)}footer{background:var(--dark);color:#fff;padding:4rem 0 2rem}.footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:3rem;margin-bottom:3rem}.footer-col h4{font-size:1.2rem;margin-bottom:1.5rem;color:#fff;position:relative;padding-bottom:10px}.footer-col h4:after{content:'';position:absolute;bottom:0;left:0;width:50px;height:3px;background:var(--secondary)}.footer-col p{margin-bottom:1.5rem;color:#bbb}.footer-links li{margin-bottom:10px;list-style:none}.footer-links a{color:#bbb;text-decoration:none;transition:var(--transition);display:flex;align-items:center}.footer-links a i{margin-right:8px;font-size:.8rem;color:var(--accent)}.footer-links a:hover{color:var(--accent);transform:translateX(5px)}.footer-newsletter input{width:100%;padding:12px 15px;border:none;border-radius:5px;margin-bottom:10px}.footer-newsletter button{background:var(--secondary);color:#fff;border:none;padding:12px 20px;border-radius:5px;cursor:pointer;width:100%;font-weight:600;transition:var(--transition)}.footer-newsletter button:hover{background:var(--accent)}.footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);color:#999;font-size:.9rem}@media (max-width:1200px){.container{width:95%}}@media (max-width:992px){.about-content,.contact-container{grid-template-columns:1fr;gap:3rem}.about-img{order:-1}.contact-info{text-align:center}.contact-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}.social-links{justify-content:center}.mission-vision-values{grid-template-columns:1fr}}@media (max-width:768px){.mobile-menu-btn,.mobile-actions-btn{display:block}nav{position:fixed;top:80px;left:0;width:100%;background:var(--primary);padding:1rem;box-shadow:0 10px 20px rgba(0,0,0,.1);transform:translateY(-150%);opacity:0;transition:var(--transition)}nav.active{transform:translateY(0);opacity:1}nav ul{flex-direction:column}nav ul li{margin:0;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.1)}nav ul li:last-child{border-bottom:none}.dropdown-menu{position:static;opacity:1;visibility:visible;width:100%;box-shadow:none;background:transparent;display:none}nav ul li:hover .dropdown-menu{top:0}.dropdown-menu li{border-bottom:none;padding:0}.dropdown-menu li a{color:#ddd;padding:.5rem 1rem;font-size:.9rem}.dropdown-menu li a:hover{color:var(--secondary);background:#f9f9f9}.hero-content h1{font-size:2.5rem}.hero-content p{font-size:1.1rem}.hero-btns{flex-direction:column;gap:15px}.btn{width:100%}.section-header h2{font-size:2rem}.shop-header{flex-direction:column;align-items:flex-start;gap:1rem}.shop-tabs{width:100%;overflow-x:auto;padding-bottom:5px}.whatsapp-btn-text{display:none}}@media (max-width:576px){.logo-main{font-size:1.5rem}.hero{min-height:600px}.hero-content h1{font-size:2rem}.parts-grid{grid-template-columns:1fr}}.mobile-menu-btn{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:10px;z-index:1001}@media (max-width:768px){.mobile-menu-btn{display:block}#mainNav{position:fixed;top:80px;left:0;width:100%;background:var(--primary);padding:1rem;box-shadow:0 10px 20px rgba(0,0,0,.1);transform:translateY(-150%);opacity:0;transition:all .3s ease;z-index:1000}#mainNav.active{transform:translateY(0);opacity:1}#mainNav ul{flex-direction:column}#mainNav ul li{margin:0;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.1)}#mainNav ul li:last-child{border-bottom:none}.dropdown-menu{position:static;width:100%;box-shadow:none;background:rgba(0,0,0,.1);display:none;margin-top:10px;padding-left:20px}.dropdown-menu.active{display:block}.dropdown-menu li a{color:#ddd;padding:.5rem 0}.dropdown>a .fa-chevron-down{transition:transform .3s ease}.dropdown.active>a .fa-chevron-down{transform:rotate(180deg)}}@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.part-card{animation:fadeIn .5s ease-in-out}
     </style>
 </head>
 <body>
@@ -1639,48 +84,46 @@ document.head.appendChild(style);
     </span>
 
     <!-- Header -->
- <!-- Header -->
-<header id="header">
-  <div class="container">
-    <div class="header-container">
-      <a href="#" class="logo">
-        <div class="logo-img">
-          <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-            <image href="Imagens/Logotipo.jpg" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
-          </svg>
+    <header id="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <div class="logo-img">
+                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <image href="Imagens/Logotipo.jpg" width="50" height="40" preserveAspectRatio="xMidYMid slice"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">AUTOAVAN,LDA</span>
+                        <span class="logo-sub">MECÂNICA ESPECIALIZADA</span>
+                    </div>
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
+                        <li class="dropdown">
+                            <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#shop">Motor</a></li>
+                                <li><a href="#shop">Suspensão</a></li>
+                                <li><a href="#shop">Freios</a></li>
+                                <li><a href="#shop">Elétrica</a></li>
+                                <li><a href="#shop">Placas</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="logo-text">
-          <span class="logo-main">AUTOAVAN,LDA</span>
-          <span class="logo-sub">MECÂNICA ESPECIALIZADA</span>
-        </div>
-      </a>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <nav id="mainNav">
-        <ul>
-          <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
-          <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
-          <li class="dropdown">
-            <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#shop">Motor</a></li>
-              <li><a href="#shop">Suspensão</a></li>
-              <li><a href="#shop">Freios</a></li>
-              <li><a href="#shop">Elétrica</a></li>
-              <li><a href="#shop">Placas</a></li>
-            </ul>
-          </li>
-          <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
-          <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
-
+    </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1757,691 +200,461 @@ document.head.appendChild(style);
                                 <i class="fas fa-eye"></i>
                             </div>
                             <h4>Visão</h4>
-                            <p>Ser reconhecida como a oficina líder em tecnologia automotiva em Angola, expandindo nossa atuação para outras províncias com padrões internacionais de qualidade.</p>
-                        </div>
-                        
-                        <div class="mv-item">
-                            <div class="mv-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <h4>Valores</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Integridade e honestidade</li>
-                                <li><i class="fas fa-check-circle"></i> Inovação tecnológica</li>
-                                <li><i class="fas fa-check-circle"></i> Atendimento personalizado</li>
-                                <li><i class="fas fa-check-circle"></i> Responsabilidade ambiental</li>
-                                <li><i class="fas fa-check-circle"></i> Excelência operacional</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficina Autoavan em Luanda">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nossos Serviços Especializados</h2>
-                <p>Tecnologia e expertise para todos os tipos de veículos</p>
-            </div>
-            
-            <div class="services-container">
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('Imagens/Manutenção e Reparação de Motores.jpg');">
-                        <span class="service-category">Motor</span>
-                    </div>
-                    <div class="service-content">
-                        <h3>Manutenção e Reparação de Motores</h3>
-                        <p>Serviços completos para motores a combustão, desde manutenção preventiva até reconstrução total.</p>
-                        <div class="service-meta">
-                            <span class="service-price">Sob Consulta</span>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Manutenção%20e%20Reparação%20de%20Motores" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('Imagens/Reparação de Carros Híbridos e Elétricos.png');">
-                        <span class="service-category">Elétricos</span>
-                    </div>
-                    <div class="service-content">
-                        <h3>Reparação de Carros Híbridos e Elétricos</h3>
-                        <p>Tecnologia especializada para diagnóstico e reparo de veículos elétricos e híbridos.</p>
-                        <div class="service-meta">
-                            <span class="service-price">Sob Consulta</span>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20de%20Carros%20Híbridos%20e%20Elétricos" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('Imagens/Reparação de Câmbios Automáticos.jpg');">
-                        <span class="service-category">Câmbios</span>
-                    </div>
-                    <div class="service-content">
-                        <h3>Reparação de Câmbios Automáticos</h3>
-                        <p>Especialistas em reparo de câmbios automáticos e automatizados de todas as marcas.</p>
-                        <div class="service-meta">
-                            <span class="service-price">Sob Consulta</span>
-                            <a href="https://wa.me/+244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20de%20Câmbios%20Automáticos" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('Imagens/Reparação e Programação de Placas.jpg');">
-                        <span class="service-category">Placas</span>
-                    </div>
-                    <div class="service-content">
-                        <h3>Reparação e Programação de Placas</h3>
-                        <p>Serviços especializados em reparo e programação de placas eletrônicas automotivas.</p>
-                        <div class="service-meta">
-                            <span class="service-price">Sob Consulta</span>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20e%20Programação%20de%20Placas" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('Imagens/Elétrica e Eletrônica Automotiva.jpg');">
-                        <span class="service-category">Elétrica</span>
-                    </div>
-                    <div class="service-content">
-                        <h3>Elétrica e Eletrônica Automotiva</h3>
-                        <p>Diagnóstico e reparo de sistemas elétricos e eletrônicos veiculares.</p>
-                        <div class="service-meta">
-                            <span class="service-price">Sob Consulta</span>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Elétrica%20e%20Eletrônica%20Automotiva" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('Imagens/Codificação de Chaves.jpg');">
-                        <span class="service-category">Chaves</span>
-                    </div>
-                    <div class="service-content">
-                        <h3>Codificação de Chaves</h3>
-                        <p>Programação de chaves originais e sobressalentes para todos os modelos.</p>
-                        <div class="service-meta">
-                            <span class="service-price">Sob Consulta</span>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Codificação%20de%20Chaves" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Parts Shop -->
-    <section class="shop" id="shop">
-        <div class="container">
-            <div class="shop-header">
-                <div class="section-header" style="text-align: left; margin: 0;">
-                    <h2>Peças Automotivas</h2>
-                    <p style="margin: 0;">Peças originais e de qualidade para seu veículo</p>
-                </div>
-                
-                <div class="shop-tabs">
-                    <div class="shop-tab active">Todas</div>
-                    <div class="shop-tab">Motor</div>
-                    <div class="shop-tab">Suspensão</div>
-                    <div class="shop-tab">Freios</div>
-                    <div class="shop-tab">Placas</div>
-                </div>
-            </div>
-            
-            <div class="parts-grid">
-                <div class="part-card">
-                    <div class="part-img" style="background-image: url('Imagens/Filtro de Óleo Original.jpg');">
-                        <span class="part-badge">Novo</span>
-                    </div>
-                    <div class="part-content">
-                        <span class="part-category">Motor</span>
-                        <h3 class="part-title">Filtro de Óleo Original</h3>
-                        <p class="part-description">Compatível com diversos modelos de veículos</p>
-                        <div class="part-footer">
-                            <div class="part-price">
-                                <span class="part-old-price">8.500 Kz</span>
-                                7.200 Kz
-                            </div>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Filtro%20de%20Óleo%20Original%20(7.200%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="part-card">
-                    <div class="part-img" style="background-image: url('Imagens/Pastilhas de Freio.jpg');">
-                        <span class="part-badge">Oferta</span>
-                    </div>
-                    <div class="part-content">
-                        <span class="part-category">Freios</span>
-                        <h3 class="part-title">Pastilhas de Freio</h3>
-                        <p class="part-description">Conjunto completo para eixo dianteiro</p>
-                        <div class="part-footer">
-                            <div class="part-price">
-                                <span class="part-old-price">25.000 Kz</span>
-                                21.500 Kz
-                            </div>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20Pastilhas%20de%20Freio%20(21.500%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="part-card">
-                    <div class="part-img" style="background-image: url('Imagens/Bateria Automotiva.webp');">
-                        <span class="part-badge">Mais Vendido</span>
-                    </div>
-                    <div class="part-content">
-                        <span class="part-category">Elétrica</span>
-                        <h3 class="part-title">Bateria Automotiva</h3>
-                        <p class="part-description">60Ah com garantia de 12 meses</p>
-                        <div class="part-footer">
-                            <div class="part-price">
-                                45.000 Kz
-                            </div>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Bateria%20Automotiva%2060Ah%20(45.000%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="part-card">
-                    <div class="part-img" style="background-image: url('Imagens/Placa Eletrônica ECU.png');">
-                        <span class="part-badge">Novo</span>
-                    </div>
-                    <div class="part-content">
-                        <span class="part-category">Placas</span>
-                        <h3 class="part-title">Placa Eletrônica ECU</h3>
-                        <p class="part-description">Compatível com vários modelos</p>
-                        <div class="part-footer">
-                            <div class="part-price">
-                                300.000 Kz
-                            </div>
-                            <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-  <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Entre em Contato</h3>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Endereço</h4>
-                                <p>Comuna de Camama, sentido Calemba 2, próximo à Igreja Renascer. Município de Belas, Luanda</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Telefone</h4>
-                                <a href="tel:+244926095712">+244926095712</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>E-mail</h4>
-                                <a href="mailto:comercial@autoavanlda.com">comercial@autoavanlda.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Horário</h4>
-                                <p>Seg-Sex: 8:00 - 18:00<br>Sábado: 8:00 - 13:00</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=100083699883838n" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/autoavan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==n" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/244926095712" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                    
-                    <div class="map-area">
-                        <h3>Nossa Localização</h3>
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.761210427433!2d13.2727466!3d-8.9823796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a5205f213e0a8b1%3A0x5d3df32a5fa4f145!2sCamama%2C%20Luanda!5e0!3m2!1spt-PT!2sao!4v1712233233141" 
-                            width="100%" 
-                            height="420" 
-                            style="border:0; border-radius: 10px;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div> 
-               
-
-
-                
-                <!-- Formulário de Agendamento -->
-                <div class="contact-form-container">
-                    <h3>Agende Seu Serviço</h3>
-                    <form id="serviceForm" action="https://formsubmit.co/comercial@autoavanlda.com" method="POST">
-                        <!-- Configurações do FormSubmit -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://autoavanlda.com/agradecimento.html">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_subject" value="Novo Agendamento - Autoavan">
-                        
-                        <div class="form-group">
-                            <label for="name">Nome Completo*</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Telefone*</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="vehicle">Veículo (Marca/Modelo/Ano)*</label>
-                            <input type="text" id="vehicle" name="vehicle" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Serviço Desejado*</label>
-                            <select id="service" name="service" required>
-                                <option value="">Selecione um serviço</option>
-                                <option value="Manutenção de Motor">Manutenção de Motor</option>
-                                <option value="Carros Elétricos/Híbridos">Carros Elétricos/Híbridos</option>
-                                <option value="Câmbios Automáticos">Câmbios Automáticos</option>
-                                <option value="Reparação de Placas">Reparação de Placas</option>
-                                <option value="Elétrica Automotiva">Elétrica Automotiva</option>
-                                <option value="Codificação de Chaves">Codificação de Chaves</option>
-                                <option value="Outro">Outro (especifique)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group" id="otherServiceGroup" style="display:none;">
-                            <label for="otherService">Especifique o Serviço</label>
-                            <input type="text" id="otherService" name="other_service">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="date">Data Preferencial*</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="time">Horário Preferencial*</label>
-                            <select id="time" name="time" required>
-                                <option value="">Selecione um horário</option>
-                                <option value="08:00 - 10:00">08:00 - 10:00</option>
-                                <option value="10:00 - 12:00">10:00 - 12:00</option>
-                                <option value="13:00 - 15:00">13:00 - 15:00</option>
-                                <option value="15:00 - 17:00">15:00 - 17:00</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Detalhes Adicionais</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <button type="submit" class="submit-btn">Agendar Serviço</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h4>Sobre a Autoavan</h4>
-                    <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
-                </div>
-                
-                <div class="footer-col">
-    <h4>Links Rápidos</h4>
-    <ul class="footer-links">
-        <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
-        <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
-        <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
-        <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
-        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
-    </ul>
-  
+                            <p>Ser reconhecida como a oficina líder em tecnologia automotiva em Angola, expandindo nossa atuação para outras províncias compadrões internacionais de qualidade.</p>
 </div>
-
-                
-        <!--         <div class="footer-col">
-                    <h4>Serviços</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Manutenção de Motores</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Carros Elétricos/Híbridos</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Câmbios Automáticos</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Reparação de Placas</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Elétrica Automotiva</a></li>
-                    </ul>
-                </div>  -->
-                
-                          <!-- Contato -->
-                          <div class="footer-col">
-                            <h4>Contato</h4>
-                            <ul class="footer-links">
-                                <li><a href="tel:+244926095712"><i class="fas fa-phone-alt"></i> +244 926 095 712</a></li>
-                                <li><a href="mailto:comercial@autoavanlda.com"><i class="fas fa-envelope"></i> comercial@autoavanlda.com</a></li>
-                                <li><a href="#"><i class="fas fa-map-marker-alt"></i> Camama, Luanda</a></li>
-                            </ul>
+                    <div class="mv-item">
+                        <div class="mv-icon">
+                            <i class="fas fa-heart"></i>
                         </div>
+                        <h4>Valores</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Integridade e honestidade</li>
+                            <li><i class="fas fa-check-circle"></i> Inovação tecnológica</li>
+                            <li><i class="fas fa-check-circle"></i> Atendimento personalizado</li>
+                            <li><i class="fas fa-check-circle"></i> Responsabilidade ambiental</li>
+                            <li><i class="fas fa-check-circle"></i> Excelência operacional</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficina Autoavan em Luanda" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
 
-               <!--   <div class="fas fa-users">
+<!-- Services -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nossos Serviços Especializados</h2>
+            <p>Tecnologia e expertise para todos os tipos de veículos</p>
+        </div>
+        
+        <div class="services-container">
+            <!-- Card de Serviço 1 -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Manutenção e Reparação de Motores.jpg');">
+                    <span class="service-category">Motor</span>
+                </div>
+                <div class="service-content">
+                    <h3>Manutenção e Reparação de Motores</h3>
+                    <p>Serviços completos para motores a combustão, desde manutenção preventiva até reconstrução total.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Manutenção%20e%20Reparação%20de%20Motores" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Serviço 2 -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Reparação de Carros Híbridos e Elétricos.png');">
+                    <span class="service-category">Elétricos</span>
+                </div>
+                <div class="service-content">
+                    <h3>Reparação de Carros Híbridos e Elétricos</h3>
+                    <p>Tecnologia especializada para diagnóstico e reparo de veículos elétricos e híbridos.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20de%20Carros%20Híbridos%20e%20Elétricos" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Serviço 3 -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Reparação de Câmbios Automáticos.jpg');">
+                    <span class="service-category">Câmbios</span>
+                </div>
+                <div class="service-content">
+                    <h3>Reparação de Câmbios Automáticos</h3>
+                    <p>Especialistas em reparo de câmbios automáticos e automatizados de todas as marcas.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/+244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20de%20Câmbios%20Automáticos" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Serviço 4 -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Reparação e Programação de Placas.jpg');">
+                    <span class="service-category">Placas</span>
+                </div>
+                <div class="service-content">
+                    <h3>Reparação e Programação de Placas</h3>
+                    <p>Serviços especializados em reparo e programação de placas eletrônicas automotivas.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Reparação%20e%20Programação%20de%20Placas" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Serviço 5 -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Elétrica e Eletrônica Automotiva.jpg');">
+                    <span class="service-category">Elétrica</span>
+                </div>
+                <div class="service-content">
+                    <h3>Elétrica e Eletrônica Automotiva</h3>
+                    <p>Diagnóstico e reparo de sistemas elétricos e eletrônicos veiculares.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Elétrica%20e%20Eletrônica%20Automotiva" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Serviço 6 -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('Imagens/Codificação de Chaves.jpg');">
+                    <span class="service-category">Chaves</span>
+                </div>
+                <div class="service-content">
+                    <h3>Codificação de Chaves</h3>
+                    <p>Programação de chaves originais e sobressalentes para todos os modelos.</p>
+                    <div class="service-meta">
+                        <span class="service-price">Sob Consulta</span>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20agendar%20um%20serviço%20de%20Codificação%20de%20Chaves" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Parts Shop -->
+<section class="shop" id="shop">
+    <div class="container">
+        <div class="shop-header">
+            <div class="section-header" style="text-align: left; margin: 0;">
+                <h2>Peças Automotivas</h2>
+                <p style="margin: 0;">Peças originais e de qualidade para seu veículo</p>
+            </div>
+            
+            <div class="shop-tabs">
+                <div class="shop-tab active">Todas</div>
+                <div class="shop-tab">Motor</div>
+                <div class="shop-tab">Suspensão</div>
+                <div class="shop-tab">Freios</div>
+                <div class="shop-tab">Placas</div>
+            </div>
+        </div>
+        
+        <div class="parts-grid">
+            <!-- Card de Peça 1 -->
+            <div class="part-card">
+                <div class="part-img" style="background-image: url('Imagens/Filtro de Óleo Original.jpg');">
+                    <span class="part-badge">Novo</span>
+                </div>
+                <div class="part-content">
+                    <span class="part-category">Motor</span>
+                    <h3 class="part-title">Filtro de Óleo Original</h3>
+                    <p class="part-description">Compatível com diversos modelos de veículos</p>
+                    <div class="part-footer">
+                        <div class="part-price">
+                            <span class="part-old-price">8.500 Kz</span>
+                            7.200 Kz
+                        </div>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Filtro%20de%20Óleo%20Original%20(7.200%20Kz)" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Peça 2 -->
+            <div class="part-card">
+                <div class="part-img" style="background-image: url('Imagens/Pastilhas de Freio.jpg');">
+                    <span class="part-badge">Oferta</span>
+                </div>
+                <div class="part-content">
+                    <span class="part-category">Freios</span>
+                    <h3 class="part-title">Pastilhas de Freio</h3>
+                    <p class="part-description">Conjunto completo para eixo dianteiro</p>
+                    <div class="part-footer">
+                        <div class="part-price">
+                            <span class="part-old-price">25.000 Kz</span>
+                            21.500 Kz
+                        </div>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20Pastilhas%20de%20Freio%20(21.500%20Kz)" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Peça 3 -->
+            <div class="part-card">
+                <div class="part-img" style="background-image: url('Imagens/Bateria Automotiva.webp');">
+                    <span class="part-badge">Mais Vendido</span>
+                </div>
+                <div class="part-content">
+                    <span class="part-category">Elétrica</span>
+                    <h3 class="part-title">Bateria Automotiva</h3>
+                    <p class="part-description">60Ah com garantia de 12 meses</p>
+                    <div class="part-footer">
+                        <div class="part-price">
+                            45.000 Kz
+                        </div>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Bateria%20Automotiva%2060Ah%20(45.000%20Kz)" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card de Peça 4 -->
+            <div class="part-card">
+                <div class="part-img" style="background-image: url('Imagens/Placa Eletrônica ECU.png');">
+                    <span class="part-badge">Novo</span>
+                </div>
+                <div class="part-content">
+                    <span class="part-category">Placas</span>
+                    <h3 class="part-title">Placa Eletrônica ECU</h3>
+                    <p class="part-description">Compatível com vários modelos</p>
+                    <div class="part-footer">
+                        <div class="part-price">
+                            300.000 Kz
+                        </div>
+                        <a href="https://wa.me/244926095712?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Placa%20Eletrônica%20ECU%20(120.000%20Kz)" class="whatsapp-btn-small" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Entre em Contato</h3>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Endereço</h4>
+                            <p>Comuna de Camama, sentido Calemba 2, próximo à Igreja Renascer. Município de Belas, Luanda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telefone</h4>
+                            <a href="tel:+244926095712">+244 926 095 712</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>E-mail</h4>
+                            <a href="mailto:comercial@autoavanlda.com">comercial@autoavanlda.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Horário</h4>
+                            <p>Seg-Sex: 8:00 - 18:00<br>Sábado: 8:00 - 13:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100083699883838" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/autoavan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/244926095712" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                
+                <div class="map-area">
+                    <h3>Nossa Localização</h3>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15776.761210427433!2d13.2727466!3d-8.9823796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a5205f213e0a8b1%3A0x5d3df32a5fa4f145!2sCamama%2C%20Luanda!5e0!3m2!1spt-PT!2sao!4v1712233233141" 
+                        width="100%" 
+                        height="420" 
+                        style="border:0; border-radius: 10px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização da Autoavan no Google Maps">
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- Formulário de Agendamento -->
+            <div class="contact-form-container">
+                <h3>Agende Seu Serviço</h3>
+                <form id="serviceForm" action="https://formsubmit.co/comercial@autoavanlda.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://autoavanlda.com/agradecimento.html">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="Novo Agendamento - Autoavan">
+                    
+                    <div class="form-group">
+                        <label for="name">Nome Completo*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefone*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vehicle">Veículo (Marca/Modelo/Ano)*</label>
+                        <input type="text" id="vehicle" name="vehicle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Serviço Desejado*</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="Manutenção de Motor">Manutenção de Motor</option>
+                            <option value="Carros Elétricos/Híbridos">Carros Elétricos/Híbridos</option>
+                            <option value="Câmbios Automáticos">Câmbios Automáticos</option>
+                            <option value="Reparação de Placas">Reparação de Placas</option>
+                            <option value="Elétrica Automotiva">Elétrica Automotiva</option>
+                            <option value="Codificação de Chaves">Codificação de Chaves</option>
+                            <option value="Outro">Outro (especifique)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="otherServiceGroup" style="display:none;">
+                        <label for="otherService">Especifique o Serviço</label>
+                        <input type="text" id="otherService" name="other_service">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Data Preferencial*</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Horário Preferencial*</label>
+                        <select id="time" name="time" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="08:00 - 10:00">08:00 - 10:00</option>
+                            <option value="10:00 - 12:00">10:00 - 12:00</option>
+                            <option value="13:00 - 15:00">13:00 - 15:00</option>
+                            <option value="15:00 - 17:00">15:00 - 17:00</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Detalhes Adicionais</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Agendar Serviço</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Sobre a Autoavan</h4>
+                <p>AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA é referência em Luanda em serviços mecânicos e venda de peças automotivas.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                    <li><a href="#shop"><i class="fas fa-chevron-right"></i> Peças Automotivas</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Nós</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+244926095712"><i class="fas fa-phone-alt"></i> +244 926 095 712</a></li>
+                    <li><a href="mailto:comercial@autoavanlda.com"><i class="fas fa-envelope"></i> comercial@autoavanlda.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Camama, Luanda</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <div class="icon-title">
+                    <i class="fas fa-users"></i>
                     <h4>Junte-se à Nossa Equipe</h4>
-                       <p>Buscamos profissionais apaixonados por excelência automotiva.</p>
-                    <ul class="footer-links">
-                        <li><a href="https://autoavanlda.com/Candidatura.html"><i class="fas fa-chevron-right"></i>  Candidate-se</a></li>
-                        
-                    </ul>
-                </div> -->
-
-                <!-- Secção de convite para candidatura -->
-<div class="footer-col">
-    <!-- Ícone representando a equipa -->
-    <div class="icon-title">
-        <i class="fas fa-users"></i> <!-- Ícone de grupo de pessoas -->
-        <h4>Junte-se à Nossa Equipe</h4>
+                </div>
+                <p>Buscamos profissionais apaixonados por excelência automotiva.</p>
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://autoavanlda.com/Candidatura.html">
+                            <i class="fas fa-chevron-right"></i> Candidate-se
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
+        </div>
     </div>
+</footer>
 
-    <!-- Descrição da vaga -->
-    <p>Buscamos profissionais apaixonados por excelência automotiva.</p>
-
-    <!-- Link para a página de candidatura -->
-    <ul class="footer-links">
-        <li>
-            <a href="https://autoavanlda.com/Candidatura.html">
-                <i class="fas fa-chevron-right"></i> Candidate-se
-            </a>
-        </li>
-    </ul>
+<!-- Modal de Confirmação -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h3>✅ Agendamento Confirmado!</h3>
+        <p>Obrigado por agendar conosco. Entraremos em contato em breve para confirmar os detalhes.</p>
+        <button class="submit-btn" id="modalCloseBtn">Fechar</button>
+    </div>
 </div>
 
-                        
-                        <!-- Seção de Recrutamento - Agora bem integrada -->
-                        <!-- <div class="footer-links">
-                            <h4><i class="fas fa-users"></i> Junte-se à Nossa Equipe</h4>
-                            <p>Buscamos profissionais apaixonados por excelência automotiva.</p>
-                            <a href="https://autoavanlda.com/Candidatura.html" class="premium-cta"> 
-                                Candidate-se <i class="fas fa-chevron-right"></i>
-                            </a>
-                            </div>-->
-                    </div>
-                    
-                </div>
-            </div>
-
-
-
+<!-- JavaScript -->
 <script>
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const mainNav = document.getElementById('mainNav');
-
-  mobileMenuBtn.addEventListener('click', () => {
-    mainNav.classList.toggle('active'); // Toggle the navigation menu visibility
-  });
-    
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos do modal
-    const modal = document.getElementById('jobApplicationModal');
-    const btn = document.getElementById('jobApplicationBtn');
-    const closeBtn = document.querySelector('.close-modal');
-    const form = document.getElementById('jobForm');
-    
-    // Abrir modal
-    btn.addEventListener('click', function() {
-        modal.style.display = 'flex';
-    });
-    
-    // Fechar modal
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // Fechar ao clicar fora
-    window.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-    
-    // Envio do formulário
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validação
-        let isValid = true;
-        document.querySelectorAll('#jobForm [required]').forEach(field => {
-            if (!field.value.trim()) {
-                field.style.borderColor = 'red';
-                isValid = false;
-            } else {
-                field.style.borderColor = '#ddd';
-            }
-        });
-        
-        if (isValid) {
-            // Simulação de envio (substitua por código real)
-            const formData = new FormData(form);
-            console.log('Dados enviados:', Object.fromEntries(formData));
-            
-            alert('Candidatura enviada com sucesso!');
-            form.reset();
-            modal.style.display = 'none';
-            
-            // Exemplo com fetch:
-            // fetch('seu-script.php', { method: 'POST', body: formData })
-            //   .then(response => alert('Sucesso!'))
-            //   .catch(error => alert('Erro ao enviar'));
-        } else {
-            alert('Por favor, preencha todos os campos obrigatórios.');
-        }
-    });
-});
-</script>
-
-<!-- Adicione este JavaScript -->
-<script>
-  const menuBtn = document.getElementById('mobileMenuBtn');
-  const dropdownMenu = document.getElementById('mobileDropdownMenu');
-
-  menuBtn.addEventListener('click', () => {
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-  });
-
-        
-        // Validação básica
-        const requiredFields = jobForm.querySelectorAll('[required]');
-        let isValid = true;
-        
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                field.style.borderColor = 'red';
-                isValid = false;
-            } else {
-                field.style.borderColor = '#ddd';
-            }
-        });
-        
-        if (!isValid) {
-            alert('Por favor, preencha todos os campos obrigatórios');
-            return;
-        }
-        
-        // Simulação de envio (substitua por código real de envio)
-        const formData = new FormData(jobForm);
-        
-        // Aqui você pode adicionar AJAX para enviar para um servidor
-        console.log('Dados do formulário:', Object.fromEntries(formData));
-        
-        // Feedback para o usuário
-        alert('Candidatura enviada com sucesso! Entraremos em contato em breve.');
-        jobForm.reset();
-        
-        // Exemplo com Fetch API (descomente e adapte)
-        /*
-        fetch('seu-endpoint.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert('Candidatura enviada com sucesso!');
-            jobForm.reset();
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-            alert('Ocorreu um erro ao enviar sua candidatura.');
-        });
-        */
-    });
-});
-</script>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 AUTO AVAN - PRESTAÇÃO DE SERVIÇOS E COMÉRCIO GERAL, LDA. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modal de Confirmação -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h3>✅ Agendamento Confirmado!</h3>
-            <p>Obrigado por agendar conosco. Entraremos em contato em breve para confirmar os detalhes.</p>
-            <button class="submit-btn" id="modalCloseBtn">Fechar</button>
-        </div>
-    </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona todos os itens do dropdown de peças
-    const pecasItems = document.querySelectorAll('.dropdown-menu li a');
-    
-    // Seleciona todas as peças na grid
-    const partCards = document.querySelectorAll('.part-card');
-    
-    // Adiciona evento de clique para cada item do menu de peças
-    pecasItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove a classe 'active' de todas as abas
-            document.querySelectorAll('.shop-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Adiciona 'active' na aba correspondente
-            const categoria = this.textContent.trim();
-            const tabCorrespondente = Array.from(document.querySelectorAll('.shop-tab')).find(tab => 
-                tab.textContent.trim() === categoria || 
-                (categoria === 'Motor' && tab.textContent.trim() === 'Todas')
-            );
-            
-            if (tabCorrespondente) {
-                tabCorrespondente.classList.add('active');
-            }
-            
-            // Filtra as peças
-            partCards.forEach(card => {
-                const cardCategory = card.querySelector('.part-category').textContent.trim();
-                
-                if (categoria === 'Todas' || cardCategory === categoria) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Fecha o dropdown após seleção (opcional)
-            this.closest('.dropdown-menu').style.opacity = '0';
-            this.closest('.dropdown-menu').style.visibility = 'hidden';
-        });
-    });
-    
-    // Adiciona também a funcionalidade para as abas
-    const shopTabs = document.querySelectorAll('.shop-tab');
-    shopTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const categoria = this.textContent.trim();
-            
-            shopTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            
-            partCards.forEach(card => {
-                const cardCategory = card.querySelector('.part-category').textContent.trim();
-                
-                if (categoria === 'Todas' || cardCategory === categoria) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-});
- </script>
-    <!-- JavaScript -->
-    <script>
-   document.addEventListener('DOMContentLoaded', function() {
     // =====================
     // MENU MOBILE
     // =====================
@@ -2647,7 +860,36 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // =====================
+    // ANIMAÇÕES
+    // =====================
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.feature-card, .service-card, .part-card, .mv-item');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Configurar elementos para animação
+    document.querySelectorAll('.feature-card, .service-card, .part-card, .mv-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // Disparar animação no carregamento e no scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
 });
 </script>
-</body>
-</html>
+</body> 
+</html> 
+
