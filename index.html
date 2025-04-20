@@ -656,108 +656,22 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // =====================
-    // MENU MOBILE
-    // =====================
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
-    const header = document.getElementById('header');
-
-    // Toggle menu mobile
-    mobileMenuBtn.addEventListener('click', function() {
-        mainNav.classList.toggle('active');
-        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-        
-        // Alternar ícone entre hamburguer e X
-        const icon = this.querySelector('i');
-        if (icon) {
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        }
-    });
-
-    // Fechar menu ao clicar em um link
-    document.querySelectorAll('#mainNav a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                mainNav.classList.remove('active');
-                document.body.style.overflow = '';
-                
-                // Resetar ícone para hamburguer
-                const icon = mobileMenuBtn.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
-            }
-        });
-    });
-
-    // Dropdowns no mobile
-    document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
-        dropdownLink.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                const dropdownMenu = this.nextElementSibling;
-                
-                dropdown.classList.toggle('active');
-                dropdownMenu.classList.toggle('active');
-                
-                // Rotacionar ícone
-                const icon = this.querySelector('.fa-chevron-down');
-                if (icon) {
-                    icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : '';
-                }
-            }
-        });
-    });
-
-    // Efeito de scroll no header
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    });
-
-    // Scroll suave para âncoras
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // =====================
-    // FORMULÁRIO DE CONTATO
+    // FORMULÁRIO DE AGENDAMENTO
     // =====================
     const serviceForm = document.getElementById('serviceForm');
+    
     if (serviceForm) {
-        const confirmationModal = document.getElementById('confirmationModal');
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const btnSpinner = document.getElementById('btnSpinner');
-        const otherServiceGroup = document.getElementById('otherServiceGroup');
+        // Mostrar campo "Outro serviço" quando selecionado
         const serviceSelect = document.getElementById('service');
-
-        // Mostrar/ocultar campo "Outro serviço"
+        const otherServiceGroup = document.getElementById('otherServiceGroup');
+        
         if (serviceSelect && otherServiceGroup) {
             serviceSelect.addEventListener('change', function() {
                 otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
             });
         }
 
-        // Definir data mínima (amanhã)
+        // Configurar data mínima (amanhã)
         const dateInput = document.getElementById('date');
         if (dateInput) {
             const tomorrow = new Date();
@@ -765,129 +679,110 @@ document.addEventListener('DOMContentLoaded', function() {
             dateInput.min = tomorrow.toISOString().split('T')[0];
         }
 
-// FORMULÁRIO DE AGENDAMENTO - NOVO CÓDIGO COMENTADO
-    const serviceForm = document.getElementById('serviceForm');
-    if (serviceForm) {
+        // Evento de envio do formulário
         serviceForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const submitBtn = serviceForm.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span id="btnSpinner" style="display:inline-block;margin-right:8px;"><i class="fas fa-spinner fa-spin"></i></span> Enviando...';
-            }
+            // Elementos do botão
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnContent = submitBtn.innerHTML;
+            
+            // Estado de carregamento
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
 
             try {
-                const response = await fetch(serviceForm.action, {
+                // Enviar dados
+                const response = await fetch(this.action, {
                     method: 'POST',
-                    body: new FormData(serviceForm),
-                    headers: { 'Accept': 'application/json' }
+                    body: new FormData(this),
+                    headers: { 
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
                 });
 
                 if (response.ok) {
-                    serviceForm.reset();
+                    // Limpar formulário (método reforçado)
+                    this.reset();
                     
+                    // Limpeza manual adicional para garantir
+                    const fields = this.querySelectorAll('input, select, textarea');
+                    fields.forEach(field => {
+                        if (field.type !== 'submit' && field.type !== 'button') {
+                            field.value = '';
+                            if (field.type === 'select-one') {
+                                field.selectedIndex = 0;
+                            }
+                        }
+                    });
+
+                    // Exibir confirmação
                     const confirmationModal = document.getElementById('confirmationModal');
                     if (confirmationModal) {
                         confirmationModal.style.display = 'flex';
                         
+                        // Redirecionar após 3 segundos
                         setTimeout(() => {
-                            window.location.href = "https://autoavanlda.com/agradecimento.html";
+                            window.location.href = this.dataset.successUrl || "https://autoavanlda.com/agradecimento.html";
                         }, 3000);
                     }
                 } else {
-                    console.error('Erro no envio do formulário');
+                    throw new Error(`Erro HTTP: ${response.status}`);
                 }
             } catch (error) {
-                console.error('Erro:', error);
-            } finally {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = "Agendar Serviço";
-                }
-            }
-        });
-    }
-
-        // Fechar modal
-        const closeModalElements = [
-            document.getElementById('modalCloseBtn'),
-            document.getElementById('closeModal')
-        ];
-        
-        closeModalElements.forEach(el => {
-            if (el) {
-                el.addEventListener('click', () => {
-                    if (confirmationModal) confirmationModal.style.display = 'none';
-                });
-            }
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
-                confirmationModal.style.display = 'none';
-            }
-        });
-    }
-
-    // =====================
-    // SHOP TABS
-    // =====================
-    const shopTabs = document.querySelectorAll('.shop-tab');
-    const partCards = document.querySelectorAll('.part-card');
-
-    if (shopTabs.length && partCards.length) {
-        shopTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remover classe active de todas as tabs
-                shopTabs.forEach(t => t.classList.remove('active'));
+                console.error('Falha no envio:', error);
                 
-                // Adicionar classe active na tab clicada
-                tab.classList.add('active');
-
-                const selectedCategory = tab.textContent.trim();
-
-                // Filtrar cards
-                partCards.forEach(card => {
-                    const cardCategory = card.querySelector('.part-category')?.textContent.trim();
-                    if (selectedCategory === 'Todas' || cardCategory === selectedCategory) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeIn 0.5s ease-in-out';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
+                // Feedback visual de erro
+                const errorElement = document.createElement('div');
+                errorElement.className = 'form-error-message';
+                errorElement.innerHTML = '<i class="fas fa-exclamation-circle"></i> Erro ao enviar. Tente novamente ou contate-nos pelo WhatsApp.';
+                errorElement.style.color = '#ff6b6b';
+                errorElement.style.marginTop = '15px';
+                errorElement.style.textAlign = 'center';
+                
+                const formActions = this.querySelector('.form-group:last-child');
+                if (formActions) {
+                    formActions.appendChild(errorElement);
+                    
+                    // Remover mensagem após 5 segundos
+                    setTimeout(() => {
+                        errorElement.remove();
+                    }, 5000);
+                }
+            } finally {
+                // Restaurar botão
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+            }
         });
     }
 
     // =====================
-    // ANIMAÇÕES
+    // FECHAR MODAL
     // =====================
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature-card, .service-card, .part-card, .mv-item');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
+    const closeModal = document.getElementById('closeModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const confirmationModal = document.getElementById('confirmationModal');
+
+    if (closeModal && confirmationModal) {
+        closeModal.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
         });
-    };
+    }
 
-    // Configurar elementos para animação
-    document.querySelectorAll('.feature-card, .service-card, .part-card, .mv-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    if (modalCloseBtn && confirmationModal) {
+        modalCloseBtn.addEventListener('click', () => {
+            confirmationModal.style.display = 'none';
+        });
+    }
+
+    // Fechar modal ao clicar fora
+    window.addEventListener('click', (e) => {
+        if (e.target === confirmationModal) {
+            confirmationModal.style.display = 'none';
+        }
     });
-
-    // Disparar animação no carregamento e no scroll
-    window.addEventListener('load', animateOnScroll);
-    window.addEventListener('scroll', animateOnScroll);
 });
 </script>
 </body>
