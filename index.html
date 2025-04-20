@@ -738,15 +738,99 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+ <script>
+document.addEventListener('DOMContentLoaded', function() {
     // =====================
-    // FORMULÁRIO DE CONTATO
+    // MENU MOBILE
+    // =====================
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    const header = document.getElementById('header');
+
+    // Toggle menu mobile
+    mobileMenuBtn.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        
+        // Alternar ícone entre hamburguer e X
+        const icon = this.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        }
+    });
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('#mainNav a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                // Resetar ícone para hamburguer
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+        });
+    });
+
+    // Dropdowns no mobile
+    document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
+        dropdownLink.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const dropdown = this.parentElement;
+                const dropdownMenu = this.nextElementSibling;
+                
+                dropdown.classList.toggle('active');
+                dropdownMenu.classList.toggle('active');
+                
+                // Rotacionar ícone
+                const icon = this.querySelector('.fa-chevron-down');
+                if (icon) {
+                    icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : '';
+                }
+            }
+        });
+    });
+
+    // Efeito de scroll no header
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+    });
+
+    // Scroll suave para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // =====================
+    // FORMULÁRIO DE CONTATO - VERSÃO CORRIGIDA
     // =====================
     const serviceForm = document.getElementById('serviceForm');
     if (serviceForm) {
-        const confirmationModal = document.getElementById('confirmationModal');
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const btnSpinner = document.getElementById('btnSpinner');
+        const submitBtn = document.querySelector('#serviceForm .submit-btn');
+        const btnText = document.querySelector('#serviceForm .submit-btn span');
+        const btnSpinner = document.querySelector('#serviceForm .submit-btn .spinner');
         const otherServiceGroup = document.getElementById('otherServiceGroup');
         const serviceSelect = document.getElementById('service');
 
@@ -769,6 +853,7 @@ document.addEventListener('DOMContentLoaded', function() {
         serviceForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            // Mostrar loading no botão
             if (submitBtn && btnText && btnSpinner) {
                 submitBtn.disabled = true;
                 btnText.textContent = "Enviando...";
@@ -783,49 +868,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 if (response.ok) {
-                    if (confirmationModal) {
-                        confirmationModal.style.display = 'flex';
-                        serviceForm.reset();
-                        
-                        const redirectUrl = document.querySelector('[name="_next"]')?.value;
-                        if (redirectUrl) {
-                            setTimeout(() => {
-                                window.location.href = redirectUrl;
-                            }, 3000);
-                        }
-                    }
+                    // Redirecionar para página de agradecimento
+                    window.location.href = "agradecimento.html";
                 } else {
                     throw new Error('Falha no envio');
                 }
             } catch (error) {
                 console.error("Erro:", error);
+                // Mostrar mensagem de erro personalizada
                 alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
             } finally {
+                // Restaurar botão
                 if (submitBtn && btnText && btnSpinner) {
                     submitBtn.disabled = false;
                     btnText.textContent = "Agendar Serviço";
                     btnSpinner.style.display = "none";
                 }
-            }
-        });
-
-        // Fechar modal
-        const closeModalElements = [
-            document.getElementById('modalCloseBtn'),
-            document.getElementById('closeModal')
-        ];
-        
-        closeModalElements.forEach(el => {
-            if (el) {
-                el.addEventListener('click', () => {
-                    if (confirmationModal) confirmationModal.style.display = 'none';
-                });
-            }
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
-                confirmationModal.style.display = 'none';
             }
         });
     }
