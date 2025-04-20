@@ -654,89 +654,62 @@
 
 <!-- JavaScript -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // =====================
-    // MENU MOBILE
-    // =====================
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
-    const header = document.getElementById('header');
+// =====================
+// MENU MOBILE
+// =====================
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mainNav = document.getElementById('mainNav');
+const header = document.getElementById('header');
 
-    // Toggle menu mobile
-    mobileMenuBtn.addEventListener('click', function() {
-        mainNav.classList.toggle('active');
-        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-        
-        // Alternar ícone entre hamburguer e X
-        const icon = this.querySelector('i');
-        if (icon) {
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        }
-    });
+// Toggle menu mobile
+mobileMenuBtn.addEventListener('click', function() {
+    mainNav.classList.toggle('active');
+    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+    
+    // Alternar ícone entre hamburguer e X
+    const icon = this.querySelector('i');
+    if (icon) {
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    }
+});
 
-    // Fechar menu ao clicar em um link
-    document.querySelectorAll('#mainNav a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                mainNav.classList.remove('active');
-                document.body.style.overflow = '';
-                
-                // Resetar ícone para hamburguer
-                const icon = mobileMenuBtn.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
-            }
-        });
-    });
-
-    // Dropdowns no mobile
-    document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
-        dropdownLink.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                const dropdownMenu = this.nextElementSibling;
-                
-                dropdown.classList.toggle('active');
-                dropdownMenu.classList.toggle('active');
-                
-                // Rotacionar ícone
-                const icon = this.querySelector('.fa-chevron-down');
-                if (icon) {
-                    icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : '';
-                }
-            }
-        });
-    });
-
-    // Efeito de scroll no header
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    });
-
-    // Scroll suave para âncoras
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+// Fechar menu ao clicar em um link
+document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            mainNav.classList.remove('active');
+            document.body.style.overflow = '';
             
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+            // Resetar ícone para hamburguer
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
             }
-        });
+        }
     });
+});
+
+// Dropdowns no mobile
+document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
+    dropdownLink.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = this.parentElement;
+            const dropdownMenu = this.nextElementSibling;
+            
+            dropdown.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+            
+            // Rotacionar ícone
+            const icon = this.querySelector('.fa-chevron-down');
+            if (icon) {
+                icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : '';
+            }
+        }
+    });
+});
 
     / =====================
 // FORMULÁRIO DE CONTATO
