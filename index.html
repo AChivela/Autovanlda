@@ -654,138 +654,160 @@
 
 <!-- JavaScript -->
 <script>
-// =====================
-// MENU MOBILE
-// =====================
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mainNav = document.getElementById('mainNav');
-const header = document.getElementById('header');
+document.addEventListener('DOMContentLoaded', function() {
+    // =====================
+    // MENU MOBILE
+    // =====================
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    const header = document.getElementById('header');
 
-// Toggle menu mobile
-mobileMenuBtn.addEventListener('click', function() {
-    mainNav.classList.toggle('active');
-    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-    
-    // Alternar ícone entre hamburguer e X
-    const icon = this.querySelector('i');
-    if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    }
-});
-
-// Fechar menu ao clicar em um link
-document.querySelectorAll('#mainNav a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            mainNav.classList.remove('active');
-            document.body.style.overflow = '';
-            
-            // Resetar ícone para hamburguer
-            const icon = mobileMenuBtn.querySelector('i');
-            if (icon) {
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            }
+    // Toggle menu mobile
+    mobileMenuBtn.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        
+        // Alternar ícone entre hamburguer e X
+        const icon = this.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         }
     });
-});
 
-// Dropdowns no mobile
-document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
-    dropdownLink.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdown = this.parentElement;
-            const dropdownMenu = this.nextElementSibling;
-            
-            dropdown.classList.toggle('active');
-            dropdownMenu.classList.toggle('active');
-            
-            // Rotacionar ícone
-            const icon = this.querySelector('.fa-chevron-down');
-            if (icon) {
-                icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : '';
-            }
-        }
-    });
-});
-
-    / =====================
-// FORMULÁRIO DE CONTATO
-// =====================
-const serviceForm = document.getElementById('serviceForm');
-if (serviceForm) {
-    const confirmationModal = document.getElementById('confirmationModal');
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('btnText');
-    const btnSpinner = document.getElementById('btnSpinner');
-    const otherServiceGroup = document.getElementById('otherServiceGroup');
-    const serviceSelect = document.getElementById('service');
-
-    // Mostrar/ocultar campo "Outro serviço"
-    if (serviceSelect && otherServiceGroup) {
-        serviceSelect.addEventListener('change', function() {
-            otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
-            if (this.value === 'Outro') {
-                document.getElementById('otherService').setAttribute('required', '');
-            } else {
-                document.getElementById('otherService').removeAttribute('required');
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('#mainNav a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                // Resetar ícone para hamburguer
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
             }
         });
-    }
+    });
 
-    // Definir data mínima (amanhã)
-    const dateInput = document.getElementById('date');
-    if (dateInput) {
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        dateInput.min = tomorrow.toISOString().split('T')[0];
-    }
+    // Dropdowns no mobile
+    document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
+        dropdownLink.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const dropdown = this.parentElement;
+                const dropdownMenu = this.nextElementSibling;
+                
+                dropdown.classList.toggle('active');
+                dropdownMenu.classList.toggle('active');
+                
+                // Rotacionar ícone
+                const icon = this.querySelector('.fa-chevron-down');
+                if (icon) {
+                    icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : '';
+                }
+            }
+        });
+    });
 
-    // Envio do formulário
-    serviceForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        if (submitBtn && btnText && btnSpinner) {
-            submitBtn.disabled = true;
-            btnText.textContent = "Enviando...";
-            btnSpinner.style.display = "inline-block";
+    // Efeito de scroll no header
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+    });
+
+    // Scroll suave para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // =====================
+    // FORMULÁRIO DE CONTATO
+    // =====================
+    const serviceForm = document.getElementById('serviceForm');
+    if (serviceForm) {
+        const confirmationModal = document.getElementById('confirmationModal');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const otherServiceGroup = document.getElementById('otherServiceGroup');
+        const serviceSelect = document.getElementById('service');
+
+        // Mostrar/ocultar campo "Outro serviço"
+        if (serviceSelect && otherServiceGroup) {
+            serviceSelect.addEventListener('change', function() {
+                otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
+            });
         }
 
-        try {
-            const response = await fetch(serviceForm.action, {
-                method: 'POST',
-                body: new FormData(serviceForm),
-                headers: { 'Accept': 'application/json' }
-            });
+        // Definir data mínima (amanhã)
+        const dateInput = document.getElementById('date');
+        if (dateInput) {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+        }
 
-            if (response.ok) {
-                // Mostrar modal de confirmação
-                if (confirmationModal) {
-                    confirmationModal.style.display = 'flex';
-                    serviceForm.reset();
-                    
-                    // Redirecionar após 3 segundos
+        // Envio do formulário
+        serviceForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (submitBtn && btnText && btnSpinner) {
+                submitBtn.disabled = true;
+                btnText.textContent = "Enviando...";
+                btnSpinner.style.display = "inline-block";
+            }
+
+            try {
+                const response = await fetch(serviceForm.action, {
+                    method: 'POST',
+                    body: new FormData(serviceForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    if (confirmationModal) {
+                        confirmationModal.style.display = 'flex';
+                        serviceForm.reset();
+                        
+                        // Redirecionar após 3 segundos
                     setTimeout(() => {
                         window.location.href = "https://autoavanlda.com/agradecimento.html";
                     }, 3000);
                 }
-            } else {
-                throw new Error('Falha no envio');
+                    
+                } else {
+                    throw new Error('Falha no envio');
+                }
+            } catch (error) {
+                console.error("Erro:", error);
+                alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
+            } finally {
+                if (submitBtn && btnText && btnSpinner) {
+                    submitBtn.disabled = false;
+                    btnText.textContent = "Agendar Serviço";
+                    btnSpinner.style.display = "none";
+                }
             }
-        } catch (error) {
-            console.error("Erro:", error);
-            alert("Ocorreu um erro ao enviar o formulário. Por favor, entre em contato diretamente pelo WhatsApp: +244 926 095 712");
-        } finally {
-            if (submitBtn && btnText && btnSpinner) {
-                submitBtn.disabled = false;
-                btnText.textContent = "Agendar Serviço";
-                btnSpinner.style.display = "none";
-            }
-        }
-    });
-}
+        });
+
         // Fechar modal
         const closeModalElements = [
             document.getElementById('modalCloseBtn'),
