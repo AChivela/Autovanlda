@@ -1466,6 +1466,19 @@
                 grid-template-columns: 1fr;
             }
         }
+        const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .part-card {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+`;
+document.head.appendChild(style);
+
     </style>
 </head>
 <body>
@@ -2422,9 +2435,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 shopTabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 // Aqui você pode adicionar a lógica para filtrar os produtos
-            });
+                // Filtragem de produtos por categoria
+const shopTabs = document.querySelectorAll('.shop-tab');
+const partCards = document.querySelectorAll('.part-card');
+
+shopTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove a classe 'active' de todas as abas
+        shopTabs.forEach(t => t.classList.remove('active'));
+        
+        // Adiciona 'active' apenas na aba clicada
+        tab.classList.add('active');
+        
+        // Obtém a categoria selecionada (texto da aba)
+        const selectedCategory = tab.textContent.trim();
+        
+        // Filtra os produtos
+        partCards.forEach(card => {
+            // Obtém a categoria do produto (texto do elemento .part-category)
+            const cardCategory = card.querySelector('.part-category').textContent.trim();
+            
+            // Mostra ou esconde o card baseado na seleção
+            if (selectedCategory === 'Todas' || cardCategory === selectedCategory) {
+                card.style.display = 'block';
+                
+                // Adiciona animação de fade in
+                card.style.animation = 'fadeIn 0.5s ease-in-out';
+            } else {
+                card.style.display = 'none';
+            }
         });
     });
+});
+    
  </script>
 </body>
 </html>
