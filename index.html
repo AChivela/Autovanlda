@@ -765,44 +765,49 @@ document.addEventListener('DOMContentLoaded', function() {
             dateInput.min = tomorrow.toISOString().split('T')[0];
         }
 
-    // Envio do formulário
-serviceForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    if (submitBtn && btnText && btnSpinner) {
-        submitBtn.disabled = true;
-        btnText.textContent = "Enviando...";
-        btnSpinner.style.display = "inline-block";
-    }
-
-    try {
-        const response = await fetch(serviceForm.action, {
-            method: 'POST',
-            body: new FormData(serviceForm),
-            headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-            if (confirmationModal) {
-                confirmationModal.style.display = 'flex';
-                serviceForm.reset();
-
-                // Redirecionar após 3 segundos
-                setTimeout(() => {
-                    window.location.href = "https://autoavanlda.com/agradecimento.html";
-                }, 3000);
+// FORMULÁRIO DE AGENDAMENTO - NOVO CÓDIGO COMENTADO
+    const serviceForm = document.getElementById('serviceForm');
+    if (serviceForm) {
+        serviceForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = serviceForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span id="btnSpinner" style="display:inline-block;margin-right:8px;"><i class="fas fa-spinner fa-spin"></i></span> Enviando...';
             }
-        }
-        // Não faz nada se não for ok (sem alert, sem console)
-    } finally {
-        if (submitBtn && btnText && btnSpinner) {
-            submitBtn.disabled = false;
-            btnText.textContent = "Agendar Serviço";
-            btnSpinner.style.display = "none";
-        }
-    }
-});
 
+            try {
+                const response = await fetch(serviceForm.action, {
+                    method: 'POST',
+                    body: new FormData(serviceForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    serviceForm.reset();
+                    
+                    const confirmationModal = document.getElementById('confirmationModal');
+                    if (confirmationModal) {
+                        confirmationModal.style.display = 'flex';
+                        
+                        setTimeout(() => {
+                            window.location.href = "https://autoavanlda.com/agradecimento.html";
+                        }, 3000);
+                    }
+                } else {
+                    console.error('Erro no envio do formulário');
+                }
+            } catch (error) {
+                console.error('Erro:', error);
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Agendar Serviço";
+                }
+            }
+        });
+    }
 
         // Fechar modal
         const closeModalElements = [
