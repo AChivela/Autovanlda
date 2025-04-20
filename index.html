@@ -1548,7 +1548,77 @@ document.head.appendChild(style);
         padding-left: 2rem;
     }
 }
-       
+       /* Esconde o checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilos para o ícone de menu (hamburguer) */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1001;
+}
+
+.menu-icon span {
+  height: 4px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Estilos para o menu */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #fff;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+/* Exibe o ícone do menu e esconde o menu desktop em telas pequenas */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  #menu-toggle:checked + .menu-icon + .mobile-menu {
+    display: block;
+  }
+}
+
 
     </style>
 </head>
@@ -1577,9 +1647,28 @@ document.head.appendChild(style);
         </div>
       </a>
 
-     <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
+   <!--   <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu Mobile">
         <i class="fas fa-bars"></i>
-      </button> 
+      </button>   -->
+
+        <!-- Botão de menu hamburguer para celular -->
+<input type="checkbox" id="menu-toggle" />
+<label for="menu-toggle" class="menu-icon">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+
+<!-- Menu Responsivo -->
+<nav class="mobile-menu">
+  <ul>
+    <li><a href="#home">Início</a></li>
+    <li><a href="#services">Serviços</a></li>
+    <li><a href="#shop">Peças</a></li>
+    <li><a href="#about">Sobre</a></li>
+    <li><a href="#contact">Contato</a></li>
+  </ul>
+</nav>
       
       <nav id="mainNav">
         <ul>
