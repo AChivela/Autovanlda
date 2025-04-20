@@ -1547,6 +1547,33 @@ document.head.appendChild(style);
         padding-left: 2rem;
     }
 }
+        /*para o mobel um teste */
+        .dropdown-menu {
+  display: none;
+  list-style: none;
+  padding: 10px;
+  background-color: #1e1e2f; /* Cor de fundo escura */
+  position: absolute;
+  top: 60px; /* Ajusta dependendo do header */
+  right: 10px;
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+
+.dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  text-decoration: underline;
+}
+
 
     </style>
 </head>
@@ -1601,16 +1628,16 @@ document.head.appendChild(style);
         <ul>
           <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
           <li><a href="#services"><i class="fas fa-tools"></i> Serviços</a></li>
-            <li><a href="#shops"><i class="fas fa-box-open"></i> Peças </a></li>
+          
           <li>
-          <!--   <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
-            <!--<ul class="dropdown-menu">
+             <a href="#shop"><i class="fas fa-box-open"></i> Peças <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
               <li><a href="#shop">Motor</a></li>
               <li><a href="#shop">Suspensão</a></li>
               <li><a href="#shop">Freios</a></li>
               <li><a href="#shop">Elétrica</a></li>
               <li><a href="#shop">Placas</a></li>
-            </ul> -->
+            </ul> 
           </li>
           <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre</a></li>
           <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
@@ -2239,11 +2266,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Adicione este JavaScript -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const jobForm = document.getElementById('jobForm');
-    
-    jobForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const dropdownMenu = document.getElementById('mobileDropdownMenu');
+
+  menuBtn.addEventListener('click', () => {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
         
         // Validação básica
         const requiredFields = jobForm.querySelectorAll('[required]');
