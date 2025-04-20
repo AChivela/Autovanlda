@@ -765,48 +765,44 @@ document.addEventListener('DOMContentLoaded', function() {
             dateInput.min = tomorrow.toISOString().split('T')[0];
         }
 
-        // Envio do formulário
-        serviceForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            if (submitBtn && btnText && btnSpinner) {
-                submitBtn.disabled = true;
-                btnText.textContent = "Enviando...";
-                btnSpinner.style.display = "inline-block";
-            }
+    // Envio do formulário
+serviceForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    if (submitBtn && btnText && btnSpinner) {
+        submitBtn.disabled = true;
+        btnText.textContent = "Enviando...";
+        btnSpinner.style.display = "inline-block";
+    }
 
-            try {
-                const response = await fetch(serviceForm.action, {
-                    method: 'POST',
-                    body: new FormData(serviceForm),
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    if (confirmationModal) {
-                        confirmationModal.style.display = 'flex';
-                        serviceForm.reset();
-                        
-                        // Redirecionar após 3 segundos
-                    setTimeout(() => {
-                        window.location.href = "https://autoavanlda.com/agradecimento.html";
-                    }, 3000);
-                }
-                    
-                } else {
-                    throw new Error('Falha no envio');
-                }
-            } catch (error) {
-                console.error("Erro:", error);
-                alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
-            } finally {
-                if (submitBtn && btnText && btnSpinner) {
-                    submitBtn.disabled = false;
-                    btnText.textContent = "Agendar Serviço";
-                    btnSpinner.style.display = "none";
-                }
-            }
+    try {
+        const response = await fetch(serviceForm.action, {
+            method: 'POST',
+            body: new FormData(serviceForm),
+            headers: { 'Accept': 'application/json' }
         });
+
+        if (response.ok) {
+            if (confirmationModal) {
+                confirmationModal.style.display = 'flex';
+                serviceForm.reset();
+
+                // Redirecionar após 3 segundos
+                setTimeout(() => {
+                    window.location.href = "https://autoavanlda.com/agradecimento.html";
+                }, 3000);
+            }
+        }
+        // Não faz nada se não for ok (sem alert, sem console)
+    } finally {
+        if (submitBtn && btnText && btnSpinner) {
+            submitBtn.disabled = false;
+            btnText.textContent = "Agendar Serviço";
+            btnSpinner.style.display = "none";
+        }
+    }
+});
+;
 
         // Fechar modal
         const closeModalElements = [
