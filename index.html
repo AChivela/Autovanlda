@@ -2440,37 +2440,66 @@ document.addEventListener('DOMContentLoaded', function() {
 });
  </script>
     <!-- JavaScript -->
-   <script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Menu Mobile
+    <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    // =====================
+    // MENU MOBILE
+    // =====================
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.getElementById('mainNav');
+    const header = document.getElementById('header');
 
-    mobileMenuBtn.addEventListener('click', function () {
+    // Toggle menu mobile
+    mobileMenuBtn.addEventListener('click', function() {
         mainNav.classList.toggle('active');
         document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        
+        // Alternar ícone entre hamburguer e X
+        const icon = this.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        }
     });
 
-    document.querySelectorAll('nav a').forEach(link => {
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('#mainNav a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
                 mainNav.classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // Resetar ícone para hamburguer
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
             }
         });
     });
 
-    document.querySelectorAll('nav ul li a i.fa-chevron-down').forEach(icon => {
-        icon.parentElement.addEventListener('click', function (e) {
+    // Dropdowns no mobile
+    document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
+        dropdownLink.addEventListener('click', function(e) {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
-                const dropdown = this.nextElementSibling;
+                const dropdown = this.parentElement;
+                const dropdownMenu = this.nextElementSibling;
+                
                 dropdown.classList.toggle('active');
+                dropdownMenu.classList.toggle('active');
+                
+                // Rotacionar ícone
+                const icon = this.querySelector('.fa-chevron-down');
+                if (icon) {
+                    icon.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : '';
+                }
             }
         });
     });
 
-    const header = document.getElementById('header');
+    // Efeito de scroll no header
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             header.classList.add('header-scrolled');
@@ -2479,13 +2508,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Scroll suave para âncoras
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+        anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
+            
             const target = document.querySelector(targetId);
             if (target) {
+                e.preventDefault();
                 window.scrollTo({
                     top: target.offsetTop - 80,
                     behavior: 'smooth'
@@ -2498,65 +2529,93 @@ document.addEventListener('DOMContentLoaded', function () {
     // FORMULÁRIO DE CONTATO
     // =====================
     const serviceForm = document.getElementById('serviceForm');
-    const confirmationModal = document.getElementById('confirmationModal');
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('btnText');
-    const btnSpinner = document.getElementById('btnSpinner');
+    if (serviceForm) {
+        const confirmationModal = document.getElementById('confirmationModal');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const otherServiceGroup = document.getElementById('otherServiceGroup');
+        const serviceSelect = document.getElementById('service');
 
-    document.getElementById('service').addEventListener('change', function () {
-        document.getElementById('otherServiceGroup').style.display =
-            this.value === 'Outro' ? 'block' : 'none';
-    });
-
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    document.getElementById('date').min = tomorrow.toISOString().split('T')[0];
-
-    serviceForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        submitBtn.disabled = true;
-        btnText.textContent = "Enviando...";
-        btnSpinner.style.display = "inline-block";
-
-        try {
-            const response = await fetch(serviceForm.action, {
-                method: 'POST',
-                body: new FormData(serviceForm),
-                headers: { 'Accept': 'application/json' }
+        // Mostrar/ocultar campo "Outro serviço"
+        if (serviceSelect && otherServiceGroup) {
+            serviceSelect.addEventListener('change', function() {
+                otherServiceGroup.style.display = this.value === 'Outro' ? 'block' : 'none';
             });
+        }
 
-            if (response.ok) {
-                confirmationModal.style.display = 'flex';
-                serviceForm.reset();
-                setTimeout(() => {
-                    const redirectUrl = document.querySelector('[name="_next"]').value;
-                    if (redirectUrl) window.location.href = redirectUrl;
-                }, 3000);
-            } else {
-                throw new Error('Falha no envio');
+        // Definir data mínima (amanhã)
+        const dateInput = document.getElementById('date');
+        if (dateInput) {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+        }
+
+        // Envio do formulário
+        serviceForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (submitBtn && btnText && btnSpinner) {
+                submitBtn.disabled = true;
+                btnText.textContent = "Enviando...";
+                btnSpinner.style.display = "inline-block";
             }
-        } catch (error) {
-            console.error("Erro:", error);
-            alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
-        } finally {
-            submitBtn.disabled = false;
-            btnText.textContent = "Agendar Serviço";
-            btnSpinner.style.display = "none";
-        }
-    });
 
-    document.getElementById('modalCloseBtn').addEventListener('click', () => {
-        confirmationModal.style.display = 'none';
-    });
-    document.getElementById('closeModal').addEventListener('click', () => {
-        confirmationModal.style.display = 'none';
-    });
-    window.addEventListener('click', (e) => {
-        if (e.target === confirmationModal) {
-            confirmationModal.style.display = 'none';
-        }
-    });
+            try {
+                const response = await fetch(serviceForm.action, {
+                    method: 'POST',
+                    body: new FormData(serviceForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    if (confirmationModal) {
+                        confirmationModal.style.display = 'flex';
+                        serviceForm.reset();
+                        
+                        const redirectUrl = document.querySelector('[name="_next"]')?.value;
+                        if (redirectUrl) {
+                            setTimeout(() => {
+                                window.location.href = redirectUrl;
+                            }, 3000);
+                        }
+                    }
+                } else {
+                    throw new Error('Falha no envio');
+                }
+            } catch (error) {
+                console.error("Erro:", error);
+                alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
+            } finally {
+                if (submitBtn && btnText && btnSpinner) {
+                    submitBtn.disabled = false;
+                    btnText.textContent = "Agendar Serviço";
+                    btnSpinner.style.display = "none";
+                }
+            }
+        });
+
+        // Fechar modal
+        const closeModalElements = [
+            document.getElementById('modalCloseBtn'),
+            document.getElementById('closeModal')
+        ];
+        
+        closeModalElements.forEach(el => {
+            if (el) {
+                el.addEventListener('click', () => {
+                    if (confirmationModal) confirmationModal.style.display = 'none';
+                });
+            }
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === confirmationModal) {
+                confirmationModal.style.display = 'none';
+            }
+        });
+    }
 
     // =====================
     // SHOP TABS
@@ -2564,87 +2623,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const shopTabs = document.querySelectorAll('.shop-tab');
     const partCards = document.querySelectorAll('.part-card');
 
-    shopTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            shopTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
+    if (shopTabs.length && partCards.length) {
+        shopTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remover classe active de todas as tabs
+                shopTabs.forEach(t => t.classList.remove('active'));
+                
+                // Adicionar classe active na tab clicada
+                tab.classList.add('active');
 
-            const selectedCategory = tab.textContent.trim();
+                const selectedCategory = tab.textContent.trim();
 
-            partCards.forEach(card => {
-                const cardCategory = card.querySelector('.part-category').textContent.trim();
-                if (selectedCategory === 'Todas' || cardCategory === selectedCategory) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.5s ease-in-out';
-                } else {
-                    card.style.display = 'none';
-                }
+                // Filtrar cards
+                partCards.forEach(card => {
+                    const cardCategory = card.querySelector('.part-category')?.textContent.trim();
+                    if (selectedCategory === 'Todas' || cardCategory === selectedCategory) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease-in-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
-    });
-});
-
-    
-
-    const tabs = document.querySelectorAll('.shop-tab');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active')); // Remove de todos
-            tab.classList.add('active'); // Ativa o clicado
-        });
-    });
-</script>
-
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
-    const dropdowns = document.querySelectorAll('.dropdown');
-    
-    // Toggle menu mobile
-    mobileMenuBtn.addEventListener('click', function() {
-        mainNav.classList.toggle('active');
-        this.querySelector('i').classList.toggle('fa-times');
-        this.querySelector('i').classList.toggle('fa-bars');
-    });
-    
-    // Toggle dropdowns no mobile
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('a');
-        
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-                const menu = dropdown.querySelector('.dropdown-menu');
-                menu.classList.toggle('active');
-            }
-        });
-    });
-    
-    // Fechar menu ao clicar em um link
-    document.querySelectorAll('#mainNav a').forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 768 && !this.parentElement.classList.contains('dropdown')) {
-                mainNav.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-            }
-        });
-    });
-    
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    });
+    }
 });
 </script>
-
 </body>
 </html>
