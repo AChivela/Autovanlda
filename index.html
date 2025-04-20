@@ -765,7 +765,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dateInput.min = tomorrow.toISOString().split('T')[0];
         }
 
-       // Envio do formulário
+// Envio do formulário
 serviceForm.addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -782,11 +782,15 @@ serviceForm.addEventListener('submit', async function(e) {
             headers: { 'Accept': 'application/json' }
         });
 
-        if (response.ok) {
-            // Redireciona diretamente para a página de agradecimento
+        if (confirmationModal) {
+            confirmationModal.style.display = 'flex';
+            serviceForm.reset();
+
             const redirectUrl = document.querySelector('[name="_next"]')?.value;
             if (redirectUrl) {
-                window.location.href = redirectUrl;
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 3000);
             }
         }
     } finally {
