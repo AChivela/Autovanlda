@@ -2443,8 +2443,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
  </script>
     <!-- JavaScript -->
-    <script>
-   document.addEventListener('DOMContentLoaded', function() {
+<script>
+document.addEventListener('DOMContentLoaded', function() {
     // =====================
     // MENU MOBILE
     // =====================
@@ -2529,14 +2529,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // =====================
-    // FORMULÁRIO DE CONTATO
+    // FORMULÁRIO DE CONTATO - VERSÃO CORRIGIDA
     // =====================
     const serviceForm = document.getElementById('serviceForm');
     if (serviceForm) {
-        const confirmationModal = document.getElementById('confirmationModal');
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = document.getElementById('btnText');
-        const btnSpinner = document.getElementById('btnSpinner');
+        const submitBtn = document.querySelector('#serviceForm .submit-btn');
+        const btnText = document.querySelector('#serviceForm .submit-btn span');
+        const btnSpinner = document.querySelector('#serviceForm .submit-btn .spinner');
         const otherServiceGroup = document.getElementById('otherServiceGroup');
         const serviceSelect = document.getElementById('service');
 
@@ -2559,6 +2558,7 @@ document.addEventListener('DOMContentLoaded', function() {
         serviceForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            // Mostrar loading no botão
             if (submitBtn && btnText && btnSpinner) {
                 submitBtn.disabled = true;
                 btnText.textContent = "Enviando...";
@@ -2573,49 +2573,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 if (response.ok) {
-                    if (confirmationModal) {
-                        confirmationModal.style.display = 'flex';
-                        serviceForm.reset();
-                        
-                        const redirectUrl = document.querySelector('[name="_next"]')?.value;
-                        if (redirectUrl) {
-                            setTimeout(() => {
-                                window.location.href = redirectUrl;
-                            }, 3000);
-                        }
-                    }
+                    // Redirecionar para página de agradecimento
+                    window.location.href = "agradecimento.html";
                 } else {
                     throw new Error('Falha no envio');
                 }
             } catch (error) {
                 console.error("Erro:", error);
+                // Mostrar mensagem de erro personalizada
                 alert("Erro ao enviar o formulário. Por favor, contacte-nos via WhatsApp: +244 926 095 712");
             } finally {
+                // Restaurar botão
                 if (submitBtn && btnText && btnSpinner) {
                     submitBtn.disabled = false;
                     btnText.textContent = "Agendar Serviço";
                     btnSpinner.style.display = "none";
                 }
-            }
-        });
-
-        // Fechar modal
-        const closeModalElements = [
-            document.getElementById('modalCloseBtn'),
-            document.getElementById('closeModal')
-        ];
-        
-        closeModalElements.forEach(el => {
-            if (el) {
-                el.addEventListener('click', () => {
-                    if (confirmationModal) confirmationModal.style.display = 'none';
-                });
-            }
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === confirmationModal) {
-                confirmationModal.style.display = 'none';
             }
         });
     }
@@ -2650,6 +2623,34 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // =====================
+    // ANIMAÇÕES
+    // =====================
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.feature-card, .service-card, .part-card, .mv-item');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Configurar elementos para animação
+    document.querySelectorAll('.feature-card, .service-card, .part-card, .mv-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // Disparar animação no carregamento e no scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
 });
 </script>
 </body>
