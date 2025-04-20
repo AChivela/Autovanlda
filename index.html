@@ -2506,6 +2506,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+    
+<script>
+    const tabs = document.querySelectorAll('.shop-tab');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active')); // Remove de todos
+            tab.classList.add('active'); // Ativa o clicado
+        });
+    });
+</script>
 
 </body>
 </html>
