@@ -2350,18 +2350,15 @@ document.addEventListener('DOMContentLoaded', function() {
  </script>
     <!-- JavaScript -->
     <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Menu Mobile
+document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.getElementById('mainNav');
-    
-    // Alternar menu mobile
+
     mobileMenuBtn.addEventListener('click', function() {
         mainNav.classList.toggle('active');
         document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
     });
-    
-    // Fechar menu ao clicar em um link
+
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
@@ -2370,8 +2367,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Dropdown mobile
+
     document.querySelectorAll('nav ul li a i.fa-chevron-down').forEach(icon => {
         icon.parentElement.addEventListener('click', function(e) {
             if (window.innerWidth <= 768) {
@@ -2381,8 +2377,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Header scroll effect
+
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
@@ -2391,15 +2386,12 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('header-scrolled');
         }
     });
-    
-    // Scroll suave
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
             const target = document.querySelector(targetId);
             if (target) {
                 window.scrollTo({
@@ -2409,6 +2401,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+</script>
+
                 
         
         // =====================
